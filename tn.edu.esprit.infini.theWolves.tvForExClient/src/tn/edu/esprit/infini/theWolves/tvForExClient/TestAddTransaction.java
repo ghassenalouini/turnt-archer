@@ -24,6 +24,14 @@ public class TestAddTransaction {
 			Currency currency = proxy.findCurrencyById(1);
 			Currency currencyCross = proxy.findCurrencyById(2);
 
+			Customer customerBid2 = proxy.findCustomerById(1);
+			Customer customer2 = proxy.findCustomerById(4);
+			Currency currency2 = proxy.findCurrencyById(5);
+			Currency currencyCross2 = proxy.findCurrencyById(6);
+
+			proxy.addCrossTransaction(customer2, customerBid2, currency2,
+					currencyCross2, "buy", 500, 3.00F, 9.00F);
+
 			proxy.addCrossTransaction(customer, customerBid, currency,
 					currencyCross, "buy", 200, 2.10F, 17.0F);
 		} catch (NamingException e) {
