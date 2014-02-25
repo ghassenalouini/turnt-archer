@@ -19,7 +19,12 @@ public class Corporate extends Customer implements Serializable {
 
 	public Corporate() {
 		super();
-	}   
+	} 
+	public Corporate(String name, String login, String password, int phone_number, String adresse_mail, String typeActivity) {
+		super(name, login, password, phone_number, adresse_mail);
+		this.typeActivity=typeActivity;
+	} 
+	
 	public String getTypeActivity() {
 		return this.typeActivity;
 	}

@@ -11,19 +11,26 @@ import javax.persistence.Entity;
 @Entity
 public class CentralBank extends Customer implements Serializable {
 
-	private float properFund;
+	
+	private String country;
 	private static final long serialVersionUID = 1L;
 
 	public CentralBank() {
 		super();
 	}
+	public CentralBank(String name, String login, String password, int phone_number, String adresse_mail, String country) {
+		super(name, login, password, phone_number, adresse_mail);
+		this.country=country;
+		
+	}
+	
 
-	public float getProperFund() {
-		return this.properFund;
+	public String getCountry() {
+		return country;
 	}
 
-	public void setProperFund(float properFund) {
-		this.properFund = properFund;
+	public void setCountry(String country) {
+		this.country = country;
 	}
-
+	
 }

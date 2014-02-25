@@ -21,6 +21,12 @@ public class Bank extends Customer implements Serializable {
 	public Bank() {
 		super();
 	}
+	
+	public Bank(String name, String login, String password, int phone_number, String adresse_mail, int fond_propre, String swift_code) {
+		super(name, login, password, phone_number, adresse_mail);
+		this.fond_propre = fond_propre;
+		this.swift_code = swift_code;
+	}
 
 	public Bank(int fond_propre, String swift_code) {
 		super();
