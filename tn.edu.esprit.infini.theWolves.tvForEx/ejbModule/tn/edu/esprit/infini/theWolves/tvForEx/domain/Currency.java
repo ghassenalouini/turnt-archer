@@ -18,6 +18,7 @@ public class Currency implements Serializable {
 
 	private int id;
 	private String label;
+	private int unity;
 
 	private String initials;
 	private static final long serialVersionUID = 1L;
@@ -55,7 +56,7 @@ public class Currency implements Serializable {
 		this.initials = initials;
 	}
 
-	 @OneToMany(mappedBy = "currency")
+	@OneToMany(mappedBy = "currency")
 	public List<Transaction> getTransactions() {
 		return transactions;
 	}
@@ -73,4 +74,19 @@ public class Currency implements Serializable {
 		this.transactionsCross = transactionsCross;
 	}
 
+	public int getUnity() {
+		return unity;
+	}
+
+	public void setUnity(int unity) {
+		this.unity = unity;
+	}
+
+	public Currency(String label, int unity, String initials) {
+		super();
+		this.label = label;
+		this.unity = unity;
+		this.initials = initials;
+	}
+	
 }
