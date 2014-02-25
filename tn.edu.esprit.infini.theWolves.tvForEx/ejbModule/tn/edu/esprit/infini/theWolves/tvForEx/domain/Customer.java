@@ -28,6 +28,20 @@ public class Customer implements Serializable {
 
 	private List<Position> positions;
 	private List<Transaction> transactions;
+	
+	
+	
+	
+	public Customer(String name, String login, String password,
+			int phone_number, String adresse_mail) {
+		super();
+		this.name = name;
+		this.login = login;
+		this.password = password;
+		this.phone_number = phone_number;
+		this.adresse_mail = adresse_mail;
+	}
+
 	private List<Transaction> transactionsCross;
 
 	@OneToMany(mappedBy = "customer")
