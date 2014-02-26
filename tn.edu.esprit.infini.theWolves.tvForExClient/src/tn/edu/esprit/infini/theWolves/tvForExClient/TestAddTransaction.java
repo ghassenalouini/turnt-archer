@@ -6,8 +6,6 @@ import javax.naming.NamingException;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Customer;
-import tn.edu.esprit.infini.theWolves.tvForEx.services.impl.CurrencyServices;
-import tn.edu.esprit.infini.theWolves.tvForEx.services.impl.CustomerServices;
 import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CurrencyServicesRemote;
 import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CustomerServicesRemote;
 import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.TransactionServicesRemote;
@@ -40,10 +38,10 @@ public class TestAddTransaction {
 			Currency currency = proxyCu.findCurrencyById(1);
 			Currency currencyCross = proxyCu.findCurrencyById(2);
 
-			Customer customerBid2 = proxy.findCustomerById(1);
-			Customer customer2 = proxy.findCustomerById(4);
-			Currency currency2 = proxy.findCurrencyById(5);
-			Currency currencyCross2 = proxy.findCurrencyById(6);
+			Customer customerBid2 = proxyCust.findCustomerById(1);
+			Customer customer2 = proxyCust.findCustomerById(4);
+			Currency currency2 = proxyCu.findCurrencyById(5);
+			Currency currencyCross2 = proxyCu.findCurrencyById(6);
 
 			proxy.addCrossTransaction(customer2, customerBid2, currency2,
 					currencyCross2, "buy", 500, 3.00F, 9.00F);
