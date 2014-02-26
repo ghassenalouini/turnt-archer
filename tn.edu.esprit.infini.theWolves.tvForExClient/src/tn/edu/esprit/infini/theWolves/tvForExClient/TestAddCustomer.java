@@ -5,7 +5,8 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Corporate;
-import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CurrencyServicesRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.domain.Customer;
+import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CustomerServicesRemote;
 
 public class TestAddCustomer {
 
@@ -13,14 +14,16 @@ public class TestAddCustomer {
 		try {
 			Context context = new InitialContext();
 
-			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyServices!"
-					+ CurrencyServicesRemote.class.getCanonicalName();
-			CurrencyServicesRemote proxy = (CurrencyServicesRemote) context
+			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CustomerServices!"
+					+ CustomerServicesRemote.class.getCanonicalName();
+			CustomerServicesRemote proxy = (CustomerServicesRemote) context
 					.lookup(jndiName);
 
-			Corporate corporate = new Corporate();
+			Customer corporate = new Corporate();
+		
 			corporate.setId(1);
-			corporate.setTypeActivity("seller");
+			((Corporate)corporate).setTypeActivity("seller");
+			
 			corporate.setLogin("login");
 			corporate.setPassword("password");
 
