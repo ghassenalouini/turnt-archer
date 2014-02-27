@@ -2,35 +2,30 @@ package tn.edu.esprit.infini.theWolves.tvForEx.services.impl;
 
 import java.util.List;
 
+import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
-import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CurrencyServicesRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CurrencyServicesLocal;
 
 /**
  * Session Bean implementation class CurrencyServices
  */
 @Stateless
-public class CurrencyServices implements CurrencyServicesRemote {
+@LocalBean
+public class CurrencyServices implements CurrencyServicesLocal {
 
 	@PersistenceContext
 	private EntityManager entityManager;
-
-	/**
-	 * Default constructor.
-	 */
-	public CurrencyServices() {
-		// TODO Auto-generated constructor stub
-	}
-
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<Currency> findAllCurrencies() {
-		String jpql = "select c from Currency c";
-		return entityManager.createQuery(jpql).getResultList();
-
-	}
+	
+    /**
+     * Default constructor. 
+     */
+    public CurrencyServices() {
+        // TODO Auto-generated constructor stub
+    }
 
 	@Override
 	public boolean addCurrency(Currency currency) {
@@ -46,13 +41,7 @@ public class CurrencyServices implements CurrencyServicesRemote {
 	}
 
 	@Override
-	public Currency findCurrencyById(int id) {
-
-		return entityManager.find(Currency.class, id);
-	}
-
-	@Override
-	public boolean removeCurrency (Currency currency) {
+	public boolean removeCurrency(Currency currency) {
 		boolean b = false;
 		try {
 			entityManager.remove(currency);
@@ -66,7 +55,6 @@ public class CurrencyServices implements CurrencyServicesRemote {
 
 	@Override
 	public boolean updateCurrency(Currency currency) {
-		
 		boolean b = false;
 		try {
 			entityManager.merge(currency);
@@ -77,7 +65,17 @@ public class CurrencyServices implements CurrencyServicesRemote {
 		}
 		return b;
 	}
-	
-	
+
+	@Override
+	public Currency findCurrencyById(int id) {
+		return entityManager.find(Currency.class, id);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Currency> findAllCurrencies() {
+		String jpql = "select c from Currency c";
+		return entityManager.createQuery(jpql).getResultList();
+	}
 
 }

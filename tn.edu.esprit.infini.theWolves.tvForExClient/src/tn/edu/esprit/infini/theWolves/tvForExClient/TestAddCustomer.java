@@ -4,9 +4,9 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import tn.edu.esprit.infini.theWolves.tvForEx.domain.Bank;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Corporate;
-import tn.edu.esprit.infini.theWolves.tvForEx.domain.Customer;
-import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CustomerServicesRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CustomerFacadeRemote;
 
 public class TestAddCustomer {
 
@@ -15,26 +15,18 @@ public class TestAddCustomer {
 			
 			Context context = new InitialContext();
 
-			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CustomerServices!"
-					+ CustomerServicesRemote.class.getCanonicalName();
+			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CustomerFacade!"
+					+ CustomerFacadeRemote.class.getCanonicalName();
 			
-			CustomerServicesRemote proxy = (CustomerServicesRemote) context
+			CustomerFacadeRemote proxy = (CustomerFacadeRemote) context
 					.lookup(jndiName);
 
 
-			Customer corporate = new Corporate();
-
-		
-			corporate.setId(1);
-	    	((Corporate)corporate).setTypeActivity("seller");
-			
-			corporate.setLogin("login");
-			corporate.setPassword("password");
-			corporate.setName("corp1");
-			corporate.setAdresse_mail("corp@corp.com");
-			
-
+			Bank bank= new Bank("bank1", "a", "b", 334444, "aee@ea.com", 120000, "BK23");
+			Corporate corporate = new Corporate("corp", "aa", "bb", 988, "corp@corp.tn", "financial");
+					
 			proxy.addCustomer(corporate);
+			proxy.addCustomer(bank);
 
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block

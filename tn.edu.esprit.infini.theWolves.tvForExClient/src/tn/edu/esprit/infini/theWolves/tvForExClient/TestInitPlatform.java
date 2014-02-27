@@ -7,8 +7,8 @@ import javax.naming.NamingException;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Bank;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Corporate;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
-import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CurrencyServicesRemote;
-import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CustomerServicesRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CurrencyFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CustomerFacadeRemote;
 
 public class TestInitPlatform {
 
@@ -16,14 +16,14 @@ public class TestInitPlatform {
 		try {
 			Context context = new InitialContext();
 
-			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyServices!"
-					+ CurrencyServicesRemote.class.getCanonicalName();
-			CurrencyServicesRemote proxy = (CurrencyServicesRemote) context
+			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyFacade!"
+					+ CurrencyFacadeRemote.class.getCanonicalName();
+			CurrencyFacadeRemote proxy = (CurrencyFacadeRemote) context
 					.lookup(jndiName);
 
-			String jndiName2 = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CustomerServices!"
-					+ CustomerServicesRemote.class.getCanonicalName();
-			CustomerServicesRemote proxy2 = (CustomerServicesRemote) context
+			String jndiName2 = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CustomerFacade!"
+					+ CustomerFacadeRemote.class.getCanonicalName();
+			CustomerFacadeRemote proxy2 = (CustomerFacadeRemote) context
 					.lookup(jndiName2);
 
 			

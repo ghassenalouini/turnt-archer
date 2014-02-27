@@ -8,23 +8,24 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Trader;
-import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.TraderServicesRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.TraderServicesLocal;
 
 /**
  * Session Bean implementation class TraderServices
  */
 @Stateless
 @LocalBean
-public class TraderServices implements TraderServicesRemote {
+public class TraderServices implements TraderServicesLocal {
 
-   
-    public TraderServices() {
-        // TODO Auto-generated constructor stub
-    }
-    
+	/**
+	 * Default constructor.
+	 */
+	public TraderServices() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@PersistenceContext
 	private EntityManager entityManager;
-
 
 	@Override
 	public Trader findTraderbyId(int id) {
@@ -58,10 +59,10 @@ public class TraderServices implements TraderServicesRemote {
 	}
 
 	@Override
-	public boolean removeCustomer(Trader trader) {
+	public boolean removeTrader(Trader trader) {
 		boolean b = false;
 		try {
-			entityManager.remove(trader); 
+			entityManager.remove(trader);
 			b = true;
 
 		} catch (Exception e) {
@@ -74,8 +75,7 @@ public class TraderServices implements TraderServicesRemote {
 	@Override
 	public List<Trader> findAllTraders() {
 		String jpql = "select t from Trader t";
-		return entityManager.createQuery(jpql).getResultList();	
+		return entityManager.createQuery(jpql).getResultList();
 	}
-
 
 }

@@ -5,7 +5,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
-import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CurrencyServicesRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CurrencyFacadeRemote;
 
 public class TestAddlCurrency {
 
@@ -14,14 +14,15 @@ public class TestAddlCurrency {
 		try {
 			Context context = new InitialContext();
 
-			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyServices!"
-					+ CurrencyServicesRemote.class.getCanonicalName();
-			CurrencyServicesRemote proxy = (CurrencyServicesRemote) context
+			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyFacade!"
+					+ CurrencyFacadeRemote.class.getCanonicalName();
+			CurrencyFacadeRemote proxy = (CurrencyFacadeRemote) context
 					.lookup(jndiName);
 
 			Currency currency = new Currency();
-			currency.setLabel("euro");
-			currency.setInitials("EUR");
+			currency.setLabel("US Dollar");
+			currency.setInitials("USD");
+			currency.setUnity(1);
 
 			System.out.println(proxy.addCurrency(currency));
 

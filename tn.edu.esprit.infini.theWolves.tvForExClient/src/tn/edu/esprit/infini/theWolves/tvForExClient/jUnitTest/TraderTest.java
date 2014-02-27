@@ -8,11 +8,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Trader;
-import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.TraderServicesRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.TraderFacadeRemote;
 
 public class TraderTest {
 
-	private TraderServicesRemote proxy;
+	private TraderFacadeRemote proxy;
 
 	@Before
 	public void test() {
@@ -21,9 +21,9 @@ public class TraderTest {
 			Context context = new InitialContext();
 
 			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/TraderServices!"
-					+ TraderServicesRemote.class.getCanonicalName();
+					+ TraderFacadeRemote.class.getCanonicalName();
 
-			proxy = (TraderServicesRemote) context.lookup(jndiName);
+			proxy = (TraderFacadeRemote) context.lookup(jndiName);
 
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
@@ -56,7 +56,7 @@ public class TraderTest {
 	@Test
 	public void testRemoveTrader() {
 		Trader trader = new Trader();
-		proxy.removeCustomer(trader);
+		proxy.removeTrader(trader);
 	}
 
 	@Test

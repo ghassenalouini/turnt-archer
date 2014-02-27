@@ -9,13 +9,13 @@ import org.junit.Test;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Corporate;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Customer;
-import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CustomerServicesRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CustomerFacadeRemote;
 
 
 
 public class CustomerTest {
 
-	private CustomerServicesRemote proxy; 
+	private CustomerFacadeRemote proxy; 
 	
 	@Before
 	public void test() {
@@ -24,9 +24,9 @@ public class CustomerTest {
 			Context context = new InitialContext();
 
 			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CustomerServices!"
-					+ CustomerServicesRemote.class.getCanonicalName();
+					+ CustomerFacadeRemote.class.getCanonicalName();
 			
-			 proxy = (CustomerServicesRemote) context
+			 proxy = (CustomerFacadeRemote) context
 					.lookup(jndiName);
 
 	} catch (NamingException e) {

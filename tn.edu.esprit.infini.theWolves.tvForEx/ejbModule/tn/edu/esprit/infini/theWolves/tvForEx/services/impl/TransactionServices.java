@@ -1,28 +1,36 @@
 package tn.edu.esprit.infini.theWolves.tvForEx.services.impl;
 
+import java.util.List;
+
+import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import tn.edu.esprit.infini.theWolves.tvForEx.domain.Bank;
-import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
-import tn.edu.esprit.infini.theWolves.tvForEx.domain.Customer;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Transaction;
-import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.TransactionServicesRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.TransactionServicesLocal;
 
+/**
+ * Session Bean implementation class TransactionServices
+ */
 @Stateless
-public class TransactionServices implements TransactionServicesRemote {
+@LocalBean
+public class TransactionServices implements TransactionServicesLocal {
 
-	@PersistenceContext
-	private EntityManager entityManager;
-
+    /**
+     * Default constructor. 
+     */
+    public TransactionServices() {
+        // TODO Auto-generated constructor stub
+    }
+    
+    @PersistenceContext
+    EntityManager entityManager;
+    
 	@Override
-	public boolean addTransaction(Customer customer, Currency currency,
-			String typeOfTransaction, int amount, float cotation) {
+	public boolean addTransactionC(Transaction transaction) {
 		boolean b = false;
 		try {
-			Transaction transaction = new Transaction(typeOfTransaction,
-					amount, customer, currency, cotation);
 			entityManager.persist(transaction);
 			b = true;
 
@@ -33,39 +41,43 @@ public class TransactionServices implements TransactionServicesRemote {
 	}
 
 	@Override
-	public boolean addCrossTransaction(Customer customer, Customer customerBid,
-			Currency currency, Currency currencyCross, String type, int amount,
-			float cotation, float cotationBase) {
-		
-		Transaction transactionCross = new Transaction(type, amount, cotation,
-				cotationBase, customer, currency, customerBid, currencyCross);
-		
+	public boolean updateTransaction(Transaction transaction) {
 		boolean b = false;
 		try {
-            
-			PositionServices positionServices= new PositionServices();
-			positionServices.updatePosition(transactionCross);
-			entityManager.persist(transactionCross);
+			entityManager.merge(transaction);
 			b = true;
 
 		} catch (Exception e) {
-			System.err.println("error addCross Transaction ...");
+			System.err.println("error update transaction ...");
 		}
 		return b;
 	}
 
 	@Override
-	public boolean createOffer(Bank bank, Currency currency, float cotation) {
+	public boolean removeTransaction(Transaction transaction) {
 		boolean b = false;
 		try {
-			Transaction transaction = new Transaction(cotation, bank, currency);
-			entityManager.persist(transaction);
+			entityManager.remove(transaction);
 			b = true;
 
 		} catch (Exception e) {
-			System.err.println("error create offer ...");
+			System.err.println("error remove transaction ...");
 		}
 		return b;
 	}
 
+	@Override
+	public Transaction findTransactionById(int id) {
+		
+		return entityManager.find(Transaction.class, id);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Transaction> findAllTransactions() {
+		String jpql = "SELECT t FROM Transaction t";
+		return entityManager.createQuery(jpql).getResultList();
+		
+	}
+    
 }

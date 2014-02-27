@@ -8,11 +8,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
-import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CurrencyServicesRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CurrencyFacadeRemote;
 
 public class CurrencyTest {
 
-	private CurrencyServicesRemote proxy;
+	private CurrencyFacadeRemote proxy;
 
 	@Before
 	public void test() {
@@ -21,9 +21,9 @@ public class CurrencyTest {
 			Context context = new InitialContext();
 
 			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyServices!"
-					+ CurrencyServicesRemote.class.getCanonicalName();
+					+ CurrencyFacadeRemote.class.getCanonicalName();
 
-			proxy = (CurrencyServicesRemote) context.lookup(jndiName);
+			proxy = (CurrencyFacadeRemote) context.lookup(jndiName);
 
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block

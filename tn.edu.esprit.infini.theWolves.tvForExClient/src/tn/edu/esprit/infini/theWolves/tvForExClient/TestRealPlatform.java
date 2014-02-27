@@ -11,34 +11,34 @@ import org.junit.Test;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Bank;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
-import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CurrencyServicesRemote;
-import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CustomerServicesRemote;
-import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.TransactionServicesRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CurrencyFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CustomerFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.TransactionFacadeRemote;
 
 @SuppressWarnings("deprecation")
 public class TestRealPlatform {
 
 	private Context context;
-	private CurrencyServicesRemote proxy;
-	private CustomerServicesRemote proxyCust;
-	private TransactionServicesRemote proxyTr;
+	private CurrencyFacadeRemote proxy;
+	private CustomerFacadeRemote proxyCust;
+	private TransactionFacadeRemote proxyTr;
 
 	@Before
 	public void init() {
 		try {
 			context = new InitialContext();
 
-			proxy = (CurrencyServicesRemote) context
-					.lookup("ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyServices!"
-							+ CurrencyServicesRemote.class.getCanonicalName());
+			proxy = (CurrencyFacadeRemote) context
+					.lookup("ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyFacade!"
+							+ CurrencyFacadeRemote.class.getCanonicalName());
 
-			String jndiNameCust = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CustomerServices!"
-					+ CustomerServicesRemote.class.getCanonicalName();
-			proxyCust = (CustomerServicesRemote) context.lookup(jndiNameCust);
+			String jndiNameCust = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CustomerFacade!"
+					+ CustomerFacadeRemote.class.getCanonicalName();
+			proxyCust = (CustomerFacadeRemote) context.lookup(jndiNameCust);
 
-			String jndiNameTr = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/TransactionServices!"
-					+ TransactionServicesRemote.class.getCanonicalName();
-			proxyTr = (TransactionServicesRemote) context.lookup(jndiNameTr);
+			String jndiNameTr = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/TransactionFacade!"
+					+ TransactionFacadeRemote.class.getCanonicalName();
+			proxyTr = (TransactionFacadeRemote) context.lookup(jndiNameTr);
 
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block

@@ -10,15 +10,15 @@ import org.junit.Test;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Bank;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Customer;
-import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CurrencyServicesRemote;
-import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CustomerServicesRemote;
-import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.TransactionServicesRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CurrencyFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CustomerFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.TransactionFacadeRemote;
 
 public class TransactionTest {
 
-	private TransactionServicesRemote proxy;
-	private CurrencyServicesRemote proxyCu;
-	private CustomerServicesRemote proxyCust;
+	private TransactionFacadeRemote proxy;
+	private CurrencyFacadeRemote proxyCu;
+	private CustomerFacadeRemote proxyCust;
 
 	@Before
 	public void test() {
@@ -27,15 +27,15 @@ public class TransactionTest {
 			Context context = new InitialContext();
 
 			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/TransactionServices!"
-					+ TransactionServicesRemote.class.getCanonicalName();
+					+ TransactionFacadeRemote.class.getCanonicalName();
 			String jndiNameCu = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyServices!"
-					+ CurrencyServicesRemote.class.getCanonicalName();
+					+ CurrencyFacadeRemote.class.getCanonicalName();
 			String jndiNameCust = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CustomerServices!"
-					+ CustomerServicesRemote.class.getCanonicalName();
+					+ CustomerFacadeRemote.class.getCanonicalName();
 
-			proxy = (TransactionServicesRemote) context.lookup(jndiName);
-			proxyCu = (CurrencyServicesRemote) context.lookup(jndiNameCu);
-			proxyCust = (CustomerServicesRemote) context.lookup(jndiNameCust);
+			proxy = (TransactionFacadeRemote) context.lookup(jndiName);
+			proxyCu = (CurrencyFacadeRemote) context.lookup(jndiNameCu);
+			proxyCust = (CustomerFacadeRemote) context.lookup(jndiNameCust);
 
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
