@@ -20,4 +20,5 @@ public interface TransactionServicesRemote  {
 	public boolean createOffer(Bank bank, Currency currency, float cotation);
 
 
+	
 }

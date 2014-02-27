@@ -27,7 +27,7 @@ public class TransactionServices implements TransactionServicesRemote {
 			b = true;
 
 		} catch (Exception e) {
-			System.err.println("emmm haw fibali ...");
+			System.err.println("error add transaction ...");
 		}
 		return b;
 	}
@@ -36,8 +36,10 @@ public class TransactionServices implements TransactionServicesRemote {
 	public boolean addCrossTransaction(Customer customer, Customer customerBid,
 			Currency currency, Currency currencyCross, String type, int amount,
 			float cotation, float cotationBase) {
+		
 		Transaction transactionCross = new Transaction(type, amount, cotation,
 				cotationBase, customer, currency, customerBid, currencyCross);
+		
 		boolean b = false;
 		try {
             
@@ -47,7 +49,7 @@ public class TransactionServices implements TransactionServicesRemote {
 			b = true;
 
 		} catch (Exception e) {
-			System.err.println("emmm haw fibali ...");
+			System.err.println("error addCross Transaction ...");
 		}
 		return b;
 	}
@@ -61,7 +63,7 @@ public class TransactionServices implements TransactionServicesRemote {
 			b = true;
 
 		} catch (Exception e) {
-			System.err.println("emmm haw fibali ...");
+			System.err.println("error create offer ...");
 		}
 		return b;
 	}

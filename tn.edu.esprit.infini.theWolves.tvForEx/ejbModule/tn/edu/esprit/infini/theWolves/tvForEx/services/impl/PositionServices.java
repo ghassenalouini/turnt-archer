@@ -37,7 +37,7 @@ public class PositionServices implements PositionServicesRemote {
 						transaction.getCotation());
 
 			} else if (position != null) {
-				System.out.println("la position pr la bank 1 est modifier");
+				System.out.println("la position pr la bank 1 est modifié");
 				position.setCredit(position.getCredit()
 						+ transaction.getAmount());
 				position.setAverageCost(((position.getAverageCost() * position
@@ -107,7 +107,7 @@ public class PositionServices implements PositionServicesRemote {
 			}
 
 		} catch (Exception e) {
-			System.err.println("emmm haw fibali ...");
+			System.err.println("update position error ...");
 		}
 
 		

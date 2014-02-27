@@ -40,7 +40,7 @@ public class CurrencyServices implements CurrencyServicesRemote {
 			b = true;
 
 		} catch (Exception e) {
-			System.err.println("emmm haw fibali ...");
+			System.err.println("error add currency ...");
 		}
 		return b;
 	}
@@ -50,5 +50,34 @@ public class CurrencyServices implements CurrencyServicesRemote {
 
 		return entityManager.find(Currency.class, id);
 	}
+
+	@Override
+	public boolean removeCurrency (Currency currency) {
+		boolean b = false;
+		try {
+			entityManager.remove(currency);
+			b = true;
+
+		} catch (Exception e) {
+			System.err.println("error remove currency ...");
+		}
+		return b;
+	}
+
+	@Override
+	public boolean updateCurrency(Currency currency) {
+		
+		boolean b = false;
+		try {
+			entityManager.merge(currency);
+			b = true;
+
+		} catch (Exception e) {
+			System.err.println("error update currency ...");
+		}
+		return b;
+	}
+	
+	
 
 }

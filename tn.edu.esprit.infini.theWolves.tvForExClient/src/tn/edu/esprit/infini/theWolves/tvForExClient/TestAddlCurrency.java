@@ -10,6 +10,7 @@ import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CurrencyServic
 public class TestAddlCurrency {
 
 	public static void main(String[] args) {
+		
 		try {
 			Context context = new InitialContext();
 
@@ -22,7 +23,7 @@ public class TestAddlCurrency {
 			currency.setLabel("euro");
 			currency.setInitials("EUR");
 
-		System.out.println(proxy.addCurrency(currency));	
+			System.out.println(proxy.addCurrency(currency));
 
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block

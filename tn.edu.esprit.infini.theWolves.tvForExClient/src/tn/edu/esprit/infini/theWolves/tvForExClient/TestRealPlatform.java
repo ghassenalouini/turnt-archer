@@ -15,6 +15,7 @@ import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CurrencyServic
 import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CustomerServicesRemote;
 import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.TransactionServicesRemote;
 
+@SuppressWarnings("deprecation")
 public class TestRealPlatform {
 
 	private Context context;
@@ -46,6 +47,7 @@ public class TestRealPlatform {
 
 	}
 
+	
 	@Test
 	public void itShouldAddCrossTransaction() {
 		

@@ -18,6 +18,7 @@ public class CentralBank extends Customer implements Serializable {
 	public CentralBank() {
 		super();
 	}
+	
 	public CentralBank(String name, String login, String password, int phone_number, String adresse_mail, String country) {
 		super(name, login, password, phone_number, adresse_mail);
 		this.country=country;

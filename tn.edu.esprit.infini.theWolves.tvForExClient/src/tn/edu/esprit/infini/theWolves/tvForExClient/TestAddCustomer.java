@@ -12,20 +12,27 @@ public class TestAddCustomer {
 
 	public static void main(String[] args) {
 		try {
+			
 			Context context = new InitialContext();
 
 			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CustomerServices!"
 					+ CustomerServicesRemote.class.getCanonicalName();
+			
 			CustomerServicesRemote proxy = (CustomerServicesRemote) context
 					.lookup(jndiName);
 
+
 			Customer corporate = new Corporate();
+
 		
 			corporate.setId(1);
-			((Corporate)corporate).setTypeActivity("seller");
+	    	((Corporate)corporate).setTypeActivity("seller");
 			
 			corporate.setLogin("login");
 			corporate.setPassword("password");
+			corporate.setName("corp1");
+			corporate.setAdresse_mail("corp@corp.com");
+			
 
 			proxy.addCustomer(corporate);
 
