@@ -18,5 +18,7 @@ public interface TraderFacadeRemote {
 	public boolean removeTrader(Trader trader);
 
 	public List<Trader> findAllTraders();
+	
+	public Trader LogInTrader(String login, String password); 
 
 }

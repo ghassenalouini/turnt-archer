@@ -20,7 +20,7 @@ public class CurrencyTest {
 		try {
 			Context context = new InitialContext();
 
-			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyServices!"
+			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyFacade!"
 					+ CurrencyFacadeRemote.class.getCanonicalName();
 
 			proxy = (CurrencyFacadeRemote) context.lookup(jndiName);
@@ -63,7 +63,7 @@ public class CurrencyTest {
 
 	@Test
 	public void testDisplayCurrencies() {
-		System.out.println(proxy.findAllCurrencies());
+		proxy.findAllCurrencies();
 	}
 
 }

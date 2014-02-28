@@ -18,5 +18,7 @@ public interface CustomerFacadeRemote {
 	public boolean removeCustomer(Customer customer);
 
 	public List<Customer> findAllCustomers();
+	
+	public Customer LogInCustomer(String login, String password); 
 
 }
