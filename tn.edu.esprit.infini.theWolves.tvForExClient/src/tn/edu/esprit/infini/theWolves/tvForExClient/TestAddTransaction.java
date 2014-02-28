@@ -29,11 +29,15 @@ public class TestAddTransaction {
 			Currency currency2 = proxy.findCurrencyById(5);
 			Currency currencyCross2 = proxy.findCurrencyById(6);
 
-			proxy.addCrossTransaction(customer2, customerBid2, currency2,
-					currencyCross2, "buy", 500, 3.00F, 9.00F);
+			// proxy.addCrossTransaction(customer2, customerBid2, currency2,
+			// currencyCross2, "buy", 500, 3.00F, 9.00F);
 
 			proxy.addCrossTransaction(customer, customerBid, currency,
 					currencyCross, "buy", 200, 2.10F, 17.0F);
+		Customer cu=proxy.findCustomerById(1);
+		if(cu==null)
+			System.out.println("trouvé");
+		else System.out.println("non");
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

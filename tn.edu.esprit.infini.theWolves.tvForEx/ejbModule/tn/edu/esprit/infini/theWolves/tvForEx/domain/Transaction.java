@@ -98,7 +98,7 @@ public class Transaction implements Serializable {
 		super();
 		this.transactionPk = new TransactionPk(customer.getId(),
 				currency.getId());
-		this.type = "bid";
+		this.type = "BID";
 		this.cotation = cotation;
 		this.customer = customer;
 		this.currency = currency;

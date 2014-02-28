@@ -28,10 +28,7 @@ public class Customer implements Serializable {
 
 	private List<Position> positions;
 	private List<Transaction> transactions;
-	
-	
-	
-	
+
 	public Customer(String name, String login, String password,
 			int phone_number, String adresse_mail) {
 		super();
