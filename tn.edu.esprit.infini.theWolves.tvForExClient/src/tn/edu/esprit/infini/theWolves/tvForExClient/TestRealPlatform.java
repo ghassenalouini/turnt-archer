@@ -11,20 +11,35 @@ import org.junit.Test;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Bank;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
-import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CurrencyServicesRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CurrencyFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CustomerFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.TransactionFacadeRemote;
 
+@SuppressWarnings("deprecation")
 public class TestRealPlatform {
 
 	private Context context;
-	private CurrencyServicesRemote proxy;
+	private CurrencyFacadeRemote proxy;
+	private CustomerFacadeRemote proxyCust;
+	private TransactionFacadeRemote proxyTr;
 
 	@Before
 	public void init() {
 		try {
 			context = new InitialContext();
-			proxy = (CurrencyServicesRemote) context
-					.lookup("ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyServices!"
-							+ CurrencyServicesRemote.class.getCanonicalName());
+
+			proxy = (CurrencyFacadeRemote) context
+					.lookup("ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyFacade!"
+							+ CurrencyFacadeRemote.class.getCanonicalName());
+
+			String jndiNameCust = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CustomerFacade!"
+					+ CustomerFacadeRemote.class.getCanonicalName();
+			proxyCust = (CustomerFacadeRemote) context.lookup(jndiNameCust);
+
+			String jndiNameTr = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/TransactionFacade!"
+					+ TransactionFacadeRemote.class.getCanonicalName();
+			proxyTr = (TransactionFacadeRemote) context.lookup(jndiNameTr);
+
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -32,16 +47,17 @@ public class TestRealPlatform {
 
 	}
 
+	
 	@Test
 	public void itShouldAddCrossTransaction() {
-		Bank bankBid = (Bank) proxy.findCustomerById(1);
-		Bank bank = (Bank) proxy.findCustomerById(2);
+		
+		Bank bankBid = (Bank) proxyCust.findCustomerById(1);
+		Bank bank = (Bank) proxyCust.findCustomerById(2);
 		Currency currency = proxy.findCurrencyById(1);
 		Currency currencyCross = proxy.findCurrencyById(2);
 
-		Assert.assertTrue(proxy.addCrossTransaction(bank, bankBid, currency,
-				currencyCross, "buy", 2000, 2.00F, 1.2F));
 
+		Assert.assertTrue(proxyTr.addCrossTransaction(bank, bankBid, currency, currencyCross, "buy", 2000, 2.00F, 1.2F));
 	}
 
 }

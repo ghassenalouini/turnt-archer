@@ -7,7 +7,8 @@ import javax.naming.NamingException;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Bank;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Corporate;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
-import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CurrencyServicesRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CurrencyFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CustomerFacadeRemote;
 
 public class TestInitPlatform {
 
@@ -15,11 +16,18 @@ public class TestInitPlatform {
 		try {
 			Context context = new InitialContext();
 
-			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyServices!"
-					+ CurrencyServicesRemote.class.getCanonicalName();
-			CurrencyServicesRemote proxy = (CurrencyServicesRemote) context
+			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyFacade!"
+					+ CurrencyFacadeRemote.class.getCanonicalName();
+			CurrencyFacadeRemote proxy = (CurrencyFacadeRemote) context
 					.lookup(jndiName);
 
+			String jndiName2 = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CustomerFacade!"
+					+ CustomerFacadeRemote.class.getCanonicalName();
+			CustomerFacadeRemote proxy2 = (CustomerFacadeRemote) context
+					.lookup(jndiName2);
+
+			
+			
 			Currency currency = new Currency();
 			currency.setLabel("euro");
 			currency.setInitials("EUR");
@@ -66,8 +74,10 @@ public class TestInitPlatform {
 			proxy.addCurrency(currency5);
 			proxy.addCurrency(currency6);
 			proxy.addCurrency(currency7);
-			proxy.addBank(bank);
-			proxy.addBank(bank2);
+			
+			
+			proxy2.addCustomer(bank);
+			proxy2.addCustomer(bank2);
 
 			Corporate corporate = new Corporate();
 			corporate.setName("Ali");
@@ -84,8 +94,8 @@ public class TestInitPlatform {
 			corporate2.setPassword("password");
 			
 
-			proxy.addCustomer(corporate2);
-			proxy.addCustomer(corporate);
+			proxy2.addCustomer(corporate2);
+			proxy2.addCustomer(corporate);
 
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block

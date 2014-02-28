@@ -7,7 +7,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
-import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CurrencyServicesRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CurrencyFacadeRemote;
 
 public class TestFindAllCurrencies {
 
@@ -15,9 +15,9 @@ public class TestFindAllCurrencies {
 		try {
 			Context context = new InitialContext();
 
-			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyServices!"
-					+ CurrencyServicesRemote.class.getCanonicalName();
-			CurrencyServicesRemote proxy = (CurrencyServicesRemote) context
+			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyFacade!"
+					+ CurrencyFacadeRemote.class.getCanonicalName();
+			CurrencyFacadeRemote proxy = (CurrencyFacadeRemote) context
 					.lookup(jndiName);
 
 			List<Currency> currencies = proxy.findAllCurrencies();
@@ -26,7 +26,7 @@ public class TestFindAllCurrencies {
 					System.out.println(c.getInitials() + ":");
 				}
 			} else {
-				System.err.println("7awel la taiass ;)");
+				System.err.println("error find currencies...");
 
 			}
 
