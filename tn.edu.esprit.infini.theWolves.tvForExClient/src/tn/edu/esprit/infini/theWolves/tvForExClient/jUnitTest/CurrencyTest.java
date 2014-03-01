@@ -4,6 +4,8 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import junit.framework.Assert;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -38,7 +40,7 @@ public class CurrencyTest {
 		currency.setLabel("euro");
 		currency.setInitials("EUR");
 
-		System.out.println(proxy.addCurrency(currency));
+		Assert.assertTrue(proxy.addCurrency(currency));
 	}
 
 	@Test
