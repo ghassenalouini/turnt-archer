@@ -4,12 +4,15 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import junit.framework.Assert;
+
 import org.junit.Before;
 import org.junit.Test;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
 import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CurrencyFacadeRemote;
 
+@SuppressWarnings("deprecation")
 public class CurrencyTest {
 
 	private CurrencyFacadeRemote proxy;
@@ -38,32 +41,35 @@ public class CurrencyTest {
 		currency.setLabel("euro");
 		currency.setInitials("EUR");
 
-		System.out.println(proxy.addCurrency(currency));
+		Assert.assertTrue(proxy.addCurrency(currency));
 	}
 
 	@Test
 	public void testFindCurrencyById() {
-
-		Currency currency = proxy.findCurrencyById(1);
-		System.out.println(currency);
-
+		
+	//	Currency currency= proxy.findCurrencyById(1);
+		
+		
+	//	Assert.assertEquals(currency,currency2);
+		
 	}
 
 	@Test
 	public void testRemoveCurrency() {
 		Currency currency = new Currency();
-		System.out.println(proxy.removeCurrency(currency));
+		Assert.assertTrue(proxy.removeCurrency(currency));
 	}
 
 	@Test
 	public void testUpdateCurrency() {
 		Currency currency = new Currency();
-		System.out.println(proxy.updateCurrency(currency));
+		Assert.assertTrue(proxy.updateCurrency(currency));
 	}
 
 	@Test
 	public void testDisplayCurrencies() {
-		proxy.findAllCurrencies();
+		
+	 //	Assert.assertTrue(proxy.findAllCurrencies());
 	}
 
 }
