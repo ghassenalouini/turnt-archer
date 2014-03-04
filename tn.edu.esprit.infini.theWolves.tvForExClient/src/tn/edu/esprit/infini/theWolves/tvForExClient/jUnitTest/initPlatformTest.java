@@ -23,11 +23,11 @@ public class initPlatformTest {
 		try {
 			Context context = new InitialContext();
 
-			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyServices!"
+			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyFacade!"
 					+ CurrencyFacadeRemote.class.getCanonicalName();
 			proxy = (CurrencyFacadeRemote) context.lookup(jndiName);
 
-			String jndiName2 = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CustomerServices!"
+			String jndiName2 = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CustomerFacade!"
 					+ CustomerFacadeRemote.class.getCanonicalName();
 			proxy2 = (CustomerFacadeRemote) context.lookup(jndiName2);
 
