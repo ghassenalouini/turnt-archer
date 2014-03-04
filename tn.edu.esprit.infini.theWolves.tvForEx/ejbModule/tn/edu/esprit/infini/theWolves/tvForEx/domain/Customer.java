@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 /**
@@ -28,6 +29,8 @@ public class Customer implements Serializable {
 
 	private List<Position> positions;
 	private List<Transaction> transactions;
+
+	private Country country;
 
 	public Customer(String name, String login, String password,
 			int phone_number, String adresse_mail) {
@@ -110,10 +113,10 @@ public class Customer implements Serializable {
 		this.password = password;
 	}
 
-	@OneToMany(mappedBy = "customer")
-	public List<Transaction> getTransactions() {
-		return transactions;
-	}
+	// @OneToMany(mappedBy = "customer")
+	// public List<Transaction> getTransactions() {
+	// return transactions;
+	// }
 
 	public void setTransactions(List<Transaction> transactions) {
 		this.transactions = transactions;
@@ -126,6 +129,15 @@ public class Customer implements Serializable {
 
 	public void setTransactionsCross(List<Transaction> transactionsCross) {
 		this.transactionsCross = transactionsCross;
+	}
+
+	@ManyToOne
+	public Country getCountry() {
+		return country;
+	}
+
+	public void setCountry(Country country) {
+		this.country = country;
 	}
 
 }

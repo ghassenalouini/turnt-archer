@@ -30,8 +30,11 @@ public class PositionFacade implements PositionFacadeRemote {
 		try {
 
 			// // the buyer bank
-			Position position = findPositionByBankCurrency(
-					transaction.getCustomer(), transaction.getCurrency());
+Customer cu=new Customer();
+cu.setId(transaction.getTransactionPk().getIdCustomer());
+			Position position = findPositionByBankCurrency(transaction
+					.getTransactionPk().getIdCustomer(), transaction
+					.getTransactionPk().getIdCu());
 			if (position == null) {
 				System.out.println("pas de position pr la bank 1");
 				position = new Position(transaction.getCustomer(),

@@ -27,6 +27,8 @@ public class Currency implements Serializable {
 	private List<Transaction> transactions;
 	private List<Transaction> transactionsCross;
 
+	private List<Country> countries;
+
 	public Currency() {
 		super();
 	}
@@ -57,10 +59,10 @@ public class Currency implements Serializable {
 		this.initials = initials;
 	}
 
-	@OneToMany(mappedBy = "currency")
-	public List<Transaction> getTransactions() {
-		return transactions;
-	}
+	// @OneToMany(mappedBy = "currency")
+	// public List<Transaction> getTransactions() {
+	// return transactions;
+	// }
 
 	public void setTransactions(List<Transaction> transactions) {
 		this.transactions = transactions;
@@ -97,6 +99,15 @@ public class Currency implements Serializable {
 
 	public void setPositions(List<Position> positions) {
 		this.positions = positions;
+	}
+
+	@OneToMany(mappedBy = "currency")
+	public List<Country> getCountries() {
+		return countries;
+	}
+
+	public void setCountries(List<Country> countries) {
+		this.countries = countries;
 	}
 
 }
