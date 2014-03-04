@@ -20,7 +20,7 @@ public class TraderTest {
 		try {
 			Context context = new InitialContext();
 
-			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/TraderServices!"
+			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/TraderFacade!"
 					+ TraderFacadeRemote.class.getCanonicalName();
 
 			proxy = (TraderFacadeRemote) context.lookup(jndiName);

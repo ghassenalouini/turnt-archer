@@ -1,6 +1,5 @@
 package tn.edu.esprit.infini.theWolves.tvForEx.facade.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -30,84 +29,73 @@ public class PositionFacade implements PositionFacadeRemote {
 		try {
 
 			// // the buyer bank
-			Position position = findPositionByBankCurrency(
-					transaction.getCustomer(), transaction.getCurrency());
-			if (position == null) {
-				System.out.println("pas de position pr la bank 1");
-				position = new Position(transaction.getCustomer(),
-						transaction.getCurrency(), transaction.getAmount(),
-						transaction.getCotation());
-
-			} else if (position != null) {
-				System.out.println("la position pr la bank 1 est modifi??");
-				position.setCredit(position.getCredit()
-						+ transaction.getAmount());
-				position.setAverageCost(((position.getAverageCost() * position
-						.getCredit()) + (transaction.getCotation() * transaction
-						.getAmount()))
-						/ (position.getCredit() + transaction.getAmount()));
-				System.out.println("lemm" + position.getAverageCost());
-			}
-
-			Position position2 = findPositionByBankCurrency(
-					transaction.getCustomer(), transaction.getCurrencyCross());
-
-			if (position2 == null) {
-				position2 = new Position(transaction.getCustomer(),
-						transaction.getCurrencyCross(),
-						-(transaction.getCotation() * transaction.getAmount()));
-
-			} else if (position2 != null) {
-				position2
-						.setCredit(position2.getCredit()
-								- (transaction.getCotation() * transaction
-										.getAmount()));
-
-			}
-
-			// // the seller bank
-			Position position3 = findPositionByBankCurrency(
-					transaction.getCustomerCross(), transaction.getCurrency());
-			if (position3 == null) {
-				position3 = new Position(transaction.getCustomerCross(),
-						transaction.getCurrency(), -transaction.getAmount());
-
-			} else if (position3 != null) {
-				position3.setCredit(position3.getCredit()
-						- transaction.getAmount());
-
-			}
-
-			Position position4 = findPositionByBankCurrency(
-					transaction.getCustomerCross(),
-					transaction.getCurrencyCross());
-			if (position4 == null) {
-				position4 = new Position(transaction.getCustomerCross(),
-						transaction.getCurrencyCross(),
-						(transaction.getCotation() * transaction.getAmount()),
-						transaction.getCotationBase());
-			} else if (position4 != null) {
-				position4.setCredit(position4.getCredit()
-						+ transaction.getCotation() * transaction.getAmount());
-				position4
-						.setAverageCost(((position.getAverageCost() * position
-								.getCredit()) + (transaction.getCotation()
-								* transaction.getAmount() * transaction
-									.getCotationBase()))
-								/ (position.getCredit() + (transaction
-										.getAmount() * transaction
-										.getCotation())));
-			}
-
-			List<Position> positions = new ArrayList<Position>();
-			positions.add(position);
-			positions.add(position2);
-			positions.add(position3);
-			positions.add(position4);
-			for (Position p : positions) {
-				entityManager.merge(p);
-			}
-
+			Customer cu = new Customer();
+			cu.setId(transaction.getTransactionPk().getIdCustomer());
+			/*
+			 * // Position position = findPositionByBankCurrency(transaction //
+			 * .getTransactionPk().getIdCustomer(), transaction //
+			 * .getTransactionPk().getIdCu()); //if (position == null) {
+			 * System.out.println("pas de position pr la bank 1"); position =
+			 * new Position(transaction.getCustomer(),
+			 * transaction.getCurrency(), transaction.getAmount(),
+			 * transaction.getCotation());
+			 * 
+			 * } else if (position != null) {
+			 * System.out.println("la position pr la bank 1 est modifi??");
+			 * position.setCredit(position.getCredit() +
+			 * transaction.getAmount());
+			 * position.setAverageCost(((position.getAverageCost() * position
+			 * .getCredit()) + (transaction.getCotation() * transaction
+			 * .getAmount())) / (position.getCredit() +
+			 * transaction.getAmount())); System.out.println("lemm" +
+			 * position.getAverageCost()); }
+			 * 
+			 * Position position2 = findPositionByBankCurrency(
+			 * transaction.getCustomer(), transaction.getCurrencyCross());
+			 * 
+			 * if (position2 == null) { position2 = new
+			 * Position(transaction.getCustomer(),
+			 * transaction.getCurrencyCross(), -(transaction.getCotation() *
+			 * transaction.getAmount()));
+			 * 
+			 * } else if (position2 != null) { position2
+			 * .setCredit(position2.getCredit() - (transaction.getCotation() *
+			 * transaction .getAmount()));
+			 * 
+			 * }
+			 * 
+			 * // // the seller bank Position position3 =
+			 * findPositionByBankCurrency( transaction.getCustomerCross(),
+			 * transaction.getCurrency()); if (position3 == null) { position3 =
+			 * new Position(transaction.getCustomerCross(),
+			 * transaction.getCurrency(), -transaction.getAmount());
+			 * 
+			 * } else if (position3 != null) {
+			 * position3.setCredit(position3.getCredit() -
+			 * transaction.getAmount());
+			 * 
+			 * }
+			 * 
+			 * Position position4 = findPositionByBankCurrency(
+			 * transaction.getCustomerCross(), transaction.getCurrencyCross());
+			 * if (position4 == null) { position4 = new
+			 * Position(transaction.getCustomerCross(),
+			 * transaction.getCurrencyCross(), (transaction.getCotation() *
+			 * transaction.getAmount()), transaction.getCotationBase()); } else
+			 * if (position4 != null) {
+			 * position4.setCredit(position4.getCredit() +
+			 * transaction.getCotation() * transaction.getAmount()); position4
+			 * .setAverageCost(((position.getAverageCost() * position
+			 * .getCredit()) + (transaction.getCotation()
+			 * transaction.getAmount() * transaction .getCotationBase())) /
+			 * (position.getCredit() + (transaction .getAmount() * transaction
+			 * .getCotation()))); }
+			 * 
+			 * List<Position> positions = new ArrayList<Position>();
+			 * positions.add(position); positions.add(position2);
+			 * positions.add(position3); positions.add(position4); for (Position
+			 * p : positions) { entityManager.merge(p); }
+			 */
 		} catch (Exception e) {
 			System.err.println("update position error ...");
 		}

@@ -21,8 +21,8 @@ public class Transaction implements Serializable {
 	private float cotationBase;
 	private static final long serialVersionUID = 1L;
 
-	private Customer customer;
-	private Currency currency;
+	// private Customer customer;
+	// private Currency currency;
 	private Customer customerCross;
 	private Currency currencyCross;
 
@@ -55,33 +55,35 @@ public class Transaction implements Serializable {
 		this.transactionPk = transactionPk;
 	}
 
-	@ManyToOne
-	@JoinColumn(name = "idCustomer", referencedColumnName = "id", updatable = false, insertable = false)
-	public Customer getCustomer() {
-		return customer;
-	}
+	// @ManyToOne
+	// @JoinColumn(name = "idCustomer", referencedColumnName = "id", updatable =
+	// false, insertable = false)
+	// public Customer getCustomer() {
+	// return customer;
+	// }
 
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
+	// public void setCustomer(Customer customer) {
+	// this.customer = customer;
+	// }
 
-	@ManyToOne
-	@JoinColumn(name = "idCurrency", referencedColumnName = "id", updatable = false, insertable = false)
-	public Currency getCurrency() {
-		return currency;
-	}
+	// @ManyToOne
+	// @JoinColumn(name = "idCurrency", referencedColumnName = "id", updatable =
+	// false, insertable = false)
+	// public Currency getCurrency() {
+	// return currency;
+	// }
 
-	public void setCurrency(Currency currency) {
-		this.currency = currency;
-	}
+	// public void setCurrency(Currency currency) {
+	// this.currency = currency;
+	// }
 
 	public Transaction(String type, int amount, Customer customer,
 			Currency currency) {
 		super();
 		this.type = type;
 		this.amount = amount;
-		this.customer = customer;
-		this.currency = currency;
+		// this.customer = customer;
+		// this.currency = currency;
 		this.transactionPk = new TransactionPk(customer.getId(),
 				currency.getId());
 	}
@@ -98,10 +100,10 @@ public class Transaction implements Serializable {
 		super();
 		this.transactionPk = new TransactionPk(customer.getId(),
 				currency.getId());
-		this.type = "bid";
+		this.type = "BID";
 		this.cotation = cotation;
-		this.customer = customer;
-		this.currency = currency;
+		// this.customer = customer;
+		// this.currency = currency;
 	}
 
 	public Transaction(String type, int amount, Customer customer,
@@ -110,8 +112,8 @@ public class Transaction implements Serializable {
 		this.type = type;
 		this.amount = amount;
 		this.cotation = cotation;
-		this.customer = customer;
-		this.currency = currency;
+		// this.customer = customer;
+		// this.currency = currency;
 		this.transactionPk = new TransactionPk(customer.getId(),
 				currency.getId());
 	}
@@ -169,8 +171,8 @@ public class Transaction implements Serializable {
 		this.amount = amount;
 		this.cotation = cotation;
 		this.cotationBase = cotationBase;
-		this.customer = customer;
-		this.currency = currency;
+		// this.customer = customer;
+		// this.currency = currency;
 		this.customerCross = customerCross;
 		this.currencyCross = currencyCross;
 		this.transactionPk = new TransactionPk(customer.getId(),

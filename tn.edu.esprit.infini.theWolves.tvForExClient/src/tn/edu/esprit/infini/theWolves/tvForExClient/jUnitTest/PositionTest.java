@@ -27,11 +27,11 @@ public class PositionTest {
 		try {
 			Context context = new InitialContext();
 
-			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/PositionServices!"
+			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/PositionFacade!"
 					+ PositionFacadeRemote.class.getCanonicalName();
-			String jndiNameCu = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyServices!"
+			String jndiNameCu = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyFacade!"
 					+ CurrencyFacadeRemote.class.getCanonicalName();
-			String jndiNameCust = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CustomerServices!"
+			String jndiNameCust = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CustomerFacade!"
 					+ CustomerFacadeRemote.class.getCanonicalName();
 
 			proxy = (PositionFacadeRemote) context.lookup(jndiName);
