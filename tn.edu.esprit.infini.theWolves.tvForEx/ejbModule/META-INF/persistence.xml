@@ -15,6 +15,8 @@
 	<class>tn.edu.esprit.infini.theWolves.tvForEx.domain.Position</class>
 	<class>tn.edu.esprit.infini.theWolves.tvForEx.domain.Trader</class>
 	<class>tn.edu.esprit.infini.theWolves.tvForEx.domain.Country</class>
+	<class>tn.edu.esprit.infini.theWolves.tvForEx.domain.Rules</class>
+	<class>tn.edu.esprit.infini.theWolves.tvForEx.domain.Administrator</class>
 
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="create" />
