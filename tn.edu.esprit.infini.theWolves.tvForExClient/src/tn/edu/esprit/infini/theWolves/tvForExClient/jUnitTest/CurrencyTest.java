@@ -16,7 +16,6 @@ import org.junit.Test;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
 import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CurrencyFacadeRemote;
 
-@SuppressWarnings("deprecation")
 public class CurrencyTest {
 
 	private CurrencyFacadeRemote proxy;
@@ -39,6 +38,7 @@ public class CurrencyTest {
 	}
 
 	@Ignore
+	@Test
 	public void itShouldAddCurrency() {
 
 		Currency currency = new Currency();
@@ -50,46 +50,80 @@ public class CurrencyTest {
 	}
 
 	@Ignore
-	public void itShouldNotAddCurrency() throws Exception {
+	@Test
+	public void itShouldFindCurrencyByIdAndCompareIt() {
 
-		Currency currency = new Currency();
-		currency.setLabel("euro");
-		currency.setInitials("EUR");
-
-	}
-
-	@Ignore
-	public void itShouldFindCurrencyById() {
-
-		Currency currency = proxy.findCurrencyById(1);
+		Currency currency = proxy.findCurrencyById(2);
 
 		Currency currency2 = new Currency();
-		currency.setLabel("euro");
-		currency.setInitials("EUR");
+		currency2.setLabel("euro");
+		currency2.setInitials("EUR");
 
-		Assert.assertEquals(currency, currency2);
+		Assert.assertEquals(currency.getLabel(), currency2.getLabel());
 
 	}
 
 	@Ignore
+	@Test(expected = junit.framework.ComparisonFailure.class)
+	public void itShouldFindCurrencyByIdAndCompareIt2() {
+
+		Currency currency = proxy.findCurrencyById(2);
+
+		Currency currency2 = new Currency();
+		currency2.setLabel("eurooooo");
+		currency2.setInitials("EUR");
+
+		Assert.assertEquals(currency.getLabel(), currency2.getLabel());
+
+	}
+
+	@Ignore
+	@Test
 	public void itShouldRemoveCurrency() {
-		Currency currency = new Currency();
-		Assert.assertTrue(proxy.removeCurrency(currency));
+		Assert.assertTrue(proxy.removeCurrency(proxy.findCurrencyById(1)));
 	}
 
 	@Ignore
+	@Test(expected = junit.framework.AssertionFailedError.class)
+	public void itShouldNotRemoveCurrency() {
+		Assert.assertTrue(proxy.removeCurrency(proxy.findCurrencyById(1)));
+	}
+
+	@Ignore
+	@Test
 	public void itShouldUpdateCurrency() {
-		Currency currency = new Currency();
+		Currency currency = proxy.findCurrencyById(1);
+		currency.setInitials("aaaaaaaaaaa");
 		Assert.assertTrue(proxy.updateCurrency(currency));
 	}
 
-	@Test(expected= Exception.class)  
-	public void itShouldNotDisplayCurrencies() {
+	@Ignore
+	@Test(expected = NullPointerException.class)
+	public void itShouldNotUpdateCurrency() {
+		Currency currency = proxy.findCurrencyById(1);
+		currency.setInitials("aaaaaaaaaaa");
+		Assert.assertTrue(proxy.updateCurrency(currency));
+	}
 
-		List<Currency> CurrencyList = new ArrayList<>();
+	@Ignore
+	@Test
+	public void itShouldDisplayCurrencies() {
+
+		List<Currency> CurrencyList = new ArrayList<Currency>();
 		CurrencyList = proxy.findAllCurrencies();
 
-		Assert.assertEquals(12, CurrencyList.size());
+		Assert.assertEquals(1, CurrencyList.size());
+
+	}
+
+	@Ignore
+	@Test(expected = junit.framework.AssertionFailedError.class)
+	public void itShouldNotDisplayCurrencies() {
+
+		List<Currency> CurrencyList = new ArrayList<Currency>();
+		CurrencyList = proxy.findAllCurrencies();
+
+		Assert.assertEquals(10, CurrencyList.size());
 
 	}
 

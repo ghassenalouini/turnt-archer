@@ -19,29 +19,34 @@ public class CurrencyServices implements CurrencyServicesLocal {
 
 	@PersistenceContext
 	private EntityManager entityManager;
-	
-    /**
-     * Default constructor. 
-     */
-    public CurrencyServices() {
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * Default constructor.
+	 */
+	public CurrencyServices() {
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public boolean addCurrency(Currency currency) {
-		
-			entityManager.persist(currency);
-			return true;
-	}
-
-	
-	@Override
-	public boolean removeCurrency(Currency currency) {
 		boolean b = false;
 		try {
-			entityManager.remove(currency);
+			entityManager.persist(currency);
 			b = true;
 
+		} catch (Exception e) {
+			System.err.println("error add currency ...");
+		}
+		return b;
+	}
+
+	@Override
+	public boolean removeCurrency(Currency currency) {
+
+		boolean b = false;
+		try {
+			entityManager.remove(entityManager.merge(currency));
+			b = true;
 		} catch (Exception e) {
 			System.err.println("error remove currency ...");
 		}

@@ -19,12 +19,17 @@ public class TestAddlCurrency {
 			CurrencyFacadeRemote proxy = (CurrencyFacadeRemote) context
 					.lookup(jndiName);
 
-			Currency currency = new Currency();
-			currency.setLabel("US Dollar");
-			currency.setInitials("USD");
-			currency.setUnity(1);
+			/*Currency currency = new Currency();
+			currency.setLabel("Canadien Dollar");
+			currency.setInitials("CND");
+			currency.setUnity(145);
 
-			System.out.println(proxy.addCurrency(currency));
+			System.out.println(proxy.addCurrency(currency));*/
+			
+			
+			Currency currency2=proxy.findCurrencyById(1);
+			System.out.println(proxy.removeCurrency(currency2));
+			
 
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
