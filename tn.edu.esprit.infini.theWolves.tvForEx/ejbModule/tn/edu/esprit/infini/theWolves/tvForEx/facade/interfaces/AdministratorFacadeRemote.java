@@ -20,6 +20,8 @@ public interface AdministratorFacadeRemote {
 
 	public List<Administrator> findAllAdmins();
 	
+	public Administrator logInAdmin (String login, String password);
+	
 	
 
 }

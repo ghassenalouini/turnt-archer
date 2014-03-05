@@ -1,5 +1,8 @@
 package tn.edu.esprit.infini.theWolves.tvForExClient.jUnitTest;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -7,6 +10,7 @@ import javax.naming.NamingException;
 import junit.framework.Assert;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
@@ -34,42 +38,59 @@ public class CurrencyTest {
 		}
 	}
 
-	@Test
-	public void testaddCurrency() {
+	@Ignore
+	public void itShouldAddCurrency() {
 
 		Currency currency = new Currency();
 		currency.setLabel("euro");
 		currency.setInitials("EUR");
 
 		Assert.assertTrue(proxy.addCurrency(currency));
+
 	}
 
-	@Test
-	public void testFindCurrencyById() {
-		
-	//	Currency currency= proxy.findCurrencyById(1);
-		
-		
-	//	Assert.assertEquals(currency,currency2);
-		
+	@Ignore
+	public void itShouldNotAddCurrency() throws Exception {
+
+		Currency currency = new Currency();
+		currency.setLabel("euro");
+		currency.setInitials("EUR");
+
 	}
 
-	@Test
-	public void testRemoveCurrency() {
+	@Ignore
+	public void itShouldFindCurrencyById() {
+
+		Currency currency = proxy.findCurrencyById(1);
+
+		Currency currency2 = new Currency();
+		currency.setLabel("euro");
+		currency.setInitials("EUR");
+
+		Assert.assertEquals(currency, currency2);
+
+	}
+
+	@Ignore
+	public void itShouldRemoveCurrency() {
 		Currency currency = new Currency();
 		Assert.assertTrue(proxy.removeCurrency(currency));
 	}
 
-	@Test
-	public void testUpdateCurrency() {
+	@Ignore
+	public void itShouldUpdateCurrency() {
 		Currency currency = new Currency();
 		Assert.assertTrue(proxy.updateCurrency(currency));
 	}
 
-	@Test
-	public void testDisplayCurrencies() {
-		
-	 //	Assert.assertTrue(proxy.findAllCurrencies());
+	@Test(expected= Exception.class)  
+	public void itShouldNotDisplayCurrencies() {
+
+		List<Currency> CurrencyList = new ArrayList<>();
+		CurrencyList = proxy.findAllCurrencies();
+
+		Assert.assertEquals(12, CurrencyList.size());
+
 	}
 
 }

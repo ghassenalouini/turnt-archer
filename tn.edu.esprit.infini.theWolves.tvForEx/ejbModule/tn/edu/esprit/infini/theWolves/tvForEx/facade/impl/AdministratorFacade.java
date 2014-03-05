@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Administrator;
 import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.AdministratorFacadeRemote;
@@ -17,13 +19,14 @@ import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.AdministratorS
 public class AdministratorFacade implements AdministratorFacadeRemote {
 
 	AdministratorServicesLocal administratorServicesLocal;
-	
-    /**
-     * Default constructor. 
-     */
-    public AdministratorFacade() {
-        // TODO Auto-generated constructor stub
-    }
+	private EntityManager entityManager;
+
+	/**
+	 * Default constructor.
+	 */
+	public AdministratorFacade() {
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public boolean addAdmin(Administrator administrator) {
@@ -50,9 +53,24 @@ public class AdministratorFacade implements AdministratorFacadeRemote {
 		return administratorServicesLocal.findAllAdmins();
 	}
 
-	
-    
-    
-    
+	@Override
+	public Administrator logInAdmin(String login, String password) {
+
+		String jpql = "select c from Administrator c where c.login=:param1 and c.password=:param2";
+		Administrator b = null;
+
+		Query query = (Query) entityManager.createQuery(jpql);
+		query.setParameter("param1", login);
+		query.setParameter("param2", password);
+
+		try {
+			b = (Administrator) query.getSingleResult();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+
+		return b;
+
+	}
 
 }

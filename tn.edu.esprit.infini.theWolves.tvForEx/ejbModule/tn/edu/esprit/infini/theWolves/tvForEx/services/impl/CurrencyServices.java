@@ -29,17 +29,12 @@ public class CurrencyServices implements CurrencyServicesLocal {
 
 	@Override
 	public boolean addCurrency(Currency currency) {
-		boolean b = false;
-		try {
+		
 			entityManager.persist(currency);
-			b = true;
-
-		} catch (Exception e) {
-			System.err.println("error add currency ...");
-		}
-		return b;
+			return true;
 	}
 
+	
 	@Override
 	public boolean removeCurrency(Currency currency) {
 		boolean b = false;
