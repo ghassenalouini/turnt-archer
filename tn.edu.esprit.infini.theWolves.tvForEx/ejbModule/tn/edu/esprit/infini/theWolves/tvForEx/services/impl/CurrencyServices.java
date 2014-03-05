@@ -19,13 +19,13 @@ public class CurrencyServices implements CurrencyServicesLocal {
 
 	@PersistenceContext
 	private EntityManager entityManager;
-	
-    /**
-     * Default constructor. 
-     */
-    public CurrencyServices() {
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * Default constructor.
+	 */
+	public CurrencyServices() {
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public boolean addCurrency(Currency currency) {
@@ -42,11 +42,11 @@ public class CurrencyServices implements CurrencyServicesLocal {
 
 	@Override
 	public boolean removeCurrency(Currency currency) {
+
 		boolean b = false;
 		try {
-			entityManager.remove(currency);
+			entityManager.remove(entityManager.merge(currency));
 			b = true;
-
 		} catch (Exception e) {
 			System.err.println("error remove currency ...");
 		}
