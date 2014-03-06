@@ -38,7 +38,7 @@ public class TraderTest {
 
 		trader.setId(1);
 		trader.setLogin("abc");
-		trader.setPswd("abc");
+		trader.setPassword("abc");
 		trader.setName("trader 1");
 
 		proxy.addTrader(trader);
