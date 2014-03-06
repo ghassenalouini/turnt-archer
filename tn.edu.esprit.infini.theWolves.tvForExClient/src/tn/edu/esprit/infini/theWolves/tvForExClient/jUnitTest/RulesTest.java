@@ -35,7 +35,7 @@ public class RulesTest {
 			e.printStackTrace();
 		}
 	}
-    @Ignore
+    
 	@Test
 	public void itShouldAddRules() {
 		Rules r1 = new Rules();
