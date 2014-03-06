@@ -1,5 +1,6 @@
 package tn.edu.esprit.infini.theWolves.tvForEx.domain;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -9,8 +10,12 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Administrator {
+public class Administrator implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int id;
 	private String nom;
 	private String login;

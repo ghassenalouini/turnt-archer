@@ -18,7 +18,7 @@ import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.AdministratorS
 public class AdministratorServices implements AdministratorServicesLocal {
 
 	@PersistenceContext
-	EntityManager entityManager;
+	private EntityManager entityManager;
 	
     /**
      * Default constructor. 
