@@ -9,11 +9,7 @@ import tn.edu.esprit.infini.theWolves.tvForEx.domain.Administrator;
 @Remote
 public interface AdministratorFacadeRemote {
 
-	/**
-	 * Le package facade permet de faciliter la navigabilité pour le client
-	 * puisqu'il permet de passer directement aux méthodes sans passer par le
-	 * CRUD
-	 **/
+	
 	public boolean addAdmin(Administrator administrator);
 
 	public boolean removeAdmin(Administrator administrator);
