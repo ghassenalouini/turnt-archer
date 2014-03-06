@@ -22,6 +22,9 @@ public class CurrencyTest {
 
 	private CurrencyFacadeRemote proxy;
 
+	// plus
+	// private CurrencyServicesLocal testService;
+
 	@Before
 	public void test() {
 
@@ -33,24 +36,45 @@ public class CurrencyTest {
 
 			proxy = (CurrencyFacadeRemote) context.lookup(jndiName);
 
+			/*
+
+			String jndi = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyServices!"
+					+ CurrencyServicesLocal.class.getCanonicalName();
+			testService = (CurrencyServicesLocal) context.lookup(jndi);
+			*/
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
-	@Ignore
 	@Test
 	public void itShouldAddCurrency() {
 
 		Currency currency = new Currency();
 		currency.setLabel("euro");
 		currency.setInitials("EUR");
+		currency.setUnity(1);
 
 		Assert.assertTrue(proxy.addCurrency(currency));
 
 	}
-@Ignore
+
+	/*
+
+	@Test
+	public void itShouldAddCurrencyTestService() {
+
+		Currency currency = new Currency();
+		currency.setLabel("euro");
+		currency.setInitials("EUR");
+		currency.setUnity(1);
+
+		Assert.assertTrue(testService.addCurrency(currency));
+
+	}*/
+
+	@Ignore
 	@Test
 	public void itShouldFindCurrencyById() {
 		Currency currency = proxy.findCurrencyById(3);
