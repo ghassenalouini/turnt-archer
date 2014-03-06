@@ -38,13 +38,13 @@ public class AdminTest {
 			e.printStackTrace();
 		}
 	}
-
+    @Ignore
 	@Test
 	public void itShouldAddAdmin() {
 		Administrator admin = new Administrator();
 		admin.setNom("Admin");
-		admin.setLogin("login");
-		admin.setPassword("password");
+		admin.setLogin("login2");
+		admin.setPassword("password2");
 		admin.setEmailAddress("aaaa@kkkk");
 
 		List<Rules> rules = new ArrayList<Rules>();
@@ -142,6 +142,12 @@ public class AdminTest {
 
 		Assert.assertEquals(1, AdminList.size());
 
+	}
+	
+	@Test
+	public void itShouldAuthentifate(){
+		Administrator admin=proxy.logInAdmin("login", "password");
+		Assert.assertEquals("Admin", admin.getNom());
 	}
 
 }
