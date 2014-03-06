@@ -8,6 +8,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 import junit.framework.Assert;
+import junit.framework.AssertionFailedError;
 
 import org.junit.Before;
 import org.junit.Ignore;
@@ -51,6 +52,24 @@ public class CurrencyTest {
 
 	@Ignore
 	@Test
+	public void itShouldFindCurrencyById() {
+		Currency currency = proxy.findCurrencyById(3);
+
+		Assert.assertEquals("euro", currency.getLabel());
+
+	}
+
+	@Ignore
+	@Test(expected = NullPointerException.class)
+	public void itShouldNotFindCurrencyById() {
+		Currency currency = proxy.findCurrencyById(1);
+
+		Assert.assertEquals("euro", currency.getLabel());
+
+	}
+
+	@Ignore
+	@Test
 	public void itShouldFindCurrencyByIdAndCompareIt() {
 
 		Currency currency = proxy.findCurrencyById(2);
@@ -80,11 +99,11 @@ public class CurrencyTest {
 	@Ignore
 	@Test
 	public void itShouldRemoveCurrency() {
-		Assert.assertTrue(proxy.removeCurrency(proxy.findCurrencyById(1)));
+		Assert.assertTrue(proxy.removeCurrency(proxy.findCurrencyById(2)));
 	}
 
 	@Ignore
-	@Test(expected = junit.framework.AssertionFailedError.class)
+	@Test(expected = AssertionFailedError.class)
 	public void itShouldNotRemoveCurrency() {
 		Assert.assertTrue(proxy.removeCurrency(proxy.findCurrencyById(1)));
 	}
@@ -117,7 +136,7 @@ public class CurrencyTest {
 	}
 
 	@Ignore
-	@Test(expected = junit.framework.AssertionFailedError.class)
+	@Test(expected = AssertionFailedError.class)
 	public void itShouldNotDisplayCurrencies() {
 
 		List<Currency> CurrencyList = new ArrayList<Currency>();

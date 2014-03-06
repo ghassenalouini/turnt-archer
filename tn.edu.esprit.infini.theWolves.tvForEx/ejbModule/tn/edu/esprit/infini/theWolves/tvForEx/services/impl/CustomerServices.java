@@ -62,7 +62,7 @@ public class CustomerServices implements CustomerServicesLocal {
 	public boolean removeCustomer(Customer customer) {
 		boolean b = false;
 		try {
-			entityManager.remove(customer);
+			entityManager.remove(entityManager.merge(customer));
 			b = true;
 
 		} catch (Exception e) {

@@ -1,14 +1,22 @@
 package tn.edu.esprit.infini.theWolves.tvForExClient.jUnitTest;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import junit.framework.Assert;
+import junit.framework.AssertionFailedError;
+import junit.framework.ComparisonFailure;
+
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Bank;
-import tn.edu.esprit.infini.theWolves.tvForEx.domain.Corporate;
+import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Customer;
 import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CustomerFacadeRemote;
 
@@ -33,41 +41,82 @@ public class CustomerTest {
 		}
 	}
 
+	@Ignore
 	@Test
-	public void testaddCustomer() {
+	public void itShouldAddCustomer() {
 
-		Bank bank = new Bank("bank1", "a", "b", 334444, "aee@ea.com", 120000,
-				"BK23");
-		Corporate corporate = new Corporate("corp", "aa", "bb", 988,
-				"corp@corp.tn", "financial");
+		Customer customer = new Customer("bank1", "a", "b", 334444, "aee@ea.com");
+		//Bank bank = new Bank("bank1", "a", "b", 334444, "aee@ea.com", 120000,
+			//	"BK23");
 
-		proxy.addCustomer(corporate);
-		proxy.addCustomer(bank);
+		//Assert.assertTrue(proxy.addCustomer(bank));
+		Assert.assertTrue(proxy.addCustomer(customer));
 
 	}
 
+	@Ignore
 	@Test
-	public void testFindCustomerById() {
+	public void itShouldFindCustomer() {
+		Bank bank = (Bank) proxy.findCustomerById(1);
 
-		Customer customer = proxy.findCustomerById(1);
-		System.out.println(customer);
+		Assert.assertEquals("BK23", bank.getSwift_code());
 
 	}
 
-	@Test
-	public void testRemoveCustomer() {
-		Customer customer = new Customer();
-		proxy.removeCustomer(customer);
+	@Ignore
+	@Test(expected = NullPointerException.class)
+	public void itShouldNotFindCustomer() {
+		Bank bank = (Bank) proxy.findCustomerById(3);
+
+		Assert.assertEquals("BK23", bank.getSwift_code());
+
 	}
 
-	@Test
-	public void testUpdateCustomer() {
-		Customer customer = new Customer();
-		proxy.updateCustomer(customer);
+	@Ignore
+	@Test(expected=ComparisonFailure.class)
+	public void itShouldFindCustomerByIdAndCompareIt() {
+
+		Bank bank = (Bank) proxy.findCustomerById(1);
+		Assert.assertEquals("bk25", bank.getSwift_code());
+
 	}
 
+	@Ignore
 	@Test
-	public void testDisplayCustomers() {
-		proxy.findAllCustomers();
+	public void itShouldRemoveCustomer() {
+		Bank bank=(Bank) proxy.findCustomerById(1);
+		Assert.assertTrue(proxy.removeCustomer(bank));
+	}
+	@Ignore
+	@Test(expected=AssertionFailedError.class)
+	public void itShouldNotRemoveCustomer() {
+		Bank bank=(Bank) proxy.findCustomerById(1);
+		Assert.assertTrue(proxy.removeCustomer(bank));
+	}
+
+	
+	@Test
+	public void itShouldUpdateCustomer() {
+		Customer customer =  proxy.findCustomerById(1);
+		customer.setAdresse_mail("zert@fgh.com");
+		Assert.assertTrue(proxy.updateCustomer(customer));
+	}
+	@Ignore
+	@Test
+	public void itShouldDisplayCustomer() {
+
+		List<Customer> CustomerList = new ArrayList<Customer>();
+		CustomerList = proxy.findAllCustomers();
+		Assert.assertEquals(1, CustomerList.size());
+
+	}
+	@Ignore
+	@Test(expected=AssertionFailedError.class)
+	public void itShouldNotDisplayCustomer() {
+
+		List<Customer> CustomerList = new ArrayList<Customer>();
+		CustomerList = proxy.findAllCustomers();
+		Assert.assertEquals(80, CustomerList.size());
+
 	}
 }
