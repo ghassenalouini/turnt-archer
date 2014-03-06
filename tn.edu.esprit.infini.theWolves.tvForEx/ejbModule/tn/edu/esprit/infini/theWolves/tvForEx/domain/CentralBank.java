@@ -17,6 +17,12 @@ public class CentralBank extends Customer implements Serializable {
 		super();
 	}
 
+	/**
+	 * ceci est un constructeur parametréde la classe central banque qui prend
+	 * en parametre
+	 * name(String),login(String),password(String),phone_number(int)
+	 * ,adresse_mail(String))
+	 **/
 	public CentralBank(String name, String login, String password,
 			int phone_number, String adresse_mail) {
 		super(name, login, password, phone_number, adresse_mail);

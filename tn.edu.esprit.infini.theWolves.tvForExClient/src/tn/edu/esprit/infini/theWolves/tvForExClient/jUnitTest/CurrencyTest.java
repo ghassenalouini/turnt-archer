@@ -22,6 +22,8 @@ public class CurrencyTest {
 
 	private CurrencyFacadeRemote proxy;
 
+	
+
 	@Before
 	public void test() {
 
@@ -32,24 +34,24 @@ public class CurrencyTest {
 					+ CurrencyFacadeRemote.class.getCanonicalName();
 
 			proxy = (CurrencyFacadeRemote) context.lookup(jndiName);
-
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
-	@Ignore
 	@Test
 	public void itShouldAddCurrency() {
 
 		Currency currency = new Currency();
 		currency.setLabel("euro");
 		currency.setInitials("EUR");
+		currency.setUnity(1);
 
 		Assert.assertTrue(proxy.addCurrency(currency));
 
 	}
+
 
 	@Ignore
 	@Test

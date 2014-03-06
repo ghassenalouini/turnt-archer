@@ -17,10 +17,7 @@ public class Bank extends Customer implements Serializable {
 	private String swift_code;
 	private static final long serialVersionUID = 1L;
 	private List<Trader> traders;
-
-	public Bank() {
-		super();
-	}
+	private List<Rules> ruless;
 
 	/**
 	 * c'est le constructeur de la classe bank qui heirte deja de la classe
@@ -77,13 +74,31 @@ public class Bank extends Customer implements Serializable {
 		return serialVersionUID;
 	}
 
+	/** retourne la liste des traders appartenant a une banque **/
 	@OneToMany(mappedBy = "bank")
 	public List<Trader> getTraders() {
 		return traders;
 	}
 
+	/**
+	 * permet de modifier la liste des traders d'une banque et prend en
+	 * parametre un liste de trader
+	 **/
 	public void setTraders(List<Trader> traders) {
 		this.traders = traders;
+	}
+
+	@OneToMany(mappedBy = "bank")
+	public List<Rules> getRuless() {
+		return ruless;
+	}
+
+	public void setRuless(List<Rules> ruless) {
+		this.ruless = ruless;
+	}
+
+	public Bank() {
+		super();
 	}
 
 }
