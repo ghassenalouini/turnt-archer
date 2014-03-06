@@ -11,7 +11,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 /**
- * Entity implementation class for Entity: Country
+ * La classe country contient 3attributs id(auto_incrementable),name(nom du
+ * pays) et code(code du pays). relation avec la classe currency et relation
+ * avec la classe custommer
  * 
  */
 
@@ -26,15 +28,7 @@ public class Country implements Serializable {
 	private Currency currency;
 	private List<Customer> customers;
 
-	@ManyToOne
-	public Currency getCurrency() {
-		return currency;
-	}
-
-	public void setCurrency(Currency currency) {
-		this.currency = currency;
-	}
-
+	/** un parametre par defaut de la classe country **/
 	public Country() {
 		super();
 	}
@@ -45,26 +39,62 @@ public class Country implements Serializable {
 		return this.id;
 	}
 
+	/**
+	 * un constructeur de la classe country qui prend en parametre name(String)
+	 * et code(String)
+	 **/
+	public Country(String name, String code) {
+		super();
+		this.name = name;
+		Code = code;
+	}
+
+	/**
+	 * un constructeur de la classe country qui prend en parametre
+	 * id(int),name(String),code(String),currency(Currency,liste de custommer
+	 * (List<Customer>)
+	 **/
+	public Country(int id, String name, String code, Currency currency,
+			List<Customer> customers) {
+		super();
+		this.id = id;
+		this.name = name;
+		Code = code;
+		this.currency = currency;
+		this.customers = customers;
+	}
+
+	/** modifier l'id d'un pays et prend en parametre un entier (int) **/
 	public void setId(int id) {
 		this.id = id;
 	}
 
+	/** retourne le nom d'un pays (String) **/
 	public String getName() {
 		return this.name;
 	}
 
+	/**
+	 * modifier le nom d'un pays et prend en parametre un champ de type (String)
+	 **/
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	/** retourne le code d'un pays qui est de type (String) **/
 	public String getCode() {
 		return this.Code;
 	}
 
+	/** modifier le code d'un pays et prend en paramtre un (String) **/
 	public void setCode(String Code) {
 		this.Code = Code;
 	}
 
+	/**
+	 * retourne la liste des custommer qui apartiennent a ce pays et retourne
+	 * une list<Customer>
+	 **/
 	@OneToMany(mappedBy = "country")
 	public List<Customer> getCustomers() {
 		return customers;
@@ -74,4 +104,19 @@ public class Country implements Serializable {
 		this.customers = customers;
 	}
 
+	/**
+	 * public void setCustomers(List<Customer> customers) { this.customers =
+	 * customers; }
+	 * 
+	 * /** retourne la devise du pays
+	 **/
+	@ManyToOne
+	public Currency getCurrency() {
+		return currency;
+	}
+
+	/** modifier la devise du pays **/
+	public void setCurrency(Currency currency) {
+		this.currency = currency;
+	}
 }
