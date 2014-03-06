@@ -39,8 +39,8 @@ public class AdministratorFacade implements AdministratorFacadeRemote {
 	}
 
 	@Override
-	public boolean updateCurrency(Administrator administrator) {
-		return administratorServicesLocal.updateCurrency(administrator);
+	public boolean updateAdmin(Administrator administrator) {
+		return administratorServicesLocal.updateAdmin(administrator);
 	}
 
 	@Override

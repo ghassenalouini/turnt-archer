@@ -14,7 +14,7 @@ public interface AdministratorFacadeRemote {
 
 	public boolean removeAdmin(Administrator administrator);
 
-	public boolean updateCurrency(Administrator administrator);
+	public boolean updateAdmin(Administrator administrator);
 
 	public Administrator findAdminById(int id);
 

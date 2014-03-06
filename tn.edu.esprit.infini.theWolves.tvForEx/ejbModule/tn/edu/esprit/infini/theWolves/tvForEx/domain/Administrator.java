@@ -21,17 +21,28 @@ public class Administrator {
 
 	/** ceci est un constructeur sans parametre **/
 	public Administrator() {
-		super();
+		
 	}
 
 	/**
 	 * ceci est un constructeur qui prend en parametre deux champs dont le
-	 * premier est le logine t le deuxieme est le password
+	 * premier est le login et le deuxieme est le password
 	 **/
 	public Administrator(String login, String password) {
-		super();
+		
 		this.login = login;
 		this.password = password;
+	}
+	
+
+	public Administrator(String nom, String login, String password,
+			String emailAddress, List<Rules> rules) {
+	
+		this.nom = nom;
+		this.login = login;
+		this.password = password;
+		this.emailAddress = emailAddress;
+		this.rules = rules;
 	}
 
 	/**

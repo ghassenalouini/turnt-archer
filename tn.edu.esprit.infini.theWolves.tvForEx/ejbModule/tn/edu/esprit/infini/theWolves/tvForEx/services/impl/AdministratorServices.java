@@ -55,7 +55,7 @@ public class AdministratorServices implements AdministratorServicesLocal {
 	}
 
 	@Override
-	public boolean updateCurrency(Administrator administrator) {
+	public boolean updateAdmin(Administrator administrator) {
 		boolean b = false;
 		try {
 			entityManager.merge(administrator);

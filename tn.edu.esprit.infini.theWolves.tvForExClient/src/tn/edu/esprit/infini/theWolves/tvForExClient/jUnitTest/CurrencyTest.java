@@ -50,7 +50,8 @@ public class CurrencyTest {
 		Assert.assertTrue(proxy.addCurrency(currency));
 
 	}
-@Ignore
+
+	@Ignore
 	@Test
 	public void itShouldFindCurrencyById() {
 		Currency currency = proxy.findCurrencyById(3);

@@ -15,7 +15,7 @@ public interface AdministratorServicesLocal {
 
 	boolean removeAdmin(Administrator administrator);
 
-	boolean updateCurrency(Administrator administrator);
+	boolean updateAdmin(Administrator administrator);
 
 	Administrator findAdminById(int id);
 
