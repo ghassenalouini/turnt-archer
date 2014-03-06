@@ -107,21 +107,41 @@ public class AdminTest {
 	public void itShouldNotRemoveAdmin() {
 		Assert.assertTrue(proxy.removeAdmin(proxy.findAdminById(45)));
 	}
+
 	@Ignore
 	@Test
 	public void itShouldUpdateAdmin() {
-		 Administrator admin = proxy.findAdminById(2);
+		Administrator admin = proxy.findAdminById(2);
 		admin.setNom("cha5s");
 		Assert.assertTrue(proxy.updateAdmin(admin));
 	}
 
-	@Test(expected=NullPointerException.class)
+	@Ignore
+	@Test(expected = NullPointerException.class)
 	public void itShouldNotUpdateAdmin() {
-		 Administrator admin = proxy.findAdminById(40);
+		Administrator admin = proxy.findAdminById(40);
 		admin.setNom("cha5s");
 		Assert.assertTrue(proxy.updateAdmin(admin));
 	}
-	
 
+	@Ignore
+	@Test
+	public void itShouldDisplayAdmin() {
+
+		List<Administrator> AdminList = new ArrayList<Administrator>();
+		AdminList = proxy.findAllAdmins();
+
+		Assert.assertEquals(3, AdminList.size());
+
+	}
+	@Test(expected = AssertionFailedError.class)
+	public void itShouldNotDisplayAdmin() {
+
+		List<Administrator> AdminList = new ArrayList<Administrator>();
+		AdminList = proxy.findAllAdmins();
+
+		Assert.assertEquals(1, AdminList.size());
+
+	}
 
 }
