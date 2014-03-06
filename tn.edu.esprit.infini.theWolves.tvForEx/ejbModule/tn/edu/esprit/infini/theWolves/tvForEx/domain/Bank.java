@@ -77,11 +77,16 @@ public class Bank extends Customer implements Serializable {
 		return serialVersionUID;
 	}
 
+	/** retourne la liste des traders appartenant a une banque **/
 	@OneToMany(mappedBy = "bank")
 	public List<Trader> getTraders() {
 		return traders;
 	}
 
+	/**
+	 * permet de modifier la liste des traders d'une banque et prend en
+	 * parametre un liste de trader
+	 **/
 	public void setTraders(List<Trader> traders) {
 		this.traders = traders;
 	}
