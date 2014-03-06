@@ -18,7 +18,7 @@ import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.AdministratorS
 public class AdministratorServices implements AdministratorServicesLocal {
 
 	@PersistenceContext
-	EntityManager entityManager;
+	private EntityManager entityManager;
 	
     /**
      * Default constructor. 
@@ -45,7 +45,7 @@ public class AdministratorServices implements AdministratorServicesLocal {
 	public boolean removeAdmin(Administrator administrator) {
 		boolean b = false;
 		try {
-			entityManager.remove(administrator);
+			entityManager.remove(entityManager.merge(administrator));
 			b = true;
 
 		} catch (Exception e) {
@@ -55,7 +55,7 @@ public class AdministratorServices implements AdministratorServicesLocal {
 	}
 
 	@Override
-	public boolean updateCurrency(Administrator administrator) {
+	public boolean updateAdmin(Administrator administrator) {
 		boolean b = false;
 		try {
 			entityManager.merge(administrator);
@@ -78,6 +78,12 @@ public class AdministratorServices implements AdministratorServicesLocal {
 		String jpql = "select a from Administrator a";
 		return entityManager.createQuery(jpql).getResultList();
 	
+	}
+
+	@Override
+	public boolean updateCurrency(Administrator administrator) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

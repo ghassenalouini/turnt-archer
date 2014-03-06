@@ -1,16 +1,23 @@
 package tn.edu.esprit.infini.theWolves.tvForEx.domain;
 
+import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Administrator {
+public class Administrator implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int id;
 	private String nom;
 	private String login;
@@ -21,17 +28,28 @@ public class Administrator {
 
 	/** ceci est un constructeur sans parametre **/
 	public Administrator() {
-		super();
+		
 	}
 
 	/**
 	 * ceci est un constructeur qui prend en parametre deux champs dont le
-	 * premier est le logine t le deuxieme est le password
+	 * premier est le login et le deuxieme est le password
 	 **/
 	public Administrator(String login, String password) {
-		super();
+		
 		this.login = login;
 		this.password = password;
+	}
+	
+
+	public Administrator(String nom, String login, String password,
+			String emailAddress, List<Rules> rules) {
+	
+		this.nom = nom;
+		this.login = login;
+		this.password = password;
+		this.emailAddress = emailAddress;
+		this.rules = rules;
 	}
 
 	/**
@@ -106,7 +124,7 @@ public class Administrator {
 	 * c'est le getter de la liste des rules qui retourne la liste des rules qui
 	 * on été placés par l'administrateur
 	 **/
-	@OneToMany(mappedBy = "administrator")
+	@OneToMany(mappedBy = "administrator",cascade=CascadeType.ALL)
 	public List<Rules> getRules() {
 		return rules;
 	}

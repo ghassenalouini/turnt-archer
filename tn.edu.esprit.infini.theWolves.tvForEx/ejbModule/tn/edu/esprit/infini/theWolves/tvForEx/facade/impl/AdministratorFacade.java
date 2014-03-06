@@ -2,9 +2,11 @@ package tn.edu.esprit.infini.theWolves.tvForEx.facade.impl;
 
 import java.util.List;
 
+import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Administrator;
@@ -17,8 +19,9 @@ import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.AdministratorS
 @Stateless
 @LocalBean
 public class AdministratorFacade implements AdministratorFacadeRemote {
-
+	@EJB
 	AdministratorServicesLocal administratorServicesLocal;
+	@PersistenceContext
 	private EntityManager entityManager;
 
 	/**
@@ -39,8 +42,8 @@ public class AdministratorFacade implements AdministratorFacadeRemote {
 	}
 
 	@Override
-	public boolean updateCurrency(Administrator administrator) {
-		return administratorServicesLocal.updateCurrency(administrator);
+	public boolean updateAdmin(Administrator administrator) {
+		return administratorServicesLocal.updateAdmin(administrator);
 	}
 
 	@Override

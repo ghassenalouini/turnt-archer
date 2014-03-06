@@ -29,6 +29,8 @@ public interface AdministratorServicesLocal {
 	 **/
 	boolean updateCurrency(Administrator administrator);
 
+	boolean updateAdmin(Administrator administrator);
+
 	/**
 	 * La methode find fait des recherches d'un administrator prend en paramétre
 	 * un id et retourne l'admistrateur correspond
