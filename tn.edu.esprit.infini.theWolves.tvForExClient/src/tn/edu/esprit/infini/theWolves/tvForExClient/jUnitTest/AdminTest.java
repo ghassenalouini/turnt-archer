@@ -40,7 +40,7 @@ public class AdminTest {
 		}
 	}
 
-	@Ignore
+	
 	@Test
 	public void itShouldAddAdmin() {
 		Administrator admin = new Administrator();
@@ -134,6 +134,7 @@ public class AdminTest {
 		Assert.assertEquals(3, AdminList.size());
 
 	}
+	@Ignore
 	@Test(expected = AssertionFailedError.class)
 	public void itShouldNotDisplayAdmin() {
 

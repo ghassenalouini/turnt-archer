@@ -45,7 +45,7 @@ public class RulesServices implements RulesServicesLocal {
 	
 		boolean b = false;
 		try {
-			entityManager.remove(rules);
+			entityManager.remove(entityManager.merge(rules));
 			b = true;
 
 		} catch (Exception e) {

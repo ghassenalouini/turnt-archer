@@ -43,13 +43,13 @@ public class Administrator implements Serializable {
 	
 
 	public Administrator(String nom, String login, String password,
-			String emailAddress, List<Rules> rules) {
+			String emailAddress) {
 	
 		this.nom = nom;
 		this.login = login;
 		this.password = password;
 		this.emailAddress = emailAddress;
-		this.rules = rules;
+		
 	}
 
 	/**
