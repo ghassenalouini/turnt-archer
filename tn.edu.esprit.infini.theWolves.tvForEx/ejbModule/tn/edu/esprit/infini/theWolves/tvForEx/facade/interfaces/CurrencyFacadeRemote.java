@@ -5,7 +5,7 @@ import java.util.List;
 import javax.ejb.Remote;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
-
+/** **/
 @Remote
 public interface CurrencyFacadeRemote {
 
