@@ -40,6 +40,10 @@ public class Corporate extends Customer implements Serializable {
 		return this.typeActivity;
 	}
 
+	/**
+	 * modifier le type d'activité d'un corporate et qui prend enparametre un
+	 * String (importateur ou exporateur)
+	 **/
 	public void setTypeActivity(String typeActivity) {
 		this.typeActivity = typeActivity;
 	}
