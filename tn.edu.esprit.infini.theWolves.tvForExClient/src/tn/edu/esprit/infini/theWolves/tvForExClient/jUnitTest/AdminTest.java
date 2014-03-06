@@ -16,7 +16,6 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Administrator;
-import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Rules;
 import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.AdministratorFacadeRemote;
 
@@ -40,7 +39,6 @@ public class AdminTest {
 		}
 	}
 
-	
 	@Test
 	public void itShouldAddAdmin() {
 		Administrator admin = new Administrator();
@@ -134,6 +132,7 @@ public class AdminTest {
 		Assert.assertEquals(3, AdminList.size());
 
 	}
+
 	@Ignore
 	@Test(expected = AssertionFailedError.class)
 	public void itShouldNotDisplayAdmin() {

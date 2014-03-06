@@ -15,7 +15,6 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import tn.edu.esprit.infini.theWolves.tvForEx.domain.Administrator;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Rules;
 import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.RulesFacadeRemote;
 
