@@ -63,7 +63,7 @@ public class TradeSerieServices implements TradeSerieServicesLocal {
 	public boolean removeTradeSerie(TradeSerie tradeSerie) {
 		boolean b = false;
 		try {
-			entityManager.remove(tradeSerie);
+			entityManager.remove(entityManager.merge(tradeSerie));
 
 		} catch (Exception e) {
 			System.err.println("error remove trade serie ...");
