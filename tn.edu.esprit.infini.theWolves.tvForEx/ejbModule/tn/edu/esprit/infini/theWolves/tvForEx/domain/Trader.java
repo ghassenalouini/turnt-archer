@@ -3,9 +3,6 @@ package tn.edu.esprit.infini.theWolves.tvForEx.domain;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 /**
@@ -13,12 +10,11 @@ import javax.persistence.ManyToOne;
  * 
  */
 @Entity
-public class Trader implements Serializable {
+public class Trader extends Customer implements Serializable {
 
-	private int id;
-	private String name;
-	private String login;
-	private String pswd;
+	private int score;
+	private String type;
+
 	private static final long serialVersionUID = 1L;
 
 	private Bank bank;
@@ -27,38 +23,20 @@ public class Trader implements Serializable {
 		super();
 	}
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public int getId() {
-		return this.id;
+	public int getScore() {
+		return score;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setScore(int score) {
+		this.score = score;
 	}
 
-	public String getName() {
-		return this.name;
+	public String getType() {
+		return type;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getLogin() {
-		return this.login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
-	}
-
-	public String getPswd() {
-		return this.pswd;
-	}
-
-	public void setPswd(String pswd) {
-		this.pswd = pswd;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	@ManyToOne
