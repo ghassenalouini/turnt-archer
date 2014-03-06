@@ -5,9 +5,12 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Country;
 import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CountryFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CountryServicesLocal;
 
 /**
  * Session Bean implementation class CountryFacade
@@ -16,41 +19,43 @@ import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CountryFacadeRem
 @LocalBean
 public class CountryFacade implements CountryFacadeRemote {
 
-    /**
-     * Default constructor. 
-     */
-	
+	/**
+	 * Default constructor.
+	 */
+
 	@EJB
-	CountryFacadeRemote countryFacadeRemote;
-	
-    public CountryFacade() {
-        // TODO Auto-generated constructor stub
-    }
+	CountryServicesLocal cd;
+	@PersistenceContext
+	private EntityManager entityManager;
+
+	public CountryFacade() {
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public boolean addCountry(Country country) {
-		return countryFacadeRemote.addCountry(country);
+		return cd.addCountry(country);
 	}
 
 	@Override
 	public boolean removeCountry(Country country) {
-		return countryFacadeRemote.removeCountry(country);
-		
+		return cd.removeCountry(country);
+
 	}
 
 	@Override
 	public boolean updateCountry(Country country) {
-		return countryFacadeRemote.updateCountry(country);
+		return cd.updateCountry(country);
 	}
 
 	@Override
 	public Country findCountryById(int id) {
-		return countryFacadeRemote.findCountryById(id);
+		return cd.findCountryById(id);
 	}
 
 	@Override
 	public List<Country> findAllCountries() {
-		return countryFacadeRemote.findAllCountries();
+		return cd.findAllCountries();
 	}
 
 }
