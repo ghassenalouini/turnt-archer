@@ -19,30 +19,43 @@ public class Administrator {
 
 	private List<Rules> rules;
 
+	/** ceci est un constructeur sans parametre **/
 	public Administrator() {
 		super();
 	}
 
+	/**
+	 * ceci est un constructeur qui prend en parametre deux champs dont le
+	 * premier est le logine t le deuxieme est le password
+	 **/
 	public Administrator(String login, String password) {
 		super();
 		this.login = login;
 		this.password = password;
 	}
 
+	/**
+	 * c'est le getter du parametre id qui est deja unidentifiant unique de la
+	 * classe Aministrator et qui est aussi incrementable automatiquement
+	 **/
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getId() {
 		return id;
 	}
 
+	/** ceci est le setter du parametre id **/
 	public void setId(int id) {
 		this.id = id;
 	}
 
+	// ** c'est la methode get du parametre nom qui retourne comme resultat un
+	// champ de type String **/
 	public String getNom() {
 		return nom;
 	}
 
+	/** c'est le setter du parametre nom qui prend en parametre un String **/
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
