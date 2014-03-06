@@ -1,5 +1,6 @@
 package tn.edu.esprit.infini.theWolves.tvForEx.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -16,8 +17,12 @@ import javax.persistence.ManyToOne;
  * tout en respectant les les rules poser par l'administrateur
  **/
 @Entity
-public class Rules {
+public class Rules implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int id;
 	Date date;
 	private String label;

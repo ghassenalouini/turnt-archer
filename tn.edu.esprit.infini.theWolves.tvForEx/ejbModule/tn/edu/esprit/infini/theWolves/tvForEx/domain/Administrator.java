@@ -3,7 +3,9 @@ package tn.edu.esprit.infini.theWolves.tvForEx.domain;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -122,7 +124,7 @@ public class Administrator implements Serializable {
 	 * c'est le getter de la liste des rules qui retourne la liste des rules qui
 	 * on été placés par l'administrateur
 	 **/
-	@OneToMany(mappedBy = "administrator")
+	@OneToMany(mappedBy = "administrator",cascade=CascadeType.ALL)
 	public List<Rules> getRules() {
 		return rules;
 	}

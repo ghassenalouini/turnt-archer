@@ -45,7 +45,7 @@ public class AdministratorServices implements AdministratorServicesLocal {
 	public boolean removeAdmin(Administrator administrator) {
 		boolean b = false;
 		try {
-			entityManager.remove(administrator);
+			entityManager.remove(entityManager.merge(administrator));
 			b = true;
 
 		} catch (Exception e) {
