@@ -3,6 +3,7 @@ package tn.edu.esprit.infini.theWolves.tvForEx.domain;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
@@ -14,12 +15,13 @@ public class TransactionPk implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int idCustomer;
 	private int idCu;
-	private Date dateOfTransaction;
+	private Date date;
 
 	public TransactionPk() {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Column(name = "Trader")
 	public int getIdCustomer() {
 		return idCustomer;
 	}
@@ -28,6 +30,7 @@ public class TransactionPk implements Serializable {
 		this.idCustomer = idCustomer;
 	}
 
+	@Column(name = "CCY")
 	public int getIdCu() {
 		return idCu;
 	}
@@ -40,7 +43,7 @@ public class TransactionPk implements Serializable {
 		super();
 		this.idCustomer = idCustomer;
 		this.idCu = idCu;
-		this.dateOfTransaction = new Date();
+		this.date = new Date();
 	}
 
 	@Override
@@ -68,12 +71,13 @@ public class TransactionPk implements Serializable {
 		return true;
 	}
 
-	public Date getDateOfTransaction() {
-		return dateOfTransaction;
+	@Column(name = "Deal_Time")
+	public Date getDate() {
+		return date;
 	}
 
-	public void setDateOfTransaction(Date dateOfTransaction) {
-		this.dateOfTransaction = dateOfTransaction;
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 }

@@ -19,6 +19,7 @@
 		<class>tn.edu.esprit.infini.theWolves.tvForEx.domain.Administrator</class>
 
 		<class>tn.edu.esprit.infini.theWolves.tvForEx.domain.TradeSerie</class>
+		<class>tn.edu.esprit.infini.theWolves.tvForEx.domain.Cotation</class>
 
 
 		<properties>

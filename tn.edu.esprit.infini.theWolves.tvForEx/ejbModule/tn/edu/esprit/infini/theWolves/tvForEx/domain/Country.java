@@ -108,6 +108,7 @@ public class Country implements Serializable {
 	 * 
 	 * /** retourne la devise du pays
 	 **/
+
 	@ManyToOne
 	public Currency getCurrency() {
 		return currency;
