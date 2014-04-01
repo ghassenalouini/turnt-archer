@@ -2,11 +2,13 @@ package tn.edu.esprit.infini.theWolves.tvForEx.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * Entity implementation class for Entity: TradeSerie
@@ -22,6 +24,8 @@ public class TradeSerie implements Serializable {
 	private String location;
 	private Date startDate;
 	private Date closeDate;
+
+	private List<Transaction> transactions;
 
 	public TradeSerie() {
 		super();
@@ -67,6 +71,15 @@ public class TradeSerie implements Serializable {
 
 	public void setCloseDate(Date closeDate) {
 		this.closeDate = closeDate;
+	}
+
+	@OneToMany(mappedBy = "tradeSerie")
+	public List<Transaction> getTransactions() {
+		return transactions;
+	}
+
+	public void setTransactions(List<Transaction> transactions) {
+		this.transactions = transactions;
 	}
 
 }

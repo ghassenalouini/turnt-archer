@@ -54,14 +54,12 @@ public class Country implements Serializable {
 	 * id(int),name(String),code(String),currency(Currency,liste de custommer
 	 * (List<Customer>)
 	 **/
-	public Country(int id, String name, String code, Currency currency,
-			List<Customer> customers) {
-		super();
-		this.id = id;
+	public Country(String name, String code, Currency currency) {
+
 		this.name = name;
-		Code = code;
+		this.Code = code;
 		this.currency = currency;
-		this.customers = customers;
+
 	}
 
 	/** modifier l'id d'un pays et prend en parametre un entier (int) **/
@@ -110,6 +108,7 @@ public class Country implements Serializable {
 	 * 
 	 * /** retourne la devise du pays
 	 **/
+
 	@ManyToOne
 	public Currency getCurrency() {
 		return currency;

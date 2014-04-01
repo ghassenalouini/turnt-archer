@@ -5,11 +5,14 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 import junit.framework.Assert;
+import junit.framework.AssertionFailedError;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Country;
+import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
 import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CountryFacadeRemote;
 
 public class CountryTest {
@@ -28,13 +31,46 @@ public class CountryTest {
 		}
 	}
 
+	@Ignore
 	@Test
 	public void itShouldAdd() {
-		Country country = new Country();
-		country.setName("Tunisie");
-		country.setCode("Tun");
+		Currency cr = new Currency("dollar", 1, "USD");
+		cr.setId(1);
+		Country country = new Country("Tunisie", "TN");
+
 		Assert.assertTrue(proxy.addCountry(country));
 
+	}
+
+	@Ignore
+	@Test
+	public void itShouldFindCountry() {
+		Country ctr = (Country) proxy.findCountryById(2);
+
+		Assert.assertEquals("Tunisie", ctr.getName());
+
+	}
+
+	@Ignore
+	@Test(expected = NullPointerException.class)
+	public void itShouldNotFindCountry() {
+		Country ctr = (Country) proxy.findCountryById(6);
+
+		Assert.assertEquals("Tsie", ctr.getName());
+
+	}
+
+	@Ignore
+	@Test
+	public void itShouldRemoveCountry() {
+		Country ctr = (Country) proxy.findCountryById(2);
+		Assert.assertTrue(proxy.removeCountry(ctr));
+	}
+
+	@Test(expected = AssertionFailedError.class)
+	public void itShouldNotRemoveCountry() {
+		Country ctr = (Country) proxy.findCountryById(2);
+		Assert.assertTrue(proxy.removeCountry(ctr));
 	}
 
 }

@@ -2,8 +2,12 @@ package tn.edu.esprit.infini.theWolves.tvForEx.domain;
 
 import java.io.Serializable;
 
-import javax.persistence.EmbeddedId;
+import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
@@ -14,39 +18,37 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Transaction implements Serializable {
 
-	private TransactionPk transactionPk;
+	private int id;
 	private String type;
 	private int amount;
 	private float cotation;
+	private int ctrAmout;
 	private float cotationBase;
+	private int ccyBasAmount;
+	private int bankId;
+
+	private TransactionPk transactionPk;
+	private Currency currencyCross;
+	private Customer customerCross;
+	private TradeSerie tradeSerie;
+
 	private static final long serialVersionUID = 1L;
 
-	// private Customer customer;
-	// private Currency currency;
-	private Customer customerCross;
-	private Currency currencyCross;
-
 	public Transaction() {
-		// TODO Auto-generated constructor stub
 	}
 
-	public String getType() {
-		return this.type;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "Deal_Ref")
+	public int getId() {
+		return id;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public int getAmount() {
-		return this.amount;
-	}
-
-	public void setAmount(int amount) {
-		this.amount = amount;
-	}
-
-	@EmbeddedId
+	@Embedded
 	public TransactionPk getTransactionPk() {
 		return transactionPk;
 	}
@@ -55,39 +57,35 @@ public class Transaction implements Serializable {
 		this.transactionPk = transactionPk;
 	}
 
-	// @ManyToOne
-	// @JoinColumn(name = "idCustomer", referencedColumnName = "id", updatable =
-	// false, insertable = false)
-	// public Customer getCustomer() {
-	// return customer;
-	// }
-
-	// public void setCustomer(Customer customer) {
-	// this.customer = customer;
-	// }
-
-	// @ManyToOne
-	// @JoinColumn(name = "idCurrency", referencedColumnName = "id", updatable =
-	// false, insertable = false)
-	// public Currency getCurrency() {
-	// return currency;
-	// }
-
-	// public void setCurrency(Currency currency) {
-	// this.currency = currency;
-	// }
-
-	public Transaction(String type, int amount, Customer customer,
-			Currency currency) {
-		super();
-		this.type = type;
-		this.amount = amount;
-		// this.customer = customer;
-		// this.currency = currency;
-		this.transactionPk = new TransactionPk(customer.getId(),
-				currency.getId());
+	@ManyToOne
+	@JoinColumn(name = "CtrCcy")
+	public Currency getCurrencyCross() {
+		return currencyCross;
 	}
 
+	public void setCurrencyCross(Currency currencyCross) {
+		this.currencyCross = currencyCross;
+	}
+
+	@Column(name = "Sens")
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	@Column(name = "CcyAmount")
+	public int getAmount() {
+		return this.amount;
+	}
+
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+
+	@Column(name = "CcyRate")
 	public float getCotation() {
 		return cotation;
 	}
@@ -96,30 +94,44 @@ public class Transaction implements Serializable {
 		this.cotation = cotation;
 	}
 
-	public Transaction(float cotation, Customer customer, Currency currency) {
-		super();
-		this.transactionPk = new TransactionPk(customer.getId(),
-				currency.getId());
-		this.type = "BID";
-		this.cotation = cotation;
-		// this.customer = customer;
-		// this.currency = currency;
+	@Column(name = "CtrAmount")
+	public int getCtrAmout() {
+		return ctrAmout;
 	}
 
-	public Transaction(String type, int amount, Customer customer,
-			Currency currency, float cotation) {
-		super();
-		this.type = type;
-		this.amount = amount;
-		this.cotation = cotation;
-		// this.customer = customer;
-		// this.currency = currency;
-		this.transactionPk = new TransactionPk(customer.getId(),
-				currency.getId());
+	public void setCtrAmout(int ctrAmout) {
+		this.ctrAmout = ctrAmout;
+	}
+
+	@Column(name = "CcyBaseRate")
+	public float getCotationBase() {
+		return cotationBase;
+	}
+
+	public void setCotationBase(float cotationBase) {
+		this.cotationBase = cotationBase;
+	}
+
+	@Column(name = "CcyBaseAmount")
+	public int getCcyBasAmount() {
+		return ccyBasAmount;
+	}
+
+	public void setCcyBasAmount(int ccyBasAmount) {
+		this.ccyBasAmount = ccyBasAmount;
+	}
+
+	@Column(name = "Bank")
+	public int getBankId() {
+		return bankId;
+	}
+
+	public void setBankId(int bankId) {
+		this.bankId = bankId;
 	}
 
 	@ManyToOne
-	@JoinColumn(name = "customerCross_id")
+	@JoinColumn(name = "CtrCustomer")
 	public Customer getCustomerCross() {
 		return customerCross;
 	}
@@ -129,17 +141,12 @@ public class Transaction implements Serializable {
 	}
 
 	@ManyToOne
-	@JoinColumn(name = "CurrencyCross_id")
-	public Currency getCurrencyCross() {
-		return currencyCross;
+	public TradeSerie getTradeSerie() {
+		return tradeSerie;
 	}
 
-	public void setCurrencyCross(Currency currencyCross) {
-		this.currencyCross = currencyCross;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public void setTradeSerie(TradeSerie tradeSerie) {
+		this.tradeSerie = tradeSerie;
 	}
 
 	public Transaction(String type, int amount, float cotation,
@@ -155,14 +162,6 @@ public class Transaction implements Serializable {
 		this.currencyCross = currencyCross;
 	}
 
-	public float getCotationBase() {
-		return cotationBase;
-	}
-
-	public void setCotationBase(float cotationBase) {
-		this.cotationBase = cotationBase;
-	}
-
 	public Transaction(String type, int amount, float cotation,
 			float cotationBase, Customer customer, Currency currency,
 			Customer customerCross, Currency currencyCross) {
@@ -171,13 +170,55 @@ public class Transaction implements Serializable {
 		this.amount = amount;
 		this.cotation = cotation;
 		this.cotationBase = cotationBase;
-		// this.customer = customer;
-		// this.currency = currency;
 		this.customerCross = customerCross;
 		this.currencyCross = currencyCross;
 		this.transactionPk = new TransactionPk(customer.getId(),
 				currency.getId());
 
+	}
+
+	public Transaction(String type, int amount, Customer customer,
+			Currency currency) {
+		super();
+		this.type = type;
+		this.amount = amount;
+		this.transactionPk = new TransactionPk(customer.getId(),
+				currency.getId());
+	}
+
+	public Transaction(float cotation, Customer customer, Currency currency) {
+		super();
+		this.transactionPk = new TransactionPk(customer.getId(),
+				currency.getId());
+		this.type = "BID";
+		this.cotation = cotation;
+	}
+
+	public Transaction(String type, int amount, Customer customer,
+			Currency currency, float cotation) {
+		super();
+		this.type = type;
+		this.amount = amount;
+		this.cotation = cotation;
+		this.transactionPk = new TransactionPk(customer.getId(),
+				currency.getId());
+	}
+
+	public Transaction(Trader trader, String type, int amount,
+			Cotation cotation, Bank bank, Currency currencyCross,
+			Currency currency, Customer customerCross, TradeSerie tradeSerie) {
+		super();
+		this.type = type;
+		this.amount = amount;
+
+		this.cotationBase = cotation.getCotation();
+
+		this.bankId = transactionPk.getIdCustomer();
+		this.transactionPk = new TransactionPk(trader.getId(), currency.getId());
+		this.currencyCross = currencyCross;
+		this.cotation = cotation.getCotation();
+		this.customerCross = customerCross;
+		this.tradeSerie = tradeSerie;
 	}
 
 }
