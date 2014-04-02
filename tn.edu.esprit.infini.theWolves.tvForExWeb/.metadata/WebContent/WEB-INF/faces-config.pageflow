@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13960489615940" configfile="/tn.edu.esprit.infini.theWolves.tvForExWeb/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="WelcomeTvForex.xhtml" x="176" y="173" id="pf13960527077711" outlinks="pf13960527077722" inlinks="pf13960527077723" path="/WelcomeTvForex.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Pages/News.xhtml" x="634" y="206" id="pf13960527077724" outlinks="pf13960527077723" inlinks="pf13960527077722" path="/Pages/News.xhtml"/>
+  <links id="pf13960527077723" target="pf13960527077711" source="pf13960527077724"/>
+  <links id="pf13960527077722" target="pf13960527077724" source="pf13960527077711"/>
+</pageflow:Pageflow>
