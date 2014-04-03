@@ -31,7 +31,7 @@ public class CountryServices implements CountryServicesLocal {
 	public boolean addCountry(Country country) {
 		boolean b = false;
 		try {
-			entityManager.persist(country);
+			entityManager. persist(country);
 			b = true;
 
 		} catch (Exception e) {

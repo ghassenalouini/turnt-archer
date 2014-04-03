@@ -18,6 +18,7 @@ import org.junit.Test;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Rules;
 import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.RulesFacadeRemote;
 
+@SuppressWarnings("deprecation")
 public class RulesTest {
 	private RulesFacadeRemote proxy;
 
@@ -35,7 +36,7 @@ public class RulesTest {
 			e.printStackTrace();
 		}
 	}
-    @Ignore
+  
 	@Test
 	public void itShouldAddRules() {
 		Rules r1 = new Rules();
