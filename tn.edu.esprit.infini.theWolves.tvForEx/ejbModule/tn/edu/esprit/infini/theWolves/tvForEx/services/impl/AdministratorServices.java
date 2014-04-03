@@ -80,4 +80,10 @@ public class AdministratorServices implements AdministratorServicesLocal {
 	
 	}
 
+	@Override
+	public boolean updateCurrency(Administrator administrator) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

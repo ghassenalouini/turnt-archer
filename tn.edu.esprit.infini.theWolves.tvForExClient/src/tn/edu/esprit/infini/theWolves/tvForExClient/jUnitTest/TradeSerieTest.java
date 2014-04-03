@@ -38,7 +38,7 @@ public class TradeSerieTest {
 		}
 	}
 
-	@Ignore
+	
 	@Test
 	public void itShouldAdd() {
 		TradeSerie tradeSerie = new TradeSerie();
@@ -112,7 +112,7 @@ public class TradeSerieTest {
 		Assert.assertEquals(1, serieList.size());
 
 	}
-	
+	@Ignore
 	@Test(expected = AssertionFailedError.class)
 	public void itShouldNotDisplayAdmin() {
 

@@ -36,14 +36,14 @@ public class TestAddTransaction {
 			Currency currency = proxyCu.findCurrencyById(1);
 			Currency currencyCross = proxyCu.findCurrencyById(2);
 
-	/*		Customer customerBid2 = proxyCust.findCustomerById(3);
+			Customer customerBid2 = proxyCust.findCustomerById(3);
 			Customer customer2 = proxyCust.findCustomerById(4);
 			Currency currency2 = proxyCu.findCurrencyById(1);
-			Currency currencyCross2 = proxyCu.findCurrencyById(2);*/
+			Currency currencyCross2 = proxyCu.findCurrencyById(2);
 
 
-			// proxy.addCrossTransaction(customer2, customerBid2, currency2,
-			// currencyCross2, "buy", 500, 3.00F, 9.00F);
+			proxy.addCrossTransaction(customer2, customerBid2, currency2,
+			 currencyCross2, "buy", 500, 3.00F, 9.00F);
 
 
 			proxy.addCrossTransaction(customer, customerBid, currency,
