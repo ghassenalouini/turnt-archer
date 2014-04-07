@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<faces-config
-    xmlns="http://java.sun.com/xml/ns/javaee"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
-    version="2.1">
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+	version="2.1">
 	<navigation-rule>
-		<display-name>Pages/News.xhtml</display-name>
-		<from-view-id>/Pages/News.xhtml</from-view-id>
+		<display-name>Pages/Support.xhtml</display-name>
+		<from-view-id>/Pages/Support.xhtml</from-view-id>
 		<navigation-case>
+			<from-outcome>nav-to-Home</from-outcome>
 			<to-view-id>/WelcomeTvForex.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
@@ -16,7 +16,112 @@
 		<display-name>WelcomeTvForex.xhtml</display-name>
 		<from-view-id>/WelcomeTvForex.xhtml</from-view-id>
 		<navigation-case>
+			<from-outcome>nav-to-Support</from-outcome>
+			<to-view-id>/Pages/Support.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>Pages/News.xhtml</display-name>
+		<from-view-id>/Pages/News.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>nav-to-Home</from-outcome>
+			<to-view-id>/WelcomeTvForex.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>Pages/News.xhtml</display-name>
+		<from-view-id>/Pages/News.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>nav-to-Support</from-outcome>
+			<to-view-id>/Pages/Support.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>WelcomeTvForex.xhtml</display-name>
+		<from-view-id>/WelcomeTvForex.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>nav-to-News</from-outcome>
 			<to-view-id>/Pages/News.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>Pages/Support.xhtml</display-name>
+		<from-view-id>/Pages/Support.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>nav-to-News</from-outcome>
+			<to-view-id>/Pages/News.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>Pages/Contact.xhtml</display-name>
+		<from-view-id>/Pages/Contact.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>nav-to-Home</from-outcome>
+			<to-view-id>/WelcomeTvForex.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>Pages/Contact.xhtml</display-name>
+		<from-view-id>/Pages/Contact.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>nav-to-News</from-outcome>
+			<to-view-id>/Pages/News.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>WelcomeTvForex.xhtml</display-name>
+		<from-view-id>/WelcomeTvForex.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>nav-to-Contact</from-outcome>
+			<to-view-id>/Pages/Contact.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>Pages/News.xhtml</display-name>
+		<from-view-id>/Pages/News.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>nav-to-Contact</from-outcome>
+			<to-view-id>/Pages/Contact.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>Pages/About.xhtml</display-name>
+		<from-view-id>/Pages/About.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>nav-to-Contact</from-outcome>
+			<to-view-id>/Pages/Contact.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>WelcomeTvForex.xhtml</display-name>
+		<from-view-id>/WelcomeTvForex.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>nav-to-About</from-outcome>
+			<to-view-id>/Pages/About.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>Pages/About.xhtml</display-name>
+		<from-view-id>/Pages/About.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>nav-to-Home</from-outcome>
+			<to-view-id>/WelcomeTvForex.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>Pages/Contact.xhtml</display-name>
+		<from-view-id>/Pages/Contact.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>nav-to-About</from-outcome>
+			<to-view-id>/Pages/About.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>WelcomeTvForex.xhtml</display-name>
+		<from-view-id>/WelcomeTvForex.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>nav-to-Login</from-outcome>
+			<to-view-id>/Pages/Login.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 

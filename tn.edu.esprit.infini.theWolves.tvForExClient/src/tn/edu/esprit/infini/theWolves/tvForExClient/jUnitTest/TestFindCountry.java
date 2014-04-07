@@ -32,7 +32,7 @@ public class TestFindCountry {
 	
 	@Test
 	public void itShouldFindCountry() {
-		Country ctr = (Country) proxy.findCountryById(6);
+		Country ctr = (Country) proxy.findCountryById(1);
 
 		Assert.assertEquals("Tunisie", ctr.getName());
 

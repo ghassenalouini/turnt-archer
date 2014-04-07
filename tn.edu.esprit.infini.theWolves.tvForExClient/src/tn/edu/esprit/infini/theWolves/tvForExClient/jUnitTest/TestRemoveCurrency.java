@@ -13,10 +13,9 @@ import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CurrencyFacadeRe
 
 @SuppressWarnings("deprecation")
 public class TestRemoveCurrency {
-	
+
 	private CurrencyFacadeRemote proxy;
-	
-	
+
 	@Before
 	public void test() {
 
@@ -32,11 +31,10 @@ public class TestRemoveCurrency {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
 	@Test
 	public void itShouldRemoveCurrency() {
-		Assert.assertTrue(proxy.removeCurrency(proxy.findCurrencyById(12)));
+		Assert.assertTrue(proxy.removeCurrency(proxy.findCurrencyById(2)));
 	}
 
 }

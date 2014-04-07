@@ -34,7 +34,7 @@ public class CustomerTest {
 			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CustomerFacade!"
 					+ CustomerFacadeRemote.class.getCanonicalName();
 
-			proxy = (CustomerFacadeRemote) context.lookup(jndiName);
+			proxy =(CustomerFacadeRemote) context.lookup(jndiName);
 
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
@@ -48,12 +48,12 @@ public class CustomerTest {
 		// Customer customer = new Customer("bank1", "a", "b", 334444,
 		// "aee@ea.com");
 		Bank bank = new Bank(20000, "BKAZDAZDA");
-		bank.setId(1);
+		bank.setId(4);
 		
 		Trader tr = new Trader("wolves", "wolves", "wolves", 22485569,
 				" wolves@esprit.tn", 0, "AdministrateurTrader", bank);
 		// Assert.assertTrue(proxy.addCustomer(bank));
-		Assert.assertTrue(proxy.addCustomer(tr));
+		Assert.assertTrue(proxy.addCustomer(bank));
 
 	}
 

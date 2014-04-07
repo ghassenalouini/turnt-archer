@@ -25,7 +25,8 @@ public class Transaction implements Serializable {
 	private int ctrAmout;
 	private float cotationBase;
 	private int ccyBasAmount;
-	private int bankId;
+	
+	private Bank bankId;
 
 	private TransactionPk transactionPk;
 	private Currency currencyCross;
@@ -121,14 +122,12 @@ public class Transaction implements Serializable {
 		this.ccyBasAmount = ccyBasAmount;
 	}
 
-	@Column(name = "Bank")
-	public int getBankId() {
-		return bankId;
-	}
+	//@Column(name = "Bank")
+	//public int getBankId() {
+	//	return bankId;
+	//}
 
-	public void setBankId(int bankId) {
-		this.bankId = bankId;
-	}
+
 
 	@ManyToOne
 	@JoinColumn(name = "CtrCustomer")
@@ -213,7 +212,7 @@ public class Transaction implements Serializable {
 
 		this.cotationBase = cotation.getCotation();
 
-		this.bankId = transactionPk.getIdCustomer();
+		//this.bankId = transactionPk.getIdCustomer();
 		this.transactionPk = new TransactionPk(trader.getId(), currency.getId());
 		this.currencyCross = currencyCross;
 		this.cotation = cotation.getCotation();

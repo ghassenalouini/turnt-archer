@@ -47,7 +47,7 @@ public class TestDisplayCurrency {
 		List<Currency> CurrencyList = new ArrayList<Currency>();
 		CurrencyList = proxy.findAllCurrencies();
 
-		Assert.assertEquals(9, CurrencyList.size());
+		Assert.assertEquals(3, CurrencyList.size());
 
 	}
 

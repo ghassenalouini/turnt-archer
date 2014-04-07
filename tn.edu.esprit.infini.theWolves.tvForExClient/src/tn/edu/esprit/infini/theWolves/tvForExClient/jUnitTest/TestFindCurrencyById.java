@@ -38,7 +38,7 @@ private CurrencyFacadeRemote proxy;
 	
 	@Test
 	public void itShouldFindCurrencyById() {
-		Currency currency = proxy.findCurrencyById(2);
+		Currency currency = proxy.findCurrencyById(1);
 
 		Assert.assertEquals("euro", currency.getLabel());
 
