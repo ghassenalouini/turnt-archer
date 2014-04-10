@@ -1,24 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13960489615940" configfile="/tn.edu.esprit.infini.theWolves.tvForExWeb/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="WelcomeTvForex.xhtml" x="48" y="276" id="pf13967482049190" referenceLink="//@navigationRule.12/@navigationCase.0/@toViewId|" outlinks="pf139675116552810 pf13967511655289 pf13967511655288 pf139682013437325 pf139682467669032" inlinks="pf139675116552914 pf139675116552913 pf139675116552912 pf139682013437326" path="/WelcomeTvForex.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="Pages/About.xhtml" x="400" y="55" id="pf139675116552915" referenceLink="//@navigationRule.13/@navigationCase.0/@toViewId|" outlinks="pf13968164317390 pf139682013437326" inlinks="pf139682013437325 pf139682050829427" path="/Pages/About.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="Pages/Contact.xhtml" x="395" y="168" id="pf139675116552916" referenceLink="//@navigationRule.13/@fromViewId|" outlinks="pf139675116552912 pf13968164317392 pf139682050829427" inlinks="pf13967511655288 pf13968164317393 pf13968164317390" path="/Pages/Contact.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="Pages/News.xhtml" x="398" y="300" id="pf139675116553017" referenceLink="//@navigationRule.9/@fromViewId|" outlinks="pf139675116552913 pf13968164317404 pf13968164317393" inlinks="pf13967511655289 pf13968164317405 pf13968164317392" path="/Pages/News.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="Pages/Support.xhtml" x="391" y="396" id="pf139675116553018" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf139675116552914 pf13968164317405" inlinks="pf139675116552810 pf13968164317404" path="/Pages/Support.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="Pages/Login.xhtml" x="121" y="143" id="pf139682467669033" inlinks="pf139682467669032" path="/Pages/Login.xhtml"/>
-  <links id="pf139675116552914" target="pf13967482049190" source="pf139675116553018" outcome="nav-to-Home"/>
-  <links id="pf139675116552810" target="pf139675116553018" source="pf13967482049190" outcome="nav-to-Support"/>
-  <links id="pf139675116552913" target="pf13967482049190" source="pf139675116553017" outcome="nav-to-Home"/>
-  <links id="pf13968164317404" target="pf139675116553018" source="pf139675116553017" outcome="nav-to-Support"/>
-  <links id="pf13967511655289" target="pf139675116553017" source="pf13967482049190" outcome="nav-to-News"/>
-  <links id="pf13968164317405" target="pf139675116553017" source="pf139675116553018" outcome="nav-to-News"/>
-  <links id="pf139675116552912" target="pf13967482049190" source="pf139675116552916" outcome="nav-to-Home"/>
-  <links id="pf13968164317392" target="pf139675116553017" source="pf139675116552916" outcome="nav-to-News"/>
-  <links id="pf13967511655288" target="pf139675116552916" source="pf13967482049190" outcome="nav-to-Contact"/>
-  <links id="pf13968164317393" target="pf139675116552916" source="pf139675116553017" outcome="nav-to-Contact"/>
-  <links id="pf13968164317390" target="pf139675116552916" source="pf139675116552915" outcome="nav-to-Contact"/>
-  <links id="pf139682013437325" target="pf139675116552915" source="pf13967482049190" outcome="nav-to-About"/>
-  <links id="pf139682013437326" target="pf13967482049190" source="pf139675116552915" outcome="nav-to-Home"/>
-  <links id="pf139682050829427" target="pf139675116552915" source="pf139675116552916" outcome="nav-to-About"/>
-  <links id="pf139682467669032" target="pf139682467669033" source="pf13967482049190" outcome="nav-to-Login"/>
+  <nodes xsi:type="pageflow:PFPage" name="WelcomeTvForex.xhtml" x="106" y="289" id="pf13970786115120" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf13970845308226" path="/WelcomeTvForex.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Pages/Platfrom/Login.xhtml" x="366" y="175" id="pf13970845308227" outlinks="pf13970865614688" inlinks="pf13970845308226" path="/Pages/Platfrom/Login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Pages/Platfrom/Register.xhtml" x="600" y="168" id="pf13970865614699" inlinks="pf13970865614688" path="/Pages/Platfrom/Register.xhtml"/>
+  <links id="pf13970845308226" target="pf13970845308227" source="pf13970786115120" outcome="navtoLogin" redirect="true"/>
+  <links id="pf13970865614688" target="pf13970865614699" source="pf13970845308227" outcome="navtoregister"/>
 </pageflow:Pageflow>

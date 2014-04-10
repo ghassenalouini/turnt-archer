@@ -6,9 +6,9 @@
 body {
 	font-family: "Trebuchet MS", "Myriad Pro", Arial, sans-serif;
 	font-size: 14px;
-	background: url(../Pages/News.xhtml) center 0 repeat;
+	background: url(../images/body.jpg) center 0 repeat;
 	color: #333;
-	text-shadow: 1px 1px 1px #fff;
+	text-shadow: 2px 2px 2px #F6DC12;
 	overflow-y: scroll;
 }
 
@@ -202,7 +202,7 @@ form.forgot_password {
 }
 
 .form_wrapper input[type="submit"] {
-	background: #78bbe6;
+	background: #318CE7;
 	color: #FFF;
 	border: 1px solid #ccc;
 	font-family: "Trebuchet MS", "Myriad Pro", sans-serif;
@@ -223,9 +223,27 @@ form.forgot_password {
 	box-shadow: 0px 0px 2px #fff inset;
 	text-decoration: none;
 }
+.logo {
+	float: left;
+	width: 300px;
+	height: 51px;
+	padding: 15px;
+	margin: 0 auto;
+}
+h1 span {
+	color: #F6DC12;
+}
+h1 small {
+	display: block;
+	padding: 0;
+	font: normal 12px/1.2em Arial, Helvetica, sans-serif;
+	letter-spacing: normal;
+	color: #FFFF00;
+}
+
 
 .form_wrapper input[type="submit"]:hover {
-	background: #78bbe6;
+	background: #318CE7;
 	color: #FFF;
 	text-decoration: none;
 	-moz-box-shadow: 0px 0px 2px #eaeaea inset;
