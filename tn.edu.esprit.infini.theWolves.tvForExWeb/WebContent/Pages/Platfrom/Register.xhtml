@@ -3,21 +3,11 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
-<h:head>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-<!--[if lt IE 7]>  <html class="ie ie6 lte9 lte8 lte7 no-js"> <![endif]-->
-<!--[if IE 7]>     <html class="ie ie7 lte9 lte8 lte7 no-js"> <![endif]-->
-<!--[if IE 8]>     <html class="ie ie8 lte9 lte8 no-js">      <![endif]-->
-<!--[if IE 9]>     <html class="ie ie9 lte9 no-js">           <![endif]-->
-<!--[if gt IE 9]>  <html class="no-js">                       <![endif]-->
-<!--[if !IE]><!--> <html class="no-js">                       <!--<![endif]-->
-
-<!-- Mirrored from themes.creativemilk.net/files/karma/leftrightsidebar/dark/signup.html by HTTrack Website Copier/3.x [XR&CO'2013], Mon, 07 Apr 2014 23:13:41 GMT -->
-
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-
-    <title>Karma - Responsive minimalistic bootstrapped admin theme.</title>
+    <title>TV-ForEx</title>
 
     <!-- // IOS webapp icons // -->
     
@@ -34,7 +24,7 @@
     <!-- // IOS webapp splash screens // -->
     
     <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)"
-          href="./RessourcesPlatform/images/mobile/apple-touch-startup-image-1536x2008.html"/>
+          href="../RessourcesPlatform/images/mobile/apple-touch-startup-image-1536x2008.html"/>
     <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)"
           href="./RessourcesPlatform/images/mobile/apple-touch-startup-image-1496x2048.html"/>     
  	<link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)"
@@ -59,7 +49,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
     <meta name="HandheldFriendly" content="true"/>   
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/> 
     
     <!-- // Stylesheets // -->
     
@@ -71,34 +61,36 @@
     
     <!-- // Helpers // -->
     
-    <script src="./RessourcesPlatform/js/plugins/modernizr.min.js"></script> 
-    <script src="./RessourcesPlatform/js/plugins/mobiledevices.js"></script>
+    <script src="RessourcesPlatform/js/plugins/modernizr.min.js"></script> 
+    <script src="RessourcesPlatform/js/plugins/mobiledevices.js"></script>
     
     <!-- // jQuery core // -->
     
-    <script src="./RessourcesPlatform/js/libs/jquery-1.11.0.min.js"></script>
-    <script src="./RessourcesPlatform/js/libs/jquery-ui-1.10.4.min.js"></script>
+   
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.0.min.js"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
     
     <!-- // Bootstrap // -->
     
-    <script src="./RessourcesPlatform/bootstrap/core/dist/js/bootstrap.min.js"></script>
+    <script src="RessourcesPlatform/bootstrap/core/dist/js/bootstrap.min.js"></script>
 
     <!-- // Custom/premium plugins // -->
 
-    <script src="./RessourcesPlatform/js/plugins/showpassword.1.0.min.js"></script>
-    <script src="./RessourcesPlatform/js/plugins/nanogress.1.0.min.js"></script>
-    <script src="./RessourcesPlatform/js/plugins/powerwizard.1.0.min.js"></script>
+    <script src="RessourcesPlatform/js/plugins/showpassword.1.0.min.js"></script>
+    <script src="RessourcesPlatform/js/plugins/nanogress.1.0.min.js"></script>
+    <script src="RessourcesPlatform/js/plugins/powerwizard.1.0.min.js"></script>
     
     <!-- // Third-party plugins // -->
     
-    <script src="./RessourcesPlatform/js/plugins/jquery.pwstrength.min.js"></script>
+    <script src="RessourcesPlatform/js/plugins/jquery.pwstrength.min.js"></script>
 
     <!-- // Custom //-->
     
-    <script src="js/plugins/login.js"></script>     
+    <script src="RessourcesPlatform/js/plugins/login.js"></script>     
      
-</h:head>
-<h:body> 
+</head>
+<body> 
 	<div id="container-signup" class="clearfix">    
      	<div id="demo-overview">
         	<a href="index.html">Dashboard</a>
@@ -111,38 +103,15 @@
             |
             <a href="forgot.html">Forgot</a>
         </div>
-        <div class="alert alert-block alert-dismissable alert-success">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <h4>Notice:</h4>
-            <p>This form make's use of the custom made powerwizard plugin..</p>
-        </div>        
+             
         <div id="login-box">
        		<div class="login-box-inner clearfix">
                 <header id="login-header">
                     <a href="#" id="login-logo">
-                    	<h1>karma</h1>
-                        <h4>/webapp</h4>
+                    	<h1>TV-ForEx</h1>
+                        
                     </a>
-                    <div class="dropdown" id="lang">
-                        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
-                            <img src="images/icons/flags/shiny/16/Germany.png" alt=""/>
-                            <i class="fa fa-caret-down"></i>
-                        </a>
-                        <ul role="menu" class="dropdown-menu ext-flags pull-right">
-                            <li>
-                                <a href="#">English <img src="images/icons/flags/shiny/16/United-Kingdom.png" alt=""/></a>
-                            </li>
-                            <li>
-                                <a href="#">German <img src="images/icons/flags/shiny/16/Germany.png" alt=""/></a>
-                            </li>
-                            <li>
-                                <a href="#">French <img src="images/icons/flags/shiny/16/France.png" alt=""/></a>
-                            </li>
-                            <li>
-                                <a href="#">Chinees <img src="images/icons/flags/shiny/16/China.png" alt=""/></a>
-                            </li>
-                        </ul>
-                    </div>
+                   
                 </header>
                 <div class="spacer-40"></div>
 
@@ -197,7 +166,7 @@
                                 </div>  
                                 <div class="col-lg-3">
                                     <label>
-                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked />
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"  />
                                         <span></span>
                                         Male
                                     </label>
@@ -476,11 +445,12 @@
                                 <div class="col-lg-6">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                             <label for="fcid-10">Username: <span class="asterisk">*</span></label>
+                                           <label for="fcid-10">Username: <span class="asterisk">*</span></label>
                                         </div> 
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-12">
+                                       
                                              <input class="form-control required" type="text" placeholder="Choose username" id="fcid-10"/>
                                         </div>
                                     </div>
@@ -696,18 +666,18 @@
             </div>
         </div>
         <footer id="login-footer">
-            <strong>Copyright © 2013 creativemilk.net</strong>
+            <strong>Copyright © 2014 Tv-ForEx</strong>
             <div class="spacer-5"></div>
-            <small>Lorem ipsum dolor sit amet, islum consectetur adipiscing elit. All rights reserved.</small>
+            <small>Trade Like a Wolf.</small>
         </footer>
     </div><!-- End #container --> 
     
     <!-- Terms of use Modal -->
-    <div class="modal fade" id="modal-tou" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="modal-tou" tabindex="-1" >
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<button type="button" class="close" data-dismiss="modal" ></button>
 					<h4 class="modal-title">Terms of use</h4>
     		    </div>
 				<div class="modal-body">
@@ -739,7 +709,7 @@
                             non-commercial transitory viewing only. This is the grant of a license, 
                             not a transfer of title, and under this license you may not:
                             
-                            <ol type="i">
+                            <ol type="i" >
                                 <li>modify or copy the materials;</li>
                                 <li>use the materials for any commercial purpose, or for any public display (commercial or non-commercial);</li>
                                 <li>attempt to decompile or reverse engineer any software contained on Company name's web site;</li>
@@ -848,7 +818,5 @@
             </div>
          </div>
      </div>
-</h:body>
-
-<!-- Mirrored from themes.creativemilk.net/files/karma/leftrightsidebar/dark/signup.html by HTTrack Website Copier/3.x [XR&CO'2013], Mon, 07 Apr 2014 23:13:41 GMT -->
+ </body>
 </html>
