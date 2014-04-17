@@ -110,95 +110,79 @@
 
 </h:head>
 <h:body>
-	<div id="container-login" class="clearfix">
-		<!-- remove this part -->
-		<div id="demo-overview">
-			
-		</div>
-		<div id="login-box">
-			<div class="login-box-inner clearfix">
-				<header id="login-header">
-					<a href="#" id="login-logo">
-						<h1>TV-Forex</h1>
-					</a>
-
-				</header>
-				<div class="spacer-40"></div>
-				<form id="form-login">
-					<div class="row">
+	<div id="container-login" class="clearfix"> 
+     	<div id="demo-overview">
+        	
+        </div>
+        <div class="alert alert-block alert-dismissable alert-info">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+            <h4>Notice:</h4>
+            <p>The form below is a complete forgot form.</p>
+        </div>                      
+        <div id="login-box">  
+       		<div class="login-box-inner clearfix">
+                <header id="login-header">
+                    <a href="#" id="login-logo">
+                    	<h1>TV-ForEx</h1>
+                        
+                    </a>
+                    <div class="dropdown" id="lang">
+                        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+                            <img src="images/icons/flags/shiny/16/Germany.png" alt=""/>
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul role="menu" class="dropdown-menu ext-flags pull-right">
+                            <li>
+                                <a href="#">English <img src="images/icons/flags/shiny/16/United-Kingdom.png" alt=""/></a>
+                            </li>
+                            <li class="active">
+                                <a href="#">German <img src="images/icons/flags/shiny/16/Germany.png" alt=""/></a>
+                            </li>
+                            <li>
+                                <a href="#">French <img src="images/icons/flags/shiny/16/France.png" alt=""/></a>
+                            </li>
+                            <li>
+                                <a href="#">Chinees <img src="images/icons/flags/shiny/16/China.png" alt=""/></a>
+                            </li>
+                        </ul>
+                    </div>
+                </header>
+                <div class="spacer-40"></div>
+            	<h:form id="form-reset">                                                
+                	<div class="row">  
+                        <div class="col-lg-12">	
+                        	<label for="fc-id-1">Email:</label>
+                        </div>
+					</div>                                          
+                	<div class="row">  
+                        <div class="col-lg-12">	
+                    		<input class="form-control" type="text" placeholder="Enter your emailaddress" id="fc-id-1" tabindex="1" />
+                        </div>
+					</div>                   
+                    <div class="spacer-20"></div>
+                    <div class="row">
 						<div class="col-lg-12">
-							<label for="fc-id-1">Username:</label>
-						</div>
-					</div>
-					
-					<div class="row">
-					<h:form>
+                        	<!-- just for the demo....replace this with an form element -->
+                        	<a href="reset.html" class="btn btn-default form-control" id="fake-submit" tabindex="4">Reset password</a>
+                        </div>
+                    </div>
+                    <div class="spacer-40"></div>                    
+                    <div class="or-line"><span>OR</span></div>                    
+					<div class="spacer-40"></div> 
+                    <div class="row">
 						<div class="col-lg-12">
-							<h:inputText  class="form-control" type="text"
-								placeholder="Enter your emailaddress" id="fc-id-1" tabindex="1" />
-						</div>
-						</h:form>
-					</div>
-					<div class="spacer-10"></div>
-					<div class="row">
-						<div class="col-lg-12">
-							<label for="fc-id-2">Password:</label> <a href="#"
-								id="showpassword-trigger" class="underline">Show password</a>
-						</div>
-					</div>
-					
-					<div class="row">
-					<h:form>
-						<div class="col-lg-12">
-							<h:inputSecret class="form-control" type="password"
-								placeholder="Capslock sensitive" id="fc-id-2" tabindex="2" />
-						</div>
-						</h:form>
-					
-					</div>
-					<div class="spacer-10"></div>
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="pull-left">
-								<label><input type="checkbox" tabindex="3" /><span></span>
-									Remember?</label>
-							</div>
-							<h:form>
-							<div class="pull-right">
-								<h:commandLink action="Forgot" class="underline">Forgot password</h:commandLink>
-							</div>
-							</h:form>
-						</div>
-					</div>
-					<div class="spacer-15"></div>
-					<div class="row">
-						<div class="col-lg-12">
-							<!-- just for the demo....replace this with an form element -->
-							<a href="index.html" class="btn btn-default form-control"
-								id="fake-submit" tabindex="4">Sign in here</a>
-						</div>
-					</div>
-					<div class="spacer-40"></div>
-					<div class="or-line">
-						<span>OR</span>
-					</div>
-					<div class="spacer-40"></div>
-					<div class="row">
-					<h:form>
-						<div class="col-lg-12">
-							<h:commandLink  action="Register" class="btn btn-block btn-success"
-								tabindex="6">Sign up for an account, it's FREE!</h:commandLink>
-						</div>
-						</h:form>
-					</div>
-				</form>
-			</div>
-		</div>
-		<footer id="login-footer">
-			<strong>Copyright © 2014 TV-ForEx</strong>
-			<div class="spacer-5"></div>
-			<small>Trade Like a Wolf</small>
-		</footer>
-	</div>
+    						<h:commandLink action="Login" class="btn btn-block btn-danger" tabindex="6" >I remember my password!"</h:commandLink>
+                        </div>
+                    </div>   
+                </h:form>
+            </div>
+        </div>
+        <footer id="login-footer">
+            <strong>Copyright © 2013 creativemilk.net</strong>
+            <div class="spacer-5"></div>
+            <small>Lorem ipsum dolor sit amet, islum consectetur adipiscing elit. All rights reserved.</small>
+        </footer>
+    </div>
 </h:body>
+
 </html>
