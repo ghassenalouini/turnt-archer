@@ -21,5 +21,14 @@
 			<to-view-id>/Pages/Platfrom/Register.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	<navigation-rule>
+		<display-name>WelcomeTvForex.xhtml</display-name>
+		<from-view-id>/WelcomeTvForex.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>navtohome</from-outcome>
+			<to-view-id>/Pages/Platfrom/AdminHome.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
 
 </faces-config>

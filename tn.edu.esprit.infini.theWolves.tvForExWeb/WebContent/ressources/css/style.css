@@ -6,7 +6,7 @@ body {
 	width: 100%;
 	color: #9d9d9d;
 	font: normal 12px/1.8em Arial, Helvetica, sans-serif;
-	background: url(../images/body.jpg) center 0 repeat;
+	background: url(../images/bgcolor.jpg) center 0 repeat;
 }
 
 html,.main {
@@ -32,14 +32,15 @@ h1 {
 }
 
 h1 a,h1 a:hover {
-	color: #afaeae;
+	color: #fff;
 	text-decoration: none;
 }
 
 h1 span {
 	color: #F6DC12;
 }
-h1 spa{
+
+h1 spa {
 	color: #318CE7;
 }
 
@@ -55,7 +56,7 @@ h2 {
 	font: normal 24px Arial, Helvetica, sans-serif;
 	padding: 8px 0;
 	margin: 0;
-	color: #318CE7;
+	color: #FFFF00;
 }
 
 h3 {
@@ -69,7 +70,8 @@ p {
 	margin: 8px 0;
 	padding: 0 0 8px 0;
 	font: normal 12px/1.8em Arial, Helvetica, sans-serif;
-	color: #F6DC12;
+	color: #FFF;
+	font-size: 14px;
 }
 
 p.spec {
@@ -84,7 +86,7 @@ a {
 a.rm,a.com {
 	padding: 0;
 	text-decoration: none;
-	padding: 5px 15px;
+	padding: 8px 20px;
 	background: #78bbe6;
 	color: #FFF;
 }
@@ -103,8 +105,7 @@ a.rm,a.com {
 .hbg {
 	padding: 0;
 	margin: 0;
-	background: #78bbe6;
-	height: 271px;
+	height: 280px;
 }
 
 .hbg img {
@@ -115,6 +116,8 @@ a.rm,a.com {
 	float: left;
 	width: 317px;
 	text-align: center;
+	background: transparent;
+	
 }
 
 .menu_nav {
@@ -144,7 +147,7 @@ a.rm,a.com {
 	text-decoration: none;
 	font-size: 13px;
 	line-height: 16px;
-	background: #cccccc;
+	background: #fff;
 }
 
 .menu_nav ul li.active a,.menu_nav ul li a:hover {
@@ -226,22 +229,22 @@ ul.sb_menu li,ul.ex_menu li {
 
 ul.sb_menu li {
 	padding: 2px 0;
-	color: #F6DC12;
+	color: #fff;
 }
 
 ul.ex_menu li {
 	padding: 2px 0;
 	color: #F6DC12;
-	
 }
 
 ul.sb_menu li a,ul.ex_menu li a {
 	display: block;
-	color: #F6DC12;
-	text-decoration: none;
+	color: #78bbe6;
+	font-size: 15px;
+	font-weight: bold;
+	text-decoration: inherit;
 	padding: 5px 5px 5px 15px;
 	background: url(images/menu_link.gif) no-repeat left center;
-	
 }
 
 ul.ex_menu li span {
