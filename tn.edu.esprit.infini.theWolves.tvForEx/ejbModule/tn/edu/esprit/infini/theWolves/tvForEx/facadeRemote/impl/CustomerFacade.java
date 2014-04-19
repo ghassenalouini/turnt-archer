@@ -1,4 +1,4 @@
-package tn.edu.esprit.infini.theWolves.tvForEx.facade.impl;
+package tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.impl;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import javax.persistence.PersistenceContext;
 
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Customer;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CustomerFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CustomerFacadeRemote;
 import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CustomerServicesLocal;
 
 @Stateless
