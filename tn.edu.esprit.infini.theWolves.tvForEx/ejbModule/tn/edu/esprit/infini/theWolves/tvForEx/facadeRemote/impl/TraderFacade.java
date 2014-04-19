@@ -1,4 +1,4 @@
-package tn.edu.esprit.infini.theWolves.tvForEx.facade.impl;
+package tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.impl;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Trader;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.TraderFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.TraderFacadeRemote;
 import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.TraderServicesLocal;
 
 /**

@@ -1,4 +1,4 @@
-package tn.edu.esprit.infini.theWolves.tvForEx.facade.impl;
+package tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.impl;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Country;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CountryFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CountryFacadeRemote;
 import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CountryServicesLocal;
 
 /**

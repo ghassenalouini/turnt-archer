@@ -2,111 +2,123 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>TV-ForEx</title>
+	<title>TV-ForEx</title>
 
-    <!-- // IOS webapp icons // -->
-    
-    <meta name="apple-mobile-web-app-title" content="Karma Webapp"/>
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./RessourcesPlatform/images/mobile/apple-touch-icon-152x152.png" />
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="./RessourcesPlatform/images/mobile/apple-touch-icon-144x144.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="./RessourcesPlatform/images/mobile/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./RessourcesPlatform/images/mobile/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="./RessourcesPlatform/images/mobile/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./RessourcesPlatform/images/mobile/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon-precomposed" href="./RessourcesPlatform/images/mobile/apple-touch-icon.png" />
-    <link rel="shortcut icon" href="./RessourcesPlatform/images/favicons/favicon.ico" />
-    
-    <!-- // IOS webapp splash screens // -->
-    
-    <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)"
-          href="../RessourcesPlatform/images/mobile/apple-touch-startup-image-1536x2008.html"/>
-    <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)"
-          href="./RessourcesPlatform/images/mobile/apple-touch-startup-image-1496x2048.html"/>     
- 	<link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)"
-          href="./RessourcesPlatform/images/mobile/apple-touch-startup-image-768x1004.html"/>
-    <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)"
-          href="./RessourcesPlatform/images/mobile/apple-touch-startup-image-748x1024.html"/>
-    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" 
-          href="./RessourcesPlatform/images/mobile/apple-touch-startup-image-640x1096.html"/>    
-    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"
-          href="./RessourcesPlatform/images/mobile/apple-touch-startup-image-640x920.html"/>    
-    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)"
-          href="./RessourcesPlatform/images/mobile/apple-touch-startup-image-320x460.html"/>    
-    
-    <!-- // Windows 8 tile // -->
-    
-    <meta name="application-name" content="Karma Webapp"/>
-    <meta name="msapplication-TileColor" content="#333333" />
-	<meta name="msapplication-TileImage" content="images/mobile/windows8-icon.html" />
+	<!-- // IOS webapp icons // -->
 
-    <!-- // Handheld devices misc // -->
-    
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-    <meta name="HandheldFriendly" content="true"/>   
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/> 
-    
-    <!-- // Stylesheets // -->
-    
-    <link rel="stylesheet" href="./RessourcesPlatform/bootstrap/core/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="./RessourcesPlatform/css/bootstrap-custom.css"/>
-    <link rel="stylesheet" href="./RessourcesPlatform/css/bootstrap-extended.css"/>
-    <link rel="stylesheet" href="./RessourcesPlatform/css/login.css"/>
-    <link rel="stylesheet" href="./RessourcesPlatform/css/dark-theme.css"/>
-    
-    <!-- // Helpers // -->
-    
-    <script src="RessourcesPlatform/js/plugins/modernizr.min.js"></script> 
-    <script src="RessourcesPlatform/js/plugins/mobiledevices.js"></script>
-    
-    <!-- // jQuery core // -->
-    
-   
-<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.0.min.js"></script>
+	<meta name="apple-mobile-web-app-title" content="Karma Webapp" />
+	<link rel="apple-touch-icon-precomposed" sizes="152x152"
+		href="./RessourcesPlatform/images/mobile/apple-touch-icon-152x152.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144"
+		href="./RessourcesPlatform/images/mobile/apple-touch-icon-144x144.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="120x120"
+		href="./RessourcesPlatform/images/mobile/apple-touch-icon-120x120.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114"
+		href="./RessourcesPlatform/images/mobile/apple-touch-icon-114x114.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="76x76"
+		href="./RessourcesPlatform/images/mobile/apple-touch-icon-76x76.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72"
+		href="./RessourcesPlatform/images/mobile/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon-precomposed"
+		href="./RessourcesPlatform/images/mobile/apple-touch-icon.png" />
+	<link rel="shortcut icon"
+		href="./RessourcesPlatform/images/favicons/favicon.ico" />
 
-<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-    
-    <!-- // Bootstrap // -->
-    
-    <script src="RessourcesPlatform/bootstrap/core/dist/js/bootstrap.min.js"></script>
+	<!-- // IOS webapp splash screens // -->
 
-    <!-- // Custom/premium plugins // -->
+	<link rel="apple-touch-startup-image"
+		media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)"
+		href="../RessourcesPlatform/images/mobile/apple-touch-startup-image-1536x2008.html" />
+	<link rel="apple-touch-startup-image"
+		media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)"
+		href="./RessourcesPlatform/images/mobile/apple-touch-startup-image-1496x2048.html" />
+	<link rel="apple-touch-startup-image"
+		media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)"
+		href="./RessourcesPlatform/images/mobile/apple-touch-startup-image-768x1004.html" />
+	<link rel="apple-touch-startup-image"
+		media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)"
+		href="./RessourcesPlatform/images/mobile/apple-touch-startup-image-748x1024.html" />
+	<link rel="apple-touch-startup-image"
+		media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
+		href="./RessourcesPlatform/images/mobile/apple-touch-startup-image-640x1096.html" />
+	<link rel="apple-touch-startup-image"
+		media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"
+		href="./RessourcesPlatform/images/mobile/apple-touch-startup-image-640x920.html" />
+	<link rel="apple-touch-startup-image"
+		media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)"
+		href="./RessourcesPlatform/images/mobile/apple-touch-startup-image-320x460.html" />
 
-    <script src="RessourcesPlatform/js/plugins/showpassword.1.0.min.js"></script>
-    <script src="RessourcesPlatform/js/plugins/nanogress.1.0.min.js"></script>
-    <script src="RessourcesPlatform/js/plugins/powerwizard.1.0.min.js"></script>
-    
-    <!-- // Third-party plugins // -->
-    
-    <script src="RessourcesPlatform/js/plugins/jquery.pwstrength.min.js"></script>
+	<!-- // Windows 8 tile // -->
 
-    <!-- // Custom //-->
-    
-    <script src="RessourcesPlatform/js/plugins/login.js"></script>     
-     
+	<meta name="application-name" content="Karma Webapp" />
+	<meta name="msapplication-TileColor" content="#333333" />
+	<meta name="msapplication-TileImage"
+		content="images/mobile/windows8-icon.html" />
+
+	<!-- // Handheld devices misc // -->
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<!-- // Stylesheets // -->
+
+	<link rel="stylesheet"
+		href="./RessourcesPlatform/bootstrap/core/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet"
+		href="./RessourcesPlatform/css/bootstrap-custom.css" />
+	<link rel="stylesheet"
+		href="./RessourcesPlatform/css/bootstrap-extended.css" />
+	<link rel="stylesheet" href="./RessourcesPlatform/css/login.css" />
+	<link rel="stylesheet" href="./RessourcesPlatform/css/dark-theme.css" />
+
+	<!-- // Helpers // -->
+
+	<script src="RessourcesPlatform/js/plugins/modernizr.min.js"></script>
+	<script src="RessourcesPlatform/js/plugins/mobiledevices.js"></script>
+
+	<!-- // jQuery core // -->
+
+
+	<script
+		src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.0.min.js"></script>
+
+	<script
+		src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+	<!-- // Bootstrap // -->
+
+	<script
+		src="RessourcesPlatform/bootstrap/core/dist/js/bootstrap.min.js"></script>
+
+	<!-- // Custom/premium plugins // -->
+
+	<script src="RessourcesPlatform/js/plugins/showpassword.1.0.min.js"></script>
+	<script src="RessourcesPlatform/js/plugins/nanogress.1.0.min.js"></script>
+	<script src="RessourcesPlatform/js/plugins/powerwizard.1.0.min.js"></script>
+
+	<!-- // Third-party plugins // -->
+
+	<script src="RessourcesPlatform/js/plugins/jquery.pwstrength.min.js"></script>
+
+	<!-- // Custom //-->
+
+	<script src="RessourcesPlatform/js/plugins/login.js"></script>
+
 </h:head>
-<h:body> 
-	<div id="container-signup" class="clearfix">    
-     	<div id="demo-overview">
-        	
-        </div>
-             
-        <div id="login-box">
-       		<div class="login-box-inner clearfix">
-                <header id="login-header">
-                    <a href="#" id="login-logo">
-                    	<h1>TV-ForEx</h1>
-                        
-                    </a>
-                   
-                </header>
-                <div class="spacer-40"></div>
+<h:body>
+	<div id="container-signup" class="clearfix">
+		<div id="demo-overview"></div>
 
+<<<<<<< HEAD
                 <ul class="powerwizard">
                     <li class="active">
                         1. Personal
@@ -423,399 +435,416 @@
                                     </select>
                                     <div class="helper-text-box">
                                     	<p>Cras semper magna sit amet diam euismod pulvinar vel sit amet augue.</p>
+=======
+		<div id="login-box">
+			<div class="login-box-inner clearfix">
+				<header id="login-header">
+					<a href="#" id="login-logo">
+						<h1>TV-ForEx</h1>
+
+					</a>
+
+				</header>
+				<div class="spacer-40"></div>
+
+				<ul class="powerwizard">
+					<li class="active">1. Personal</li>
+					<li>2. Account</li>
+					<li class="end">3.Confirm</li>
+				</ul>
+				<div class="spacer-30"></div>
+				<div class="powerwizard-content">
+					<form id="form-signup"
+						action="http://themes.creativemilk.net/files/karma/leftrightsidebar/dark/ajax/signup.html">
+						<div class="powerwizard-step">
+							<h2>1. Personal</h2>
+							<p>Some personal information about you.</p>
+							<div class="spacer-40"></div>
+							<div class="row">
+								<div class="col-lg-4">
+									<label for="fcid-1">First name: <span class="asterisk">*</span></label>
+								</div>
+								<div class="col-lg-8">
+									<h:inputText value="#{registerBean.customer.name}"
+										class="form-control required" id="fcid-1" />
+								</div>
+							</div>
+							<div class="spacer-10"></div>
+							<div class="row">
+								<div class="col-lg-4">
+									<label for="fcid-2">Email : <span class="asterisk">*</span></label>
+								</div>
+								<div class="col-lg-8">
+									<h:inputText value="#{registerBean.customer.adresse_mail}"
+										class="form-control required" id="fcid-2" />
+								</div>
+							</div>
+							<div class="spacer-10"></div>
+							<div class="row">
+								<div class="col-lg-4">
+									<label for="fcid-4">Phone : <span class="asterisk">*</span></label>
+								</div>
+								<div class="col-lg-8">
+									<h:inputText value="#{registerBean.customer.phone_number}"
+										class="form-control required" id="fcid-4" />
+								</div>
+							</div>
+							<div class="spacer-10"></div>
+							<div class="row">
+								<div class="col-lg-4">
+									<label>Submit as :</label>
+								</div>
+								<h:form>
+									<p:selectOneRadio id="options" value="#{registerBean.number}">
+										<div class="col-lg-3">
+											<f:selectItem itemLabel="Central Bank" itemValue="1" />
+										</div>
+										<div class="col-lg-2">
+											<f:selectItem itemLabel="Bank" itemValue="2" />
+										</div>
+										<div class="col-lg-3">
+											<f:selectItem itemLabel="Corporate" itemValue="3" />
+										</div>
+									</p:selectOneRadio>
+								</h:form>
+							</div>
+							<div class="spacer-10"></div>
+							<div class="row">
+								<div class="col-lg-4">
+									<label for="fcid-5">Country:</label>
+								</div>
+								<div class="col-lg-8">
+									<h:form>
+										<h:selectOneMenu value="#{registerBean.customer.country}">
+											<f:selectItem itemValue="5" itemLabel="" />
+											<f:selectItem itemValue="1" itemLabel="Tunisia" />
+											<f:selectItem itemValue="2" itemLabel="France" />
+											<f:selectItem itemValue="3" itemLabel="USA" />
+											<f:selectItem itemValue="4" itemLabel="Germany" />
+										</h:selectOneMenu>
+									</h:form>
+									<div class="helper-text-box">
+										<p>Choose your country</p>
+>>>>>>> refs/remotes/origin/master
 									</div>
-                                </div>
-                            </div>
-                            <div class="spacer-10"></div>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                     <label for="fcid-6">Information:</label>
-                                </div> 
-                                <div class="col-lg-8">
-                                    <textarea class="form-control noresizing" id="fcid-6"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="powerwizard-step">
-                            <h2>2. Account</h2>
-                            <p>Create your own account.</p>
-                            <div class="spacer-40"></div>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                           <label for="fcid-10">Username: <span class="asterisk">*</span></label>
-                                        </div> 
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                       
-                                             <input class="form-control required" type="text" placeholder="Choose username" id="fcid-10"/>
-                                        </div>
-                                    </div>
-                                    <div class="spacer-10"></div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                             <label for="fcid-10">Check:</label>
-                                             <span class="red-check pull-right">Name taken!</span>
-                                        </div> 
-                                    </div>
-                            	</div>
-                            	<div class="col-lg-6"> 
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                             <label for="fcid-12">Password:</label>
-                                        </div> 
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                             <input class="form-control" type="password" placeholder="Set password" id="fcid-12"/>
-                                        </div>
-                                    </div>
-                                    <div class="spacer-10"></div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                             <input class="form-control" type="password" placeholder="Re type password" id="fcid-13"/>
-                                        </div>
-                                    </div> 
-                            	</div>
-                            </div>
-                            <div class="spacer-30"></div>
-                            <div class="row">
-                                <div class="col-lg-12">
-                                     <label>Subscribe to:</label>
-                                </div> 
-                            </div>
-                            <div class="box">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <label>
-                                            <input type="checkbox"/>
-                                            <span></span>
-                                            Lorem ipsum
-                                        </label>    
-                                    </div> 
-                                    <div class="col-lg-6">
-                                        <label>
-                                            <input type="checkbox"/>
-                                            <span></span>
-                                            Sit amet
-                                        </label>    
-                                    </div> 
-                                </div>      
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <label>
-                                            <input type="checkbox"/>
-                                            <span></span>
-                                            Phasellus
-                                        </label>    
-                                    </div> 
-                                    <div class="col-lg-6">
-                                        <label>
-                                            <input type="checkbox"/>
-                                            <span></span>
-                                            Adipiscindon
-                                        </label>    
-                                    </div> 
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <label>
-                                            <input type="checkbox"/>
-                                            <span></span>
-                                            Suspendisse
-                                        </label>    
-                                    </div> 
-                                    <div class="col-lg-6">
-                                        <label>
-                                            <input type="checkbox"/>
-                                            <span></span>
-                                            Donec sit 
-                                        </label>    
-                                    </div> 
-                                </div>  
-								<div class="row">
-                                    <div class="col-lg-6">
-                                        <label>
-                                            <input type="checkbox"/>
-                                            <span></span>
-                                            Ipsum doro
-                                        </label>    
-                                    </div> 
-                                    <div class="col-lg-6">
-                                        <label>
-                                            <input type="checkbox"/>
-                                            <span></span>
-                                            Phasellus domo
-                                        </label>    
-                                    </div> 
-                                </div>  
-                            </div>
-                        </div>
-                        <div class="powerwizard-step">
-                            <h2>3. Confirm</h2>
-                            <p>Check and confirm your data.</p>
-                            <div class="spacer-40"></div>
-                            <div class="spacer-5"></div>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                     <strong>Full name:</strong>
-                                </div> 
-                                <div class="col-lg-8">
-                                    Steven Watson
-                                </div>
-                            </div>
-                            <div class="spacer-10"></div>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                     <strong>Phone:</strong>
-                                </div> 
-                                <div class="col-lg-8">
-                                   088-423-423-000
-                                </div>
-                            </div>
-                            <div class="spacer-10"></div>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                     <strong>Gender:</strong>
-                                </div> 
-                                <div class="col-lg-8">
-                                    Male
-                                </div>
-                            </div>
-                            <div class="spacer-10"></div>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                     <strong>Country:</strong>
-                                </div> 
-                                <div class="col-lg-8">
-                                    United Kingdom
-                                </div>
-                            </div> 
-                            <div class="spacer-10"></div>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                     <strong>Information:</strong>
-                                </div> 
-                                <div class="col-lg-8">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et magna luctus, 
-                                    dignissim lectus at, bibendum sem. Nulla facilisi. 
-                                    Nam tincidunt nunc ac libero tempus suscipit. Donec ultrices odio sed 
-                                    ligula semper gravida. 
-                                </div>
-                            </div> 
-                            <div class="spacer-30"></div>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                     <strong>Username:</strong>
-                                </div> 
-                                <div class="col-lg-8">
-                                    stevenwatson
-                                </div>
-                            </div> 
-                            <div class="spacer-10"></div>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                     <strong>Password:</strong>
-                                </div> 
-                                <div class="col-lg-8">
-                                    g5^09boDuF5!
-                                </div>
-                            </div>  
-                            <div class="spacer-10"></div>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                     <strong>Subscribe to:</strong>
-                                </div> 
-                                <div class="col-lg-8">
-                                    Lorem ipsum, Ipsum doro, Adipiscidon
-                                </div>
-                            </div> 
-                            <div class="spacer-30"></div> 
-                            <div class="row">
-                                <div class="col-lg-4"></div> 
-                                <div class="col-lg-8">
-                                    <label><input type="checkbox" class="required"/><span></span> I agree to the <a href="#" id="modal-tou-trigger">Terms of use</a></label>
-                                </div>
-                            </div> 
-                            <div class="spacer-20"></div>
-                            <div class="row">
-                                <div class="col-lg-12">
-                                	<button class="btn btn-default pull-right">Register account!</button>
-                                </div>
-                            </div>
-                        </div>
-                 	</form>
-                    <div class="spacer-40"></div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <ul class="pagination pw-nav">
-                            	<li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                            </ul>
-                            <div class="pull-right">
-                            	<a href="#" class="btn btn-default pw-prev"><i class="fa fa-caret-left"></i>&#160; Prev</a>
-                            	<a href="#" class="btn btn-default pw-next">Next &#160;<i class="fa fa-caret-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                 </div>
-            </div>
-        </div>
-        <footer id="login-footer">
-            <strong>Copyright © 2014 Tv-ForEx</strong>
-            <div class="spacer-5"></div>
-            <small>Trade Like a Wolf.</small>
-        </footer>
-    </div><!-- End #container --> 
-    
-    <!-- Terms of use Modal -->
-    <div class="modal fade" id="modal-tou" tabindex="-1" >
+								</div>
+							</div>
+							<div class="spacer-10"></div>
+
+						</div>
+						<div class="powerwizard-step">
+							<h2>2. Account</h2>
+							<p>Create your own account.</p>
+							<div class="spacer-40"></div>
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="row">
+										<div class="col-lg-12">
+											<label for="fcid-10">Username : <span
+												class="asterisk">*</span></label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-lg-12">
+
+											<h:inputText value="#{registerBean.customer.login}"
+												class="form-control required" type="text"
+												placeholder="Choose username" id="fcid-10" />
+										</div>
+									</div>
+									<div class="spacer-10"></div>
+
+								</div>
+								<div class="col-lg-6">
+									<div class="row">
+										<div class="col-lg-12">
+											<label for="fcid-12">Password :<span class="asterisk">*</span></label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-lg-12">
+											<h:inputText value="#{registerBean.customer.password}"
+												class="form-control required" id="fcid-12" />
+										</div>
+									</div>
+									<div class="spacer-10"></div>
+									<div class="row">
+										<div class="col-lg-12">
+											<h:inputText value="#{registerBean.customer.password}"
+												class="form-control required" id="fcid-13" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="spacer-30"></div>
+						</div>
+						<div class="powerwizard-step">
+							<h2>3. Confirm</h2>
+							<p>Check and confirm your data.</p>
+							<div class="spacer-40"></div>
+							<div class="spacer-5"></div>
+							<div class="row">
+								<div class="col-lg-4">
+									<strong>Your name is :</strong>
+								</div>
+								<div class="col-lg-8">
+									<h:outputText value="#{registerBean.customer.name}" />
+								</div>
+							</div>
+							<div class="spacer-10"></div>
+							<div class="row">
+								<div class="col-lg-4">
+									<strong>Email :</strong>
+								</div>
+								<div class="col-lg-8">
+									<h:outputText value="#{registerBean.customer.adresse_mail}" />
+								</div>
+							</div>
+							<div class="spacer-10"></div>
+							<div class="row">
+								<div class="col-lg-4">
+									<strong>Phone :</strong>
+								</div>
+								<div class="col-lg-8">
+									<h:outputText value="#{registerBean.customer.phone_number}" />
+								</div>
+							</div>
+							<div class="spacer-10"></div>
+							<div class="row">
+								<div class="col-lg-4">
+									<strong>Submit as:</strong>
+								</div>
+								<div class="col-lg-8">à Revoir</div>
+							</div>
+							<div class="spacer-10"></div>
+							<div class="row">
+								<div class="col-lg-4">
+									<strong>Country:</strong>
+								</div>
+								<div class="col-lg-8">
+									<h:outputText value="#{registerBean.customer.country}" />
+								</div>
+							</div>
+							<div class="spacer-10"></div>
+							<div class="row">
+								<div class="col-lg-4">
+									<strong>Username:</strong>
+								</div>
+								<div class="col-lg-8">
+									<h:outputText value="#{registerBean.customer.login}" />
+								</div>
+							</div>
+							<div class="spacer-10"></div>
+							<div class="row">
+								<div class="col-lg-4">
+									<strong>Password:</strong>
+								</div>
+								<div class="col-lg-8">
+									<h:outputText value="#{registerBean.customer.password}" />
+								</div>
+							</div>
+							<div class="spacer-10"></div>
+							<div class="row">
+								<div class="col-lg-4"></div>
+								<div class="col-lg-8">
+									<label><input type="checkbox" class="required" /><span></span>
+										I agree to the <a href="#" id="modal-tou-trigger">Terms of
+											use</a></label>
+								</div>
+							</div>
+							<div class="spacer-20"></div>
+							<div class="row">
+								<div class="col-lg-12">
+									<h:form>
+										<h:commandButton value="Register account"
+											action="#{registerBean.register}"
+											class="btn btn-default pull-right" />
+
+									</h:form>
+								</div>
+							</div>
+						</div>
+					</form>
+					<div class="spacer-40"></div>
+					<div class="row">
+						<div class="col-lg-12">
+							<ul class="pagination pw-nav">
+								<li><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+							</ul>
+							<div class="pull-right">
+								<a href="#" class="btn btn-default pw-prev"><i
+									class="fa fa-caret-left"></i>&#160; Prev</a> <a href="#"
+									class="btn btn-default pw-next">Next &#160;<i
+									class="fa fa-caret-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer id="login-footer">
+			<strong>Copyright © 2014 Tv-ForEx</strong>
+			<div class="spacer-5"></div>
+			<small>Trade Like a Wolf.</small>
+		</footer>
+	</div>
+	<!-- End #container -->
+
+	<!-- Terms of use Modal -->
+	<div class="modal fade" id="modal-tou" tabindex="-1">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" ></button>
+					<button type="button" class="close" data-dismiss="modal"></button>
 					<h4 class="modal-title">Terms of use</h4>
-    		    </div>
+				</div>
 				<div class="modal-body">
-                    <h2>
-                        Web Site Terms and Conditions of Use
-                    </h2>
-                    
-                    <h3>
-                        1. Terms
-                    </h3>
-                    
-                    <p>
-                        By accessing this web site, you are agreeing to be bound by these 
-                        web site Terms and Conditions of Use, all applicable laws and regulations, 
-                        and agree that you are responsible for compliance with any applicable local 
-                        laws. If you do not agree with any of these terms, you are prohibited from 
-                        using or accessing this site. The materials contained in this web site are 
-                        protected by applicable copyright and trade mark law.
-                    </p>
-                    
-                    <h3>
-                        2. Use License
-                    </h3>
-                    
-                    <ol type="a">
-                        <li>
-                            Permission is granted to temporarily download one copy of the materials 
-                            (information or software) on Company name's web site for personal, 
-                            non-commercial transitory viewing only. This is the grant of a license, 
-                            not a transfer of title, and under this license you may not:
-                            
-                            <ol type="i" >
-                                <li>modify or copy the materials;</li>
-                                <li>use the materials for any commercial purpose, or for any public display (commercial or non-commercial);</li>
-                                <li>attempt to decompile or reverse engineer any software contained on Company name's web site;</li>
-                                <li>remove any copyright or other proprietary notations from the materials; or</li>
-                                <li>transfer the materials to another person or "mirror" the materials on any other server.</li>
-                            </ol>
-                        </li>
-                        <li>
-                            This license shall automatically terminate if you violate any of these restrictions and may be terminated by Company name at any time. Upon terminating your viewing of these materials or upon the termination of this license, you must destroy any downloaded materials in your possession whether in electronic or printed format.
-                        </li>
-                    </ol>
-                    
-                    <h3>
-                        3. Disclaimer
-                    </h3>
-                    
-                    <ol type="a">
-                        <li>
-                            The materials on Company name's web site are provided "as is". Company name makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights. Further, Company name does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its Internet web site or otherwise relating to such materials or on any sites linked to this site.
-                        </li>
-                    </ol>
-                    
-                    <h3>
-                        4. Limitations
-                    </h3>
-                    
-                    <p>
-                        In no event shall Company name or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption,) arising out of the use or inability to use the materials on Company name's Internet site, even if Company name or a Company name authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.
-                    </p>
-                
-                    <h3>
-                        5. Revisions and Errata
-                    </h3>
-                    
-                    <p>
-                        The materials appearing on Company name's web site could include technical, typographical, or photographic errors. Company name does not warrant that any of the materials on its web site are accurate, complete, or current. Company name may make changes to the materials contained on its web site at any time without notice. Company name does not, however, make any commitment to update the materials.
-                    </p>
-                    
-                    <h3>
-                        6. Links
-                    </h3>
-                    
-                    <p>
-                        Company name has not reviewed all of the sites linked to its Internet web site and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by Company name of the site. Use of any such linked web site is at the user's own risk.
-                    </p>
-                    
-                    <h3>
-                        7. Site Terms of Use Modifications
-                    </h3>
-                    
-                    <p>
-                        Company name may revise these terms of use for its web site at any time without notice. By using this web site you are agreeing to be bound by the then current version of these Terms and Conditions of Use.
-                    </p>
-                    
-                    <h3>
-                        8. Governing Law
-                    </h3>
-                    
-                    <p>
-                        Any claim relating to Company name's web site shall be governed by the laws of the State of The world without regard to its conflict of law provisions.
-                    </p>
-                    
-                    <p>
-                        General Terms and Conditions applicable to Use of a Web Site.
-                    </p>
-        
-                    <h2>
-                        Privacy Policy
-                    </h2>
-                    
-                    <p>
-                        Your privacy is very important to us. Accordingly, we have developed this Policy in order for you to understand how we collect, use, communicate and disclose and make use of personal information. The following outlines our privacy policy.
-                    </p>
-                    
-                    <ul>
-                        <li>
-                            Before or at the time of collecting personal information, we will identify the purposes for which information is being collected.
-                        </li>
-                        <li>
-                            We will collect and use of personal information solely with the objective of fulfilling those purposes specified by us and for other compatible purposes, unless we obtain the consent of the individual concerned or as required by law.		
-                        </li>
-                        <li>
-                            We will only retain personal information as long as necessary for the fulfillment of those purposes. 
-                        </li>
-                        <li>
-                            We will collect personal information by lawful and fair means and, where appropriate, with the knowledge or consent of the individual concerned. 
-                        </li>
-                        <li>
-                            Personal data should be relevant to the purposes for which it is to be used, and, to the extent necessary for those purposes, should be accurate, complete, and up-to-date. 
-                        </li>
-                        <li>
-                            We will protect personal information by reasonable security safeguards against loss or theft, as well as unauthorized access, disclosure, copying, use or modification.
-                        </li>
-                        <li>
-                            We will make readily available to customers information about our policies and practices relating to the management of personal information. 
-                        </li>
-                    </ul>
-                    
-                    <p>
-                        We are committed to conducting our business in accordance with these principles in order to ensure that the confidentiality of personal information is protected and maintained. 
-                    </p>
-                    
-                    <div class="spacer-20"></div>
-            		
-                </div>
-            </div>
-         </div>
-     </div>
- </h:body>
+					<h2>Web Site Terms and Conditions of Use</h2>
+
+					<h3>1. Terms</h3>
+
+					<p>By accessing this web site, you are agreeing to be bound by
+						these web site Terms and Conditions of Use, all applicable laws
+						and regulations, and agree that you are responsible for compliance
+						with any applicable local laws. If you do not agree with any of
+						these terms, you are prohibited from using or accessing this site.
+						The materials contained in this web site are protected by
+						applicable copyright and trade mark law.</p>
+
+					<h3>2. Use License</h3>
+
+					<ol type="a">
+						<li>Permission is granted to temporarily download one copy of
+							the materials (information or software) on Company name's web
+							site for personal, non-commercial transitory viewing only. This
+							is the grant of a license, not a transfer of title, and under
+							this license you may not:
+
+							<ol type="i">
+								<li>modify or copy the materials;</li>
+								<li>use the materials for any commercial purpose, or for
+									any public display (commercial or non-commercial);</li>
+								<li>attempt to decompile or reverse engineer any software
+									contained on Company name's web site;</li>
+								<li>remove any copyright or other proprietary notations
+									from the materials; or</li>
+								<li>transfer the materials to another person or "mirror"
+									the materials on any other server.</li>
+							</ol>
+						</li>
+						<li>This license shall automatically terminate if you violate
+							any of these restrictions and may be terminated by Company name
+							at any time. Upon terminating your viewing of these materials or
+							upon the termination of this license, you must destroy any
+							downloaded materials in your possession whether in electronic or
+							printed format.</li>
+					</ol>
+
+					<h3>3. Disclaimer</h3>
+
+					<ol type="a">
+						<li>The materials on Company name's web site are provided "as
+							is". Company name makes no warranties, expressed or implied, and
+							hereby disclaims and negates all other warranties, including
+							without limitation, implied warranties or conditions of
+							merchantability, fitness for a particular purpose, or
+							non-infringement of intellectual property or other violation of
+							rights. Further, Company name does not warrant or make any
+							representations concerning the accuracy, likely results, or
+							reliability of the use of the materials on its Internet web site
+							or otherwise relating to such materials or on any sites linked to
+							this site.</li>
+					</ol>
+
+					<h3>4. Limitations</h3>
+
+					<p>In no event shall Company name or its suppliers be liable
+						for any damages (including, without limitation, damages for loss
+						of data or profit, or due to business interruption,) arising out
+						of the use or inability to use the materials on Company name's
+						Internet site, even if Company name or a Company name authorized
+						representative has been notified orally or in writing of the
+						possibility of such damage. Because some jurisdictions do not
+						allow limitations on implied warranties, or limitations of
+						liability for consequential or incidental damages, these
+						limitations may not apply to you.</p>
+
+					<h3>5. Revisions and Errata</h3>
+
+					<p>The materials appearing on Company name's web site could
+						include technical, typographical, or photographic errors. Company
+						name does not warrant that any of the materials on its web site
+						are accurate, complete, or current. Company name may make changes
+						to the materials contained on its web site at any time without
+						notice. Company name does not, however, make any commitment to
+						update the materials.</p>
+
+					<h3>6. Links</h3>
+
+					<p>Company name has not reviewed all of the sites linked to its
+						Internet web site and is not responsible for the contents of any
+						such linked site. The inclusion of any link does not imply
+						endorsement by Company name of the site. Use of any such linked
+						web site is at the user's own risk.</p>
+
+					<h3>7. Site Terms of Use Modifications</h3>
+
+					<p>Company name may revise these terms of use for its web site
+						at any time without notice. By using this web site you are
+						agreeing to be bound by the then current version of these Terms
+						and Conditions of Use.</p>
+
+					<h3>8. Governing Law</h3>
+
+					<p>Any claim relating to Company name's web site shall be
+						governed by the laws of the State of The world without regard to
+						its conflict of law provisions.</p>
+
+					<p>General Terms and Conditions applicable to Use of a Web
+						Site.</p>
+
+					<h2>Privacy Policy</h2>
+
+					<p>Your privacy is very important to us. Accordingly, we have
+						developed this Policy in order for you to understand how we
+						collect, use, communicate and disclose and make use of personal
+						information. The following outlines our privacy policy.</p>
+
+					<ul>
+						<li>Before or at the time of collecting personal information,
+							we will identify the purposes for which information is being
+							collected.</li>
+						<li>We will collect and use of personal information solely
+							with the objective of fulfilling those purposes specified by us
+							and for other compatible purposes, unless we obtain the consent
+							of the individual concerned or as required by law.</li>
+						<li>We will only retain personal information as long as
+							necessary for the fulfillment of those purposes.</li>
+						<li>We will collect personal information by lawful and fair
+							means and, where appropriate, with the knowledge or consent of
+							the individual concerned.</li>
+						<li>Personal data should be relevant to the purposes for
+							which it is to be used, and, to the extent necessary for those
+							purposes, should be accurate, complete, and up-to-date.</li>
+						<li>We will protect personal information by reasonable
+							security safeguards against loss or theft, as well as
+							unauthorized access, disclosure, copying, use or modification.</li>
+						<li>We will make readily available to customers information
+							about our policies and practices relating to the management of
+							personal information.</li>
+					</ul>
+
+					<p>We are committed to conducting our business in accordance
+						with these principles in order to ensure that the confidentiality
+						of personal information is protected and maintained.</p>
+
+					<div class="spacer-20"></div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</h:body>
 </html>
