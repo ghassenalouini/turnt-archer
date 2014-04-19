@@ -112,9 +112,7 @@
 <h:body>
 	<div id="container-login" class="clearfix">
 		<!-- remove this part -->
-		<div id="demo-overview">
-			
-		</div>
+		<div id="demo-overview"></div>
 		<div id="login-box">
 			<div class="login-box-inner clearfix">
 				<header id="login-header">
@@ -124,20 +122,22 @@
 
 				</header>
 				<div class="spacer-40"></div>
-				<form id="form-login">
+				<h:form id="form-login">
 					<div class="row">
 						<div class="col-lg-12">
 							<label for="fc-id-1">Username:</label>
 						</div>
 					</div>
-					
+
 					<div class="row">
-					<h:form>
+
 						<div class="col-lg-12">
-							<h:inputText  class="form-control" type="text"
-								placeholder="Enter your emailaddress" id="fc-id-1" tabindex="1" />
+							<h:inputText class="form-control" type="text"
+								placeholder="Enter your emailaddress" id="fc-id-1" tabindex="1"
+								
+								 />
 						</div>
-						</h:form>
+
 					</div>
 					<div class="spacer-10"></div>
 					<div class="row">
@@ -146,15 +146,17 @@
 								id="showpassword-trigger" class="underline">Show password</a>
 						</div>
 					</div>
-					
+
 					<div class="row">
-					<h:form>
+
 						<div class="col-lg-12">
 							<h:inputSecret class="form-control" type="password"
-								placeholder="Capslock sensitive" id="fc-id-2" tabindex="2" />
+								placeholder="Capslock sensitive" id="fc-id-2" tabindex="2"
+								
+								/>
 						</div>
-						</h:form>
-					
+
+
 					</div>
 					<div class="spacer-10"></div>
 					<div class="row">
@@ -163,19 +165,24 @@
 								<label><input type="checkbox" tabindex="3" /><span></span>
 									Remember?</label>
 							</div>
-							<h:form>
-							<div class="pull-right">
-								<h:commandLink action="Forgot" class="underline">Forgot password</h:commandLink>
-							</div>
-							</h:form>
+							
+								<div class="pull-right">
+									<h:commandLink action="Forgot" class="underline">Forgot password</h:commandLink>
+								</div>
+								<div class="spacer-15"></div>
+								
+							
 						</div>
 					</div>
 					<div class="spacer-15"></div>
 					<div class="row">
 						<div class="col-lg-12">
 							<!-- just for the demo....replace this with an form element -->
-							<a href="index.html" class="btn btn-default form-control"
-								id="fake-submit" tabindex="4">Sign in here</a>
+
+							<h:commandButton tabindex="4" id="login_submit"
+							action="#{authBean.login}"
+								class="btn btn-default form-control" 
+								value="Sign in here" />
 						</div>
 					</div>
 					<div class="spacer-40"></div>
@@ -184,14 +191,15 @@
 					</div>
 					<div class="spacer-40"></div>
 					<div class="row">
-					<h:form>
-						<div class="col-lg-12">
-							<h:commandLink  action="Register" class="btn btn-block btn-success"
-								tabindex="6">Sign up for an account, it's FREE!</h:commandLink>
-						</div>
-						</h:form>
+					
+							<div class="col-lg-12">
+
+								<h:commandButton class="btn btn-block btn-success"
+									value="Sign up for an account, it's FREE!" action="Register?faces-redirect=true" />
+							</div>
+						
 					</div>
-				</form>
+				</h:form>
 			</div>
 		</div>
 		<footer id="login-footer">

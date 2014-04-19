@@ -4,17 +4,18 @@ import java.util.List;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.persistence.Query;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
+import javax.persistence.Query;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Customer;
+import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CustomerFacadeLocal;
 import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CustomerFacadeRemote;
 import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CustomerServicesLocal;
 
 @Stateless
-public class CustomerFacade implements CustomerFacadeRemote {
+public class CustomerFacade implements CustomerFacadeRemote,
+		CustomerFacadeLocal {
 
 	@EJB
 	CustomerServicesLocal customerServicesLocal;

@@ -47,8 +47,10 @@ public class CustomerTest {
 
 		// Customer customer = new Customer("bank1", "a", "b", 334444,
 		// "aee@ea.com");
-		Bank bank = new Bank(20000, "BKAZDAZDA");
-		bank.setId(4);
+		Bank bank = new Bank();
+		bank.setLogin("bank");
+		bank.setPassword("bank");
+		bank.setName("bank");
 		
 		Trader tr = new Trader("wolves", "wolves", "wolves", 22485569,
 				" wolves@esprit.tn", 0, "AdministrateurTrader", bank);

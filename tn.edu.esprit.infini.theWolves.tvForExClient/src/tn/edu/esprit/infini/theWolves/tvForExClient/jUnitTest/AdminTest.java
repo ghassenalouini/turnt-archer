@@ -38,7 +38,7 @@ public class AdminTest {
 			e.printStackTrace();
 		}
 	}
-    @Ignore
+   
 	@Test
 	public void itShouldAddAdmin() {
 		Administrator admin = new Administrator();
@@ -143,7 +143,7 @@ public class AdminTest {
 		Assert.assertEquals(1, AdminList.size());
 
 	}
-	
+	@Ignore
 	@Test
 	public void itShouldAuthentifate(){
 		Administrator admin=proxy.logInAdmin("login", "password");
