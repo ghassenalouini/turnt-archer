@@ -2,7 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
 <h:head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -110,95 +112,136 @@
 
 </h:head>
 <h:body>
-	<div id="container-login" class="clearfix">
-		<!-- remove this part -->
-		<div id="demo-overview">
-			
-		</div>
-		<div id="login-box">
-			<div class="login-box-inner clearfix">
-				<header id="login-header">
-					<a href="#" id="login-logo">
-						<h1>TV-Forex</h1>
-					</a>
+	<h:form id="login-submit">
 
-				</header>
-				<div class="spacer-40"></div>
-				<form id="form-login">
-					<div class="row">
-						<div class="col-lg-12">
-							<label for="fc-id-1">Username:</label>
-						</div>
-					</div>
-					
-					<div class="row">
-					<h:form>
-						<div class="col-lg-12">
-							<h:inputText  class="form-control" type="text"
-								placeholder="Enter your emailaddress" id="fc-id-1" tabindex="1" />
-						</div>
-						</h:form>
-					</div>
-					<div class="spacer-10"></div>
-					<div class="row">
-						<div class="col-lg-12">
-							<label for="fc-id-2">Password:</label> <a href="#"
-								id="showpassword-trigger" class="underline">Show password</a>
-						</div>
-					</div>
-					
-					<div class="row">
-					<h:form>
-						<div class="col-lg-12">
-							<h:inputSecret class="form-control" type="password"
-								placeholder="Capslock sensitive" id="fc-id-2" tabindex="2" />
-						</div>
-						</h:form>
-					
-					</div>
-					<div class="spacer-10"></div>
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="pull-left">
+		<h:panelGrid layout="block" id="container-login">
+			<!-- remove this part -->
+			<h:panelGroup layout="block" id="demo-overview">
+
+			</h:panelGroup>
+
+			<h:panelGrid layout="block" id="login-box">
+
+				<h:panelGroup class="login-box-inner clearfix">
+					<header id="login-header">
+						<a href="#" id="login-logo">
+							<h1>TV-Forex</h1>
+						</a>
+
+					</header>
+
+					<h:panelGroup class="spacer-40"></h:panelGroup>
+
+					<h:form id="form-login">
+
+						<h:panelGroup class="row" layout="block">
+
+							<h:panelGroup class="col-lg-12" layout="block">
+								<label for="fc-id-1">Username:</label>
+							</h:panelGroup>
+
+
+						</h:panelGroup>
+
+					</h:form>
+
+
+
+
+					<h:inputText value="#{authentificationBean.login}"
+						class="form-control" id="fc-id-1" tabindex="1" />
+
+
+
+					<h:panelGroup class="spacer-10" layout="block"></h:panelGroup>
+					<h:panelGroup layout="block" class="row">
+						<h:panelGroup layout="block" class="col-lg-12">
+
+
+							<label for="fc-id-2">Password:</label>
+							<a href="#" id="showpassword-trigger" class="underline">Show
+								password</a>
+
+						</h:panelGroup>
+					</h:panelGroup>
+
+
+
+
+					<h:inputSecret value="#{authentificationBean.password}"
+						class="form-control" id="fc-id-2" tabindex="2" />
+
+
+
+
+					<h:panelGroup class="spacer-10" layout="block"></h:panelGroup>
+					<h:panelGroup class="row" layout="block">
+
+						<h:panelGroup class="col-lg-12" layout="block">
+
+							<h:panelGroup class="pull-left" layout="block">
+
 								<label><input type="checkbox" tabindex="3" /><span></span>
 									Remember?</label>
-							</div>
-							<h:form>
-							<div class="pull-right">
+							</h:panelGroup>
+
+
+
+
+
+							<h:panelGroup class="pull-right" layout="block">
 								<h:commandLink action="Forgot" class="underline">Forgot password</h:commandLink>
-							</div>
-							</h:form>
-						</div>
-					</div>
-					<div class="spacer-15"></div>
-					<div class="row">
-						<div class="col-lg-12">
-							<!-- just for the demo....replace this with an form element -->
-							<a href="index.html" class="btn btn-default form-control"
-								id="fake-submit" tabindex="4">Sign in here</a>
-						</div>
-					</div>
-					<div class="spacer-40"></div>
-					<div class="or-line">
+							</h:panelGroup>
+
+
+
+						</h:panelGroup>
+					</h:panelGroup>
+
+
+				
+
+
+					<h:panelGroup class="spacer-15"></h:panelGroup>
+
+
+
+					<h:commandButton value="Sign in here"
+						action="#{authentificationBean.doLogin()}"
+						class="btn btn-default form-control" id="submit-id" />
+
+
+
+
+
+
+					<h:panelGroup layout="block" class="spacer-40"></h:panelGroup>
+					<h:panelGroup layout="block" class="or-line">
 						<span>OR</span>
-					</div>
-					<div class="spacer-40"></div>
-					<div class="row">
-					<h:form>
-						<div class="col-lg-12">
-							<h:commandLink  action="Register" class="btn btn-block btn-success"
-								tabindex="6">Sign up for an account, it's FREE!</h:commandLink>
-						</div>
-						</h:form>
-					</div>
-				</form>
-			</div>
-		</div>
-		<footer id="login-footer">
-			<strong>Copyright © 2014 TV-ForEx</strong>
-			<div class="spacer-5"></div>
-			<small>Trade Like a Wolf</small>
-		</footer>
-	</div>
+					</h:panelGroup>
+					<h:panelGroup layout="block" class="spacer-40"></h:panelGroup>
+					<h:panelGroup layout="block" class="row">
+
+						<h:panelGroup layout="block" class="col-lg-12">
+							<h:commandLink action="Register"
+								class="btn btn-block btn-success" tabindex="6">Sign up for an account, it's FREE!</h:commandLink>
+						</h:panelGroup>
+
+
+					</h:panelGroup>
+
+
+
+				</h:panelGroup>
+			</h:panelGrid>
+
+			<footer id="login-footer">
+				<strong>Copyright © 2014 TV-ForEx</strong>
+				<h:panelGroup class="spacer-5"></h:panelGroup>
+				<small>Trade Like a Wolf</small>
+			</footer>
+
+		</h:panelGrid>
+	</h:form>
 </h:body>
 </html>
