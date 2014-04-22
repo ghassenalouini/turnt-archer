@@ -112,55 +112,45 @@
 
 </h:head>
 <h:body>
-	<h:form id="login-submit">
+	<h:form id="login_submit">
 
-		<h:panelGrid layout="block" id="container-login">
+		<div layout="block" id="container-login">
 			<!-- remove this part -->
-			<h:panelGroup layout="block" id="demo-overview">
+			<div layout="block" id="demo-overview">
 
-			</h:panelGroup>
+			</div>
 
-			<h:panelGrid layout="block" id="login-box">
+			<div layout="block" id="login-box">
 
-				<h:panelGroup class="login-box-inner clearfix">
+				<div class="login-box-inner clearfix">
 					<header id="login-header">
 						<a href="#" id="login-logo">
 							<h1>TV-Forex</h1>
+							
 						</a>
+						
 
 					</header>
 
 					
 
-					<h:panelGroup class="spacer-40"></h:panelGroup>
+					<div class="spacer-40"></div>
 
 
 
 
-					<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
-
-						<h:outputText value="Connect as " />
-						<p:selectOneRadio id="options" value="#{authentificationCustomerBean.selected}">
-						
-							<f:selectItem itemLabel="Central Bank" itemValue="1" />
-							<f:selectItem itemLabel="Bank" itemValue="2" />
-							<f:selectItem itemLabel="Corporate" itemValue="3" />
-						
-						</p:selectOneRadio>
-
-					</h:panelGrid>
 
 
 					<h:form id="form-login">
 
-						<h:panelGroup class="row" layout="block">
+						<div class="row" layout="block">
 
-							<h:panelGroup class="col-lg-12" layout="block">
+							<div class="col-lg-12" layout="block">
 								<label for="fc-id-1">Username:</label>
-							</h:panelGroup>
+							</div>
 
 
-						</h:panelGroup>
+						</div>
 
 					</h:form>
 
@@ -170,100 +160,106 @@
 
 
 
-					<h:inputText value="#{authentificationCustomerBean.login}"
+					<h:inputText value="#{authentificationCustomerBean.customer.login}"
 						class="form-control" id="fc-id-1" tabindex="1" />
 
 
 
-					<h:panelGroup class="spacer-10" layout="block"></h:panelGroup>
-					<h:panelGroup layout="block" class="row">
-						<h:panelGroup layout="block" class="col-lg-12">
+					<div class="spacer-10" layout="block"></div>
+					<div layout="block" class="row">
+						<div layout="block" class="col-lg-12">
 
 
 							<label for="fc-id-2">Password:</label>
 							<a href="#" id="showpassword-trigger" class="underline">Show
 								password</a>
 
-						</h:panelGroup>
-					</h:panelGroup>
+						</div>
+					</div>
 
 
 
 
-					<h:inputSecret value="#{authentificationCustomerBean.password}"
+					<h:inputSecret value="#{authentificationCustomerBean.customer.password}"
 						class="form-control" id="fc-id-2" tabindex="2" />
 
 
 
 
-					<h:panelGroup class="spacer-10" layout="block"></h:panelGroup>
-					<h:panelGroup class="row" layout="block">
+					<div class="spacer-10" layout="block"></div>
+					<div class="row" layout="block">
 
-						<h:panelGroup class="col-lg-12" layout="block">
+						<div class="col-lg-12" layout="block">
 
-							<h:panelGroup class="pull-left" layout="block">
+							<div class="pull-left" layout="block">
 
 								<label><input type="checkbox" tabindex="3" /><span></span>
 									Remember?</label>
-							</h:panelGroup>
+							</div>
 
 
 
 
 
-							<h:panelGroup class="pull-right" layout="block">
+							<div class="pull-right" layout="block">
 								<h:commandLink action="Forgot" class="underline">Forgot password</h:commandLink>
-							</h:panelGroup>
+							</div>
 
 
 
-						</h:panelGroup>
-					</h:panelGroup>
+						</div>
+					</div>
 
 
 
 
 
-					<h:panelGroup class="spacer-15"></h:panelGroup>
+					<div class="spacer-15"></div>
 
 
 
 					<h:commandButton value="Sign in here"
-						action="#{authentificationCustomerBean.loginCustomer()}"
-						class="btn btn-default form-control" id="submit-id" />
+						action="#{authentificationCustomerBean.doLoginCustomer()}"
+						class="btn btn-default form-control" id="submit_id" />
+						<br/>
+						<br/>
+						<br/>
+						<h:message for="submit_id" styleClass="attention-warning"/>
+						
+						
 
 
 
 
 
 
-					<h:panelGroup layout="block" class="spacer-40"></h:panelGroup>
-					<h:panelGroup layout="block" class="or-line">
+					<div layout="block" class="spacer-40"></div>
+					<div layout="block" class="or-line">
 						<span>OR</span>
-					</h:panelGroup>
-					<h:panelGroup layout="block" class="spacer-40"></h:panelGroup>
-					<h:panelGroup layout="block" class="row">
+					</div>
+					<div layout="block" class="spacer-40"></div>
+					<div layout="block" class="row">
 
-						<h:panelGroup layout="block" class="col-lg-12">
+						<div layout="block" class="col-lg-12">
 							<h:commandLink action="Register"
 								class="btn btn-block btn-success" tabindex="6">Sign up for an account, it's FREE!</h:commandLink>
-						</h:panelGroup>
+						</div>
 
 
-					</h:panelGroup>
+					</div>
 
 
 
-				</h:panelGroup>
-			</h:panelGrid>
+				</div>
+			</div>
 
 			<footer id="login-footer">
 				<strong>Copyright © 2014 TV-ForEx</strong>
-				<h:panelGroup class="spacer-5"></h:panelGroup>
+				<div class="spacer-5"></div>
 				<small>Trade Like a Wolf</small>
 			</footer>
 
-		</h:panelGrid>
+		</div>
 	</h:form>
 </h:body>
 </html>

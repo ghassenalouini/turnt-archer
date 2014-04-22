@@ -170,6 +170,13 @@
                     <ul class="sidebar-profile-list">
                         <li><h3>Hi, Steven Watson</h3></li>
                         <li><a href="#">Profile</a>  | <a href="#">Mail</a> | <a href="#">Logout</a></li>
+                      <h:form>
+                    
+					<h:commandButton value="log out"
+						action="#{authentificationCustomerBean.logout()}"
+						class="btn btn-default form-control" id="submit_id" />
+						</h:form>
+						
                     </ul>
                 </div><!-- End .sidebar-profile -->
             </div><!-- End .sidebar-module --> 
