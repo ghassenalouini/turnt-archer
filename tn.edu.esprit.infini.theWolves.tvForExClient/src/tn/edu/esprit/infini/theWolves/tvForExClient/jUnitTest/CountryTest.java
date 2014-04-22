@@ -13,7 +13,7 @@ import org.junit.Test;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Country;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CountryFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CountryFacadeRemote;
 
 public class CountryTest {
 	private CountryFacadeRemote proxy;

@@ -1,7 +1,5 @@
 package tn.edu.esprit.infini.theWolves.tvForExClient.jUnitTest;
 
-import static org.junit.Assert.*;
-
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -13,7 +11,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Country;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CountryFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CountryFacadeRemote;
 
 public class TestNotRemoveCountry {
 
@@ -31,12 +29,11 @@ public class TestNotRemoveCountry {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Test(expected = AssertionFailedError.class)
 	public void itShouldNotRemoveCountry() {
 		Country ctr = (Country) proxy.findCountryById(2);
 		Assert.assertTrue(proxy.removeCountry(ctr));
 	}
-
 
 }

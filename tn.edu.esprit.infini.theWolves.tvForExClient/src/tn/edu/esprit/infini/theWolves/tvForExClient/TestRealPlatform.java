@@ -11,9 +11,9 @@ import org.junit.Test;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Bank;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CurrencyFacadeRemote;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CustomerFacadeRemote;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.TransactionFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CurrencyFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CustomerFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.TransactionFacadeRemote;
 
 @SuppressWarnings("deprecation")
 public class TestRealPlatform {
@@ -47,17 +47,16 @@ public class TestRealPlatform {
 
 	}
 
-	
 	@Test
 	public void itShouldAddCrossTransaction() {
-		
+
 		Bank bankBid = (Bank) proxyCust.findCustomerById(1);
 		Bank bank = (Bank) proxyCust.findCustomerById(2);
 		Currency currency = proxy.findCurrencyById(1);
 		Currency currencyCross = proxy.findCurrencyById(2);
 
-
-		Assert.assertTrue(proxyTr.addCrossTransaction(bank, bankBid, currency, currencyCross, "buy", 2000, 2.00F, 1.2F));
+		Assert.assertTrue(proxyTr.addCrossTransaction(bank, bankBid, currency,
+				currencyCross, "buy", 2000, 2.00F, 1.2F));
 	}
 
 }

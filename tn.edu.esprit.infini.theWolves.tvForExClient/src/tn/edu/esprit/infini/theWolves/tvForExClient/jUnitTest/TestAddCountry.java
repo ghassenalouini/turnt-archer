@@ -1,7 +1,5 @@
 package tn.edu.esprit.infini.theWolves.tvForExClient.jUnitTest;
 
-import static org.junit.Assert.*;
-
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -13,7 +11,7 @@ import org.junit.Test;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Country;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CountryFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CountryFacadeRemote;
 
 public class TestAddCountry {
 
@@ -31,7 +29,6 @@ public class TestAddCountry {
 			e.printStackTrace();
 		}
 	}
-	
 
 	@Test
 	public void itShouldAdd() {
@@ -42,7 +39,5 @@ public class TestAddCountry {
 		Assert.assertTrue(proxy.addCountry(country));
 
 	}
-
-
 
 }

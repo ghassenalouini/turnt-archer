@@ -18,7 +18,7 @@ import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.AdministratorS
  */
 @Stateless
 @LocalBean
-public class AdministratorFacade implements AdministratorFacadeRemote {
+public class AdministratorFacadeImpl implements AdministratorFacadeRemote {
 	@EJB
 	AdministratorServicesLocal administratorServicesLocal;
 	@PersistenceContext
@@ -27,7 +27,7 @@ public class AdministratorFacade implements AdministratorFacadeRemote {
 	/**
 	 * Default constructor.
 	 */
-	public AdministratorFacade() {
+	public AdministratorFacadeImpl() {
 		// TODO Auto-generated constructor stub
 	}
 

@@ -1,4 +1,4 @@
-package tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces;
+package tn.edu.esprit.infini.theWolves.tvForEx.facadeLocal.interfaces;
 
 import java.util.List;
 
@@ -11,7 +11,8 @@ import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Customer;
 
 @Local
-public interface CotationServicesLocal {
+public interface CotationFacadeLocal {
+	
 	public Cotation findcotationByBankCurrency(Customer customer,
 			Currency currency);
 
@@ -23,4 +24,5 @@ public interface CotationServicesLocal {
 	boolean updateCotation(Cotation cotation);
 	public List<Administrator> findAllCotation();
 	public Cotation findCotationByCurrecy(Currency currency);
+
 }

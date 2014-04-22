@@ -18,7 +18,7 @@ import javax.persistence.OneToMany;
 @Entity
 public class Currency implements Serializable {
 
-	private int id;
+	
 	private String label;
 	private int unity;
 	private String initials;
@@ -35,20 +35,8 @@ public class Currency implements Serializable {
 	public Currency() {
 		super();
 	}
-
-	/** retourne l'id de la classe currency qui est de type int **/
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public int getId() {
-		return this.id;
-	}
-
-	/** Modifier l'id de la classe currency et prend en parametre un entier **/
-	public void setId(int id) {
-		this.id = id;
-	}
-
 	/** retourne le label de la currecy (String) **/
+	@Id
 	public String getLabel() {
 		return this.label;
 	}

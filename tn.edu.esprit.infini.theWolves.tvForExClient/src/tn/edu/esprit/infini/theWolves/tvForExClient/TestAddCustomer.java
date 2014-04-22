@@ -8,9 +8,9 @@ import tn.edu.esprit.infini.theWolves.tvForEx.domain.Administrator;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Bank;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Corporate;
 import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.AdministratorFacadeLocal;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.AdministratorFacadeRemote;
 import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CustomerFacadeLocal;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CustomerFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.AdministratorFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CustomerFacadeRemote;
 
 public class TestAddCustomer {
 
@@ -33,11 +33,11 @@ public class TestAddCustomer {
 			bank.setLogin("bank");
 			bank.setPassword("bank");
 			bank.setName("bank");
-				
+
 			Corporate corporate = new Corporate("corp", "aa", "bb", 988,
 					"corp@corp.tn", "financial");
 
-			//proxy.addCustomer(corporate);
+			// proxy.addCustomer(corporate);
 			proxy.addCustomer(bank);
 			Administrator admin = new Administrator();
 			admin.setNom("Admin");
@@ -46,7 +46,8 @@ public class TestAddCustomer {
 			admin.setEmailAddress("aaaa@kkkk");
 			if (admin != null) {
 				proxy2.addAdmin(admin);
-			} else {System.out.println("no");
+			} else {
+				System.out.println("no");
 			}
 
 		} catch (NamingException e) {

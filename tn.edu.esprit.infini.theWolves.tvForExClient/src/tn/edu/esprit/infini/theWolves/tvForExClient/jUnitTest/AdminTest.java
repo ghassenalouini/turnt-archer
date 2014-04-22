@@ -17,7 +17,7 @@ import org.junit.Test;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Administrator;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Rules;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.AdministratorFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.AdministratorFacadeRemote;
 
 public class AdminTest {
 
@@ -38,7 +38,7 @@ public class AdminTest {
 			e.printStackTrace();
 		}
 	}
-   
+
 	@Test
 	public void itShouldAddAdmin() {
 		Administrator admin = new Administrator();
@@ -143,10 +143,11 @@ public class AdminTest {
 		Assert.assertEquals(1, AdminList.size());
 
 	}
+
 	@Ignore
 	@Test
-	public void itShouldAuthentifate(){
-		Administrator admin=proxy.logInAdmin("login", "password");
+	public void itShouldAuthentifate() {
+		Administrator admin = proxy.logInAdmin("login", "password");
 		Assert.assertEquals("Admin", admin.getNom());
 	}
 

@@ -27,7 +27,7 @@ public interface AdministratorServicesLocal {
 	 * qui fait renvoie une instance gérée de l'entité administrateur en prenant
 	 * en compte un objet de type administrateur
 	 **/
-	boolean updateCurrency(Administrator administrator);
+	
 
 	boolean updateAdmin(Administrator administrator);
 

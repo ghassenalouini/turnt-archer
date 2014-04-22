@@ -1,8 +1,8 @@
-package tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces;
+package tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces;
 
 import java.util.List;
 
-import javax.ejb.Local;
+import javax.ejb.Remote;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Administrator;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Bank;
@@ -10,8 +10,9 @@ import tn.edu.esprit.infini.theWolves.tvForEx.domain.Cotation;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Customer;
 
-@Local
-public interface CotationServicesLocal {
+@Remote
+public interface CotationFacadeRemote {
+	
 	public Cotation findcotationByBankCurrency(Customer customer,
 			Currency currency);
 
@@ -23,4 +24,5 @@ public interface CotationServicesLocal {
 	boolean updateCotation(Cotation cotation);
 	public List<Administrator> findAllCotation();
 	public Cotation findCotationByCurrecy(Currency currency);
+
 }

@@ -16,7 +16,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Rules;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.RulesFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.RulesFacadeRemote;
 
 @SuppressWarnings("deprecation")
 public class RulesTest {
@@ -52,35 +52,40 @@ public class RulesTest {
 	public void itShouldFindRuleById() {
 		Rules rule = proxy.findRuleById(2);
 
-		Assert.assertEquals("Rules num 1",rule.getLabel());
+		Assert.assertEquals("Rules num 1", rule.getLabel());
 
 	}
+
 	@Ignore
-	@Test(expected=NullPointerException.class)
+	@Test(expected = NullPointerException.class)
 	public void itShouldNotFindRuleById() {
 		Rules rule = proxy.findRuleById(1);
 
-		Assert.assertEquals("Rules num 1",rule.getLabel());
+		Assert.assertEquals("Rules num 1", rule.getLabel());
 
 	}
+
 	@Ignore
-	@Test(expected=junit.framework.ComparisonFailure.class)
+	@Test(expected = junit.framework.ComparisonFailure.class)
 	public void itShouldFindRuleByIdAndCompareIt() {
 		Rules rule = proxy.findRuleById(2);
 
-		Assert.assertEquals("Rules num 12",rule.getLabel());
+		Assert.assertEquals("Rules num 12", rule.getLabel());
 
 	}
+
 	@Ignore
 	@Test
 	public void itShouldRemoveRule() {
 		Assert.assertTrue(proxy.removeRules(proxy.findRuleById(1)));
 	}
+
 	@Ignore
-	@Test(expected=AssertionFailedError.class)
+	@Test(expected = AssertionFailedError.class)
 	public void itShouldNotRemoveRule() {
 		Assert.assertTrue(proxy.removeRules(proxy.findRuleById(10)));
 	}
+
 	@Ignore
 	@Test
 	public void itShouldUpdateRule() {
@@ -88,6 +93,7 @@ public class RulesTest {
 		rule.setLabel("Rule num 412");
 		Assert.assertTrue(proxy.updateRules(rule));
 	}
+
 	@Ignore
 	@Test
 	public void itShouldDisplayrule() {
@@ -98,8 +104,9 @@ public class RulesTest {
 		Assert.assertEquals(1, RulesList.size());
 
 	}
+
 	@Ignore
-	@Test(expected=AssertionFailedError.class)
+	@Test(expected = AssertionFailedError.class)
 	public void itShouldNotDisplayrule() {
 
 		List<Rules> RulesList = new ArrayList<Rules>();
@@ -108,13 +115,5 @@ public class RulesTest {
 		Assert.assertEquals(10, RulesList.size());
 
 	}
-
-	
-	
-	
-	
-	
-	
-	
 
 }

@@ -10,7 +10,7 @@ import javax.persistence.Query;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Customer;
 import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CustomerFacadeLocal;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CustomerFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CustomerFacadeRemote;
 import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CustomerServicesLocal;
 
 @Stateless

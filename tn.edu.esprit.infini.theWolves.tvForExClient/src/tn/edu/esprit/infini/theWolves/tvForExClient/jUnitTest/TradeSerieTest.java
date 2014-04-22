@@ -15,9 +15,8 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import tn.edu.esprit.infini.theWolves.tvForEx.domain.Administrator;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.TradeSerie;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.TradeSerieFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.TradeSerieFacadeRemote;
 
 public class TradeSerieTest {
 	private TradeSerieFacadeRemote proxy;
@@ -38,7 +37,6 @@ public class TradeSerieTest {
 		}
 	}
 
-	
 	@Test
 	public void itShouldAdd() {
 		TradeSerie tradeSerie = new TradeSerie();
@@ -76,18 +74,21 @@ public class TradeSerieTest {
 		TradeSerie tradeSerie = proxy.findTradeSerieById(2);
 		Assert.assertEquals("Trade11", tradeSerie.getName());
 	}
-    @Ignore
+
+	@Ignore
 	@Test
 	public void itShouldRemove() {
-		TradeSerie tradeSerie=proxy.findTradeSerieById(3);
+		TradeSerie tradeSerie = proxy.findTradeSerieById(3);
 		Assert.assertTrue(proxy.removeTradeSerie(tradeSerie));
 	}
-    @Ignore
+
+	@Ignore
 	@Test(expected = AssertionFailedError.class)
 	public void itShouldNotRemoveAdmin() {
-		TradeSerie tradeSerie=proxy.findTradeSerieById(3);
+		TradeSerie tradeSerie = proxy.findTradeSerieById(3);
 		Assert.assertTrue(proxy.removeTradeSerie(tradeSerie));
 	}
+
 	@Ignore
 	@Test
 	public void itShouldUpdate() {
@@ -95,6 +96,7 @@ public class TradeSerieTest {
 		tradeSerie.setName("Naaame");
 		Assert.assertTrue(proxy.updateTradeSerie(tradeSerie));
 	}
+
 	@Ignore
 	@Test(expected = NullPointerException.class)
 	public void itShouldNotUpdate() {
@@ -102,6 +104,7 @@ public class TradeSerieTest {
 		tradeSerie.setName("Naaame");
 		Assert.assertTrue(proxy.updateTradeSerie(tradeSerie));
 	}
+
 	@Ignore
 	@Test
 	public void itShouldDisplayAdmin() {
@@ -112,6 +115,7 @@ public class TradeSerieTest {
 		Assert.assertEquals(1, serieList.size());
 
 	}
+
 	@Ignore
 	@Test(expected = AssertionFailedError.class)
 	public void itShouldNotDisplayAdmin() {

@@ -1,2 +1,7 @@
 /src
 /build
+/.metadata
+/.settings
+/bin
+/.classpath
+/.project

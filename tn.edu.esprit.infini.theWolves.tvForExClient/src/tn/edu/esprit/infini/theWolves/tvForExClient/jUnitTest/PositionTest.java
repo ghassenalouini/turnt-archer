@@ -10,17 +10,16 @@ import org.junit.Test;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Bank;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Position;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CurrencyFacadeRemote;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CustomerFacadeRemote;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.PositionFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CurrencyFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CustomerFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.PositionFacadeRemote;
 
 public class PositionTest {
 
 	private PositionFacadeRemote proxy;
 	private CurrencyFacadeRemote proxyCu;
 	private CustomerFacadeRemote proxyCust;
-	
-	
+
 	@Before
 	public void test() {
 
@@ -44,28 +43,24 @@ public class PositionTest {
 		}
 
 	}
-	
-	
+
 	@Test
 	public void testUpdatePosition() {
 
-		
 		// System.out.println(proxy.updatePosition(transaction));
-		
+
 	}
 
-	
 	@Test
 	public void testfindPostionbyBankCuurency() {
 
 		Bank bank = (Bank) proxyCust.findCustomerById(1);
 		Currency currency = proxyCu.findCurrencyById(1);
-		
+
 		Position position = proxy.findPositionByBankCurrency(bank, currency);
 
 		System.out.println(position.getId());
-		
+
 	}
-	
-	
+
 }

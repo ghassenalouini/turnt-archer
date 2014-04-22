@@ -18,7 +18,7 @@ import org.junit.Test;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Bank;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Customer;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Trader;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CustomerFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CustomerFacadeRemote;
 
 @SuppressWarnings("deprecation")
 public class CustomerTest {
@@ -34,7 +34,7 @@ public class CustomerTest {
 			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CustomerFacade!"
 					+ CustomerFacadeRemote.class.getCanonicalName();
 
-			proxy =(CustomerFacadeRemote) context.lookup(jndiName);
+			proxy = (CustomerFacadeRemote) context.lookup(jndiName);
 
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
@@ -51,7 +51,7 @@ public class CustomerTest {
 		bank.setLogin("bank");
 		bank.setPassword("bank");
 		bank.setName("bank");
-		
+
 		Trader tr = new Trader("wolves", "wolves", "wolves", 22485569,
 				" wolves@esprit.tn", 0, "AdministrateurTrader", bank);
 		// Assert.assertTrue(proxy.addCustomer(bank));

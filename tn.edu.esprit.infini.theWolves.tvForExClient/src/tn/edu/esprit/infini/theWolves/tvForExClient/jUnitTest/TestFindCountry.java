@@ -1,7 +1,5 @@
 package tn.edu.esprit.infini.theWolves.tvForExClient.jUnitTest;
 
-import static org.junit.Assert.*;
-
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -12,7 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Country;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CountryFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CountryFacadeRemote;
 
 public class TestFindCountry {
 	private CountryFacadeRemote proxy;
@@ -29,7 +27,7 @@ public class TestFindCountry {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Test
 	public void itShouldFindCountry() {
 		Country ctr = (Country) proxy.findCountryById(1);
@@ -37,6 +35,5 @@ public class TestFindCountry {
 		Assert.assertEquals("Tunisie", ctr.getName());
 
 	}
-
 
 }

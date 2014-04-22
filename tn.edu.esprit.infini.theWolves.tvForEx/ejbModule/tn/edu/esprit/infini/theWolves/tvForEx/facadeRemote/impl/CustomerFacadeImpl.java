@@ -14,7 +14,7 @@ import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CustomerFa
 import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CustomerServicesLocal;
 
 @Stateless
-public class CustomerFacade implements CustomerFacadeRemote {
+public class CustomerFacadeImpl implements CustomerFacadeRemote {
 
 	@EJB
 	CustomerServicesLocal customerServicesLocal;

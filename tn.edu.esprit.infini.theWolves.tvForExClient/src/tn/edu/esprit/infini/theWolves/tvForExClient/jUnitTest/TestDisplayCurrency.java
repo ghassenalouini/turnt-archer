@@ -1,7 +1,5 @@
 package tn.edu.esprit.infini.theWolves.tvForExClient.jUnitTest;
 
-import static org.junit.Assert.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,15 +13,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CurrencyFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CurrencyFacadeRemote;
 
 @SuppressWarnings({ "unused", "deprecation" })
 public class TestDisplayCurrency {
 
-	
-	
 	private CurrencyFacadeRemote proxy;
-	
+
 	@Before
 	public void test() {
 
@@ -39,8 +35,7 @@ public class TestDisplayCurrency {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
 	@Test
 	public void itShouldDisplayCurrencies() {
 
