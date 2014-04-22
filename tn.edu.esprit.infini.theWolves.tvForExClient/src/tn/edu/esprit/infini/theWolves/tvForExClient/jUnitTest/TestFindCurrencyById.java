@@ -1,7 +1,5 @@
 package tn.edu.esprit.infini.theWolves.tvForExClient.jUnitTest;
 
-import static org.junit.Assert.*;
-
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -12,14 +10,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CurrencyFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CurrencyFacadeRemote;
 
 @SuppressWarnings({ "unused", "deprecation" })
 public class TestFindCurrencyById {
 
-private CurrencyFacadeRemote proxy;
-	
-	
+	private CurrencyFacadeRemote proxy;
+
 	@Before
 	public void test() {
 
@@ -35,7 +32,7 @@ private CurrencyFacadeRemote proxy;
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Test
 	public void itShouldFindCurrencyById() {
 		Currency currency = proxy.findCurrencyById(1);

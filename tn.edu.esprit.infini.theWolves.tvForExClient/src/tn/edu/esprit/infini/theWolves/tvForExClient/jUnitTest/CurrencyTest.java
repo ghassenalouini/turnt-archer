@@ -15,14 +15,12 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CurrencyFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CurrencyFacadeRemote;
 
 @SuppressWarnings("deprecation")
 public class CurrencyTest {
 
 	private CurrencyFacadeRemote proxy;
-
-	
 
 	@Before
 	public void test() {
@@ -51,7 +49,6 @@ public class CurrencyTest {
 		Assert.assertTrue(proxy.addCurrency(currency));
 
 	}
-
 
 	@Ignore
 	@Test

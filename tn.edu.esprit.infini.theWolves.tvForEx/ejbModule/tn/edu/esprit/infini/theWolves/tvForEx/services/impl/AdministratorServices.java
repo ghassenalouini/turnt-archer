@@ -19,13 +19,13 @@ public class AdministratorServices implements AdministratorServicesLocal {
 
 	@PersistenceContext
 	private EntityManager entityManager;
-	
-    /**
-     * Default constructor. 
-     */
-    public AdministratorServices() {
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * Default constructor.
+	 */
+	public AdministratorServices() {
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public boolean addAdmin(Administrator administrator) {
@@ -38,7 +38,7 @@ public class AdministratorServices implements AdministratorServicesLocal {
 			System.err.println("error add admin ...");
 		}
 		return b;
-		
+
 	}
 
 	@Override
@@ -77,13 +77,10 @@ public class AdministratorServices implements AdministratorServicesLocal {
 	public List<Administrator> findAllAdmins() {
 		String jpql = "select a from Administrator a";
 		return entityManager.createQuery(jpql).getResultList();
-	
+
 	}
 
-	@Override
-	public boolean updateCurrency(Administrator administrator) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
+	
 
 }

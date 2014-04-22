@@ -1,4 +1,4 @@
-package tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces;
+package tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces;
 
 import java.util.List;
 

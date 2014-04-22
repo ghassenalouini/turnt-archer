@@ -13,7 +13,7 @@ import org.junit.Test;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Country;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CountryFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CountryFacadeRemote;
 
 public class CountryTest {
 	private CountryFacadeRemote proxy;
@@ -35,7 +35,7 @@ public class CountryTest {
 	@Test
 	public void itShouldAdd() {
 		Currency cr = new Currency("dollar", 1, "USD");
-		cr.setId(1);
+		
 		Country country = new Country("Tunisie", "TN");
 
 		Assert.assertTrue(proxy.addCountry(country));

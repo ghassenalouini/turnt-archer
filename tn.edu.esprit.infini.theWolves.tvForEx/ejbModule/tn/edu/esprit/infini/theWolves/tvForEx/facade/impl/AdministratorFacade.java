@@ -10,7 +10,8 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Administrator;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.AdministratorFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.AdministratorFacadeLocal;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.AdministratorFacadeRemote;
 import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.AdministratorServicesLocal;
 
 /**
@@ -18,7 +19,8 @@ import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.AdministratorS
  */
 @Stateless
 @LocalBean
-public class AdministratorFacade implements AdministratorFacadeRemote {
+public class AdministratorFacade implements AdministratorFacadeRemote,
+		AdministratorFacadeLocal {
 	@EJB
 	AdministratorServicesLocal administratorServicesLocal;
 	@PersistenceContext

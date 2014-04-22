@@ -1,4 +1,4 @@
-package tn.edu.esprit.infini.theWolves.tvForEx.facade.impl;
+package tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.impl;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CurrencyFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CurrencyFacadeRemote;
 import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CurrencyServicesLocal;
 
 /**

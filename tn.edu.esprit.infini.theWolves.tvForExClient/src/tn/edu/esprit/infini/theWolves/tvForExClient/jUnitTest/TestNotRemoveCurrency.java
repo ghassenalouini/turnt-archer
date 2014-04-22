@@ -10,12 +10,12 @@ import junit.framework.AssertionFailedError;
 import org.junit.Before;
 import org.junit.Test;
 
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CurrencyFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CurrencyFacadeRemote;
 
 public class TestNotRemoveCurrency {
 
 	private CurrencyFacadeRemote proxy;
-	
+
 	@Before
 	public void test() {
 
@@ -31,8 +31,7 @@ public class TestNotRemoveCurrency {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
 	@Test(expected = AssertionFailedError.class)
 	public void itShouldNotRemoveCurrency() {
 		Assert.assertTrue(proxy.removeCurrency(proxy.findCurrencyById(99)));

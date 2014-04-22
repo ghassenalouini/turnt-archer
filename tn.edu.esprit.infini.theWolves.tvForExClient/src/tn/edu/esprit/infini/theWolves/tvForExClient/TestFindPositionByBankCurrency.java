@@ -8,9 +8,9 @@ import tn.edu.esprit.infini.theWolves.tvForEx.domain.Bank;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Customer;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Position;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CurrencyFacadeRemote;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CustomerFacadeRemote;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.PositionFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CurrencyFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CustomerFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.PositionFacadeRemote;
 
 public class TestFindPositionByBankCurrency {
 
@@ -27,17 +27,16 @@ public class TestFindPositionByBankCurrency {
 					+ CustomerFacadeRemote.class.getCanonicalName();
 			CustomerFacadeRemote proxyCust = (CustomerFacadeRemote) context
 					.lookup(jndiNameCust);
-			
+
 			String jndiNameCu = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyFacade!"
 					+ CurrencyFacadeRemote.class.getCanonicalName();
 			CurrencyFacadeRemote proxyCu = (CurrencyFacadeRemote) context
 					.lookup(jndiNameCu);
 
-
 			Customer bank = proxyCust.findCustomerById(2);
 			Currency currency = proxyCu.findCurrencyById(1);
-			Position position = proxy
-					.findPositionByBankCurrency((Bank) bank, currency);
+			Position position = proxy.findPositionByBankCurrency((Bank) bank,
+					currency);
 
 			System.out.println(position.getId());
 

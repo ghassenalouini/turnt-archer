@@ -1,4 +1,4 @@
-package tn.edu.esprit.infini.theWolves.tvForEx.facade.impl;
+package tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.impl;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Customer;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Position;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Transaction;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.PositionFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.PositionFacadeRemote;
 import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.PositionServicesLocal;
 
 @Stateless

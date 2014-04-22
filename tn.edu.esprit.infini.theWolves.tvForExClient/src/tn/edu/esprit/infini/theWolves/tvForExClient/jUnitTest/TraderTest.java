@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Trader;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.TraderFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.TraderFacadeRemote;
 
 public class TraderTest {
 
@@ -42,7 +42,7 @@ public class TraderTest {
 		trader.setName("trader 1");
 
 		proxy.addTrader(trader);
-		
+
 	}
 
 	@Test

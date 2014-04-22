@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>TV-ForEx</title>
+
+	<!-- // IOS webapp icons // -->
+
+	<meta name="apple-mobile-web-app-title" content="Karma Webapp" />
+	<link rel="apple-touch-icon-precomposed" sizes="152x152"
+		href="../RessourcesPlatform/images/mobile/apple-touch-icon-152x152.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144"
+		href="../RessourcesPlatform/images/mobile/apple-touch-icon-144x144.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="120x120"
+		href="../RessourcesPlatform/images/mobile/apple-touch-icon-120x120.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114"
+		href="../RessourcesPlatform/images/mobile/apple-touch-icon-114x114.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="76x76"
+		href="../RessourcesPlatform/images/mobile/apple-touch-icon-76x76.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72"
+		href="../RessourcesPlatform/images/mobile/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon-precomposed"
+		href="../RessourcesPlatform/images/mobile/apple-touch-icon.png" />
+	<link rel="shortcut icon"
+		href="../RessourcesPlatform/images/favicons/favicon.ico" />
+
+	<!-- // IOS webapp splash screens // -->
+
+	<link rel="apple-touch-startup-image"
+		media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)"
+		href="../RessourcesPlatform/images/mobile/apple-touch-startup-image-1536x2008.html" />
+	<link rel="apple-touch-startup-image"
+		media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)"
+		href="../RessourcesPlatform/images/mobile/apple-touch-startup-image-1496x2048.html" />
+	<link rel="apple-touch-startup-image"
+		media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)"
+		href="../RessourcesPlatform/images/mobile/apple-touch-startup-image-768x1004.html" />
+	<link rel="apple-touch-startup-image"
+		media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)"
+		href="../RessourcesPlatform/images/mobile/apple-touch-startup-image-748x1024.html" />
+	<link rel="apple-touch-startup-image"
+		media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
+		href="../RessourcesPlatform/images/mobile/apple-touch-startup-image-640x1096.html" />
+	<link rel="apple-touch-startup-image"
+		media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"
+		href="../RessourcesPlatform/images/mobile/apple-touch-startup-image-640x920.html" />
+	<link rel="apple-touch-startup-image"
+		media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)"
+		href="../RessourcesPlatform/images/mobile/apple-touch-startup-image-320x460.html" />
+
+	<!-- // Windows 8 tile // -->
+
+	<meta name="application-name" content="Karma Webapp" />
+	<meta name="msapplication-TileColor" content="#333333" />
+	<meta name="msapplication-TileImage"
+		content="images/mobile/windows8-icon.html" />
+
+	<!-- // Handheld devices misc // -->
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<!-- // Stylesheets // -->
+
+	<link rel="stylesheet"
+		href="../RessourcesPlatform/bootstrap/core/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet"
+		href="../RessourcesPlatform/bootstrap/select2/select2.css" />
+	<link rel="stylesheet"
+		href="../RessourcesPlatform/bootstrap/datepicker/css/datepicker.css" />
+	<link rel="stylesheet"
+		href="../RessourcesPlatform/bootstrap/fileupload/bootstrap-fileupload.min.css" />
+	<link rel="stylesheet"
+		href="../RessourcesPlatform/bootstrap/typeahead/typeahead.min.css" />
+	<link rel="stylesheet"
+		href="../RessourcesPlatform/bootstrap/colorpicker/css/colorpicker.css" />
+	<link rel="stylesheet"
+		href="../RessourcesPlatform/bootstrap/timepicker/css/bootstrap-timepicker.min.css" />
+	<link rel="stylesheet"
+		href="../RessourcesPlatform/fontawesome/css/font-awesome.min.css" />
+	<link rel="stylesheet"
+		href="../RessourcesPlatform/css/bootstrap-custom.css" />
+	<link rel="stylesheet"
+		href="../RessourcesPlatform/css/bootstrap-extended.css" />
+	<link rel="stylesheet" href="../RessourcesPlatform/css/animate.min.css" />
+	<link rel="stylesheet" href="../RessourcesPlatform/css/helpers.css" />
+	<link rel="stylesheet" href="../RessourcesPlatform/css/base.min.css" />
+	<link rel="stylesheet" href="../RessourcesPlatform/css/dark-theme.css" />
+	<link rel="stylesheet"
+		href="../RessourcesPlatform/css/mediaqueries.css" />
+
+	<!-- // Helpers // -->
+
+	<script src="../RessourcesPlatform/js/plugins/modernizr.min.js"></script>
+	<script src="../RessourcesPlatform/js/plugins/mobiledevices.js"></script>
+
+	<!-- // jQuery core // -->
+
+	<script src="../RessourcesPlatform/js/libs/jquery-1.11.0.min.js"></script>
+	<script src="../RessourcesPlatform/js/libs/jquery-ui-1.10.4.min.js"></script>
+
+	<!-- // Bootstrap // -->
+
+	<script
+		src="../RessourcesPlatform/bootstrap/core/dist/js/bootstrap.min.js"></script>
+	<script src="../RessourcesPlatform/bootstrap/select2/select2.min.js"></script>
+	<script
+		src="../RessourcesPlatform/bootstrap/bootboxjs/bootboxjs.min.js"></script>
+	<script src="../RessourcesPlatform/bootstrap/holder/holder.min.js"></script>
+	<script
+		src="../RessourcesPlatform/bootstrap/typeahead/typeahead.min.js"></script>
+	<script
+		src="../RessourcesPlatform/bootstrap/datepicker/js/bootstrap-datepicker.min.js"></script>
+	<script
+		src="../RessourcesPlatform/bootstrap/fileupload/bootstrap-fileupload.min.js"></script>
+	<script
+		src="../RessourcesPlatform/bootstrap/inputmask/bootstrap-inputmask.min.js"></script>
+	<script
+		src="../RessourcesPlatform/bootstrap/colorpicker/js/bootstrap-colorpicker.min.js"></script>
+	<script
+		src="../RessourcesPlatform/bootstrap/timepicker/js/bootstrap-timepicker.min.js"></script>
+
+	<!-- // Custom/premium plugins // -->
+
+	<script
+		src="../RessourcesPlatform/js/plugins/responsivetables.1.0.min.js"></script>
+	<script
+		src="../RessourcesPlatform/js/plugins/responsivehelper.1.0.min.js"></script>
+	<script src="../RessourcesPlatform/js/plugins/mainmenu.1.0.min.js"></script>
+	<script src="../RessourcesPlatform/js/plugins/easyfiletree.1.0.min.js"></script>
+	<script src="../RessourcesPlatform/js/plugins/autosaveforms.1.0.min.js"></script>
+	<script src="../RessourcesPlatform/js/plugins/chainedinputs.1.0.min.js"></script>
+	<script
+		src="../RessourcesPlatform/js/plugins/checkboxtoggle.1.0.min.js"></script>
+	<script
+		src="../RessourcesPlatform/js/plugins/bootstraptabsextend.1.0.min.js"></script>
+	<script src="../RessourcesPlatform/js/plugins/lockscreen.1.0.min.js"></script>
+	<script src="../RessourcesPlatform/js/plugins/autoexpand.1.0.min.js"></script>
+	<script src="../RessourcesPlatform/js/plugins/notify.1.0.min.js"></script>
+	<script src="../RessourcesPlatform/js/plugins/nanogress.1.0.min.js"></script>
+	<script src="../RessourcesPlatform/js/plugins/powerwizard.1.0.min.js"></script>
+	<script src="../RessourcesPlatform/js/plugins/simpleselect.1.0.min.js"></script>
+	<script
+		src="./RessourcesPlatform/js/plugins/tinycontextmenu.1.0.min.js"></script>
+
+	<!-- // Third-party plugins // -->
+
+	<script src="../RessourcesPlatform/js/plugins/tinyscrollbar.min.js"></script>
+	<script src="../RessourcesPlatform/js/plugins/jquery.knob.js"></script>
+	<script src="../RessourcesPlatform/js/plugins/prism.min.js"></script>
+	<script src="../RessourcesPlatform/js/plugins/h5f.min.js"></script>
+	<script
+		src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
+	<script src="../RessourcesPlatform/js/plugins/gmap3.min.js"></script>
+	<script
+		src="../RessourcesPlatform/js/plugins/jquery.tablesorter.min.js"></script>
+	<script
+		src="../RessourcesPlatform/js/plugins/jquery.tablesorter.widgets.min.js"></script>
+	<script
+		src="../RessourcesPlatform/js/plugins/jquery.tablesorter.pager.min.js"></script>
+	<script src="../RessourcesPlatform/js/plugins/fullcalendar.min.js"></script>
+	<script src="../RessourcesPlatform/ckeditor/ckeditor.js"></script>
+	<script src="../RessourcesPlatform/js/plugins/hogan-2.0.0.js"></script>
+	<script src="../RessourcesPlatform/js/plugins/jquery.nouislider.min.js"></script>
+	<script src="../RessourcesPlatform/js/plugins/jquery.autosize-min.js"></script>
+	<script
+		src="../RessourcesPlatform/js/plugins/jquery.magnific-popup.min.js"></script>
+	<script src="../RessourcesPlatform/js/plugins/jquery.pwstrength.min.js"></script>
+	<script src="../RessourcesPlatform/js/plugins/jquery.mixitup.min.js"></script>
+	<script src="../RessourcesPlatform/js/plugins/jquery.vticker.min.js"></script>
+	<script src="../RessourcesPlatform/js/flot/jquery.flot.min.js"></script>
+	<script src="../RessourcesPlatform/js/flot/jquery.flot.resize.min.js"></script>
+	<script src="../RessourcesPlatform/js/flot/excanvas.min.js"></script>
+	<script src="../RessourcesPlatform/js/plugins/layout.min.js"></script>
+	<script src="../RessourcesPlatform/js/plugins/masonry.pkgd.min.js"></script>
+	<script src="../RessourcesPlatform/js/plugins/json2.js"></script>
+
+	<!-- // Custom //-->
+
+	<script src="../RessourcesPlatform/js/plugins/theme-demo.min.js"></script>
+
+</h:head>
+<h:body>
+	<div id="container" class="clearfix">
+
+		<!-- ******************************************** 
+         * SIDEBAR MAIN:                            *
+         *                                          *
+         * the part which contains the main         *
+         * navigation, logo, search and more...     *
+         * (parts can be in both sidebars).         *
+         ******************************************** -->
+
+		<aside id="sidebar-main" class="sidebar">
+
+			<div class="sidebar-logo">
+				<a href="index.html" id="logo-big"><h1>TV-ForEx</h1> </a>
+			</div>
+			<!-- End .sidebar-logo -->
+
+			<!-- ********** -->
+			<!-- NEW MODULE -->
+			<!-- ********** -->
+
+						<!-- End .sidebar-module -->
+						<ui:include src="./Sidebar.xhtml"/>
+
+			<div class="sidebar-line">
+				<!-- A seperator line -->
+			</div>
+
+			
+
+			<ul class="ext-tabs-sidebar">
+				<li class="active"><a href="#sidebar-tab-1"><i
+						class="fa fa-bars"></i> Navigation</a></li>
+				
+			</ul>
+			<!-- End .ext-tabs-sidebar -->
+			
+			<!-- End .tab-content -->
+
+			<div class="sidebar-line">
+				<!-- A seperator line -->
+			</div>
+
+
+<ui:include src="./SidebarMenu.xhtml"/>
+
+
+
+		</aside>
+		<!-- End aside -->
+
+		<!-- ********************************************
+             * SIDEBAR SEC:                             *
+             *                                          *
+             * the part which contains things like      *
+             * calendar, users, lists, blocks and       *
+             * much more.                               *
+             ******************************************** -->
+
+		<div id="sidebar-sec" class="sidebar">
+
+			<div class="sidebar-sec-top"></div>
+
+			<!-- ********** -->
+			<!-- NEW MODULE -->
+			<!-- ********** -->
+
+			<div class="sidebar-module">
+				<form class="input-group">
+					<input type="text" name="" class="form-control"
+						placeholder="Type A head..." id="typeahead-sidebar-search" />
+					<div class="input-group-btn">
+						<!-- can NOT be used with typeahead
+                        <a href="#" class="clear-input"><i class="fa fa-times-circle"></i></a>
+                        -->
+						<button class="btn btn-default" type="submit">
+							<i class="fa fa-search"></i>
+						</button>
+					</div>
+				</form>
+			</div>
+			<!-- End .sidebar-module -->
+
+			<div class="sidebar-line">
+				<!-- A seperator line -->
+			</div>
+
+			<!-- * Tabs can be removed, if so dont forget * -->
+			<!-- * to remove the .tab-pane divs(wrapper). * -->
+
+			<ul class="ext-tabs-sidebar">
+				<li class="active"><a href="#sidebar-tab-3"><i
+						class="fa fa-group"></i> Banks on line</a></li>
+				<li><a href="#sidebar-tab-4"><i class="fa fa-check"></i>
+						News</a></li>
+			</ul>
+			<!-- End .ext-tabs-sidebar -->
+			<ui:include src="./TabBar.xhtml"/>
+			<!-- End .tab-content -->
+
+			<div class="sidebar-line">
+				
+			</div>
+
+			<!-- ********** -->
+			<!-- NEW MODULE -->
+			<!-- ********** -->
+			
+		
+			<!-- End .sidebar-module -->
+		</div>
+		
+		
+
+		<div id="main" class="clearfix">
+
+			<!-- ******************************************** 
+             * MAIN HEADER:                             *
+             *                                          *  
+             * the part which contains the breadcrumbs, *
+             * dropdown menus, toggle sidebar button    *
+             ******************************************** -->
+
+			<header id="header-main">
+				<div class="header-main-top">
+					<div class="pull-left">
+
+						<!-- * This is the responsive logo * -->
+
+						<a href="index.html" id="logo-small"><h4>TV-ForEx</h4>
+							<h5></h5></a>
+					</div>
+					<div class="pull-right">
+
+						<!-- * This is the trigger that will show/hide the menu * -->
+						<!-- * if the layout is in responsive mode              * -->
+
+						<a href="#" id="responsive-menu-trigger"> <i
+							class="fa fa-bars"></i>
+						</a>
+					</div>
+				</div>
+				<!-- End #header-main-top -->		
+			</header>
+			<!-- End #header-main -->
+
+			<div id="content" class="clearfix">
+
+				<!-- ********************************************
+                 * HEADER SEC:                              *
+                 *                                          *   
+                 * the part which contains the page title,  *
+                 * buttons and dropdowns.                   *
+                 ******************************************** -->
+
+			<ui:include src="./HederTemp.xhtml" />
+				<!-- End #header-sec -->
+
+				<!-- ********************************************
+                     * WINDOW:                                  *
+                     *                                          *
+                     * the part which contains the main content *
+                     ******************************************** -->
+
+	<ui:include src="./WindowBar.xhtml" />
+				<!-- End .window -->
+
+				<!-- ********************************************
+                     * FOOTER MAIN:                             *
+                     *                                          *
+                     * the part which contains things like      * 
+                     * chat, buttons, copyright and             *
+                     * dropup menu(s).                          *
+                     ******************************************** -->
+
+				<ui:include src="./FooterChat.xhtml" />
+				<!-- End #footer-main -->
+			</div>
+			<!-- End #content -->
+		</div>
+		<!-- End #main -->
+	</div>
+	<!-- End #container -->
+
+	<!--Modal -->
+	<div class="modal fade" id="modal-update" tabindex="-1" role="dialog"
+		aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">times</button>
+					<h4 class="modal-title">Update 13.2.1 available</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row" style="margin-bottom: -20px">
+						<div class="col-xs-3">
+							<i class="fa fa-download" style="font-size: 120px; color: #ccc"></i>
+						</div>
+						<div class="col-xs-9">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+								Suspendisse laoreet molestie justo at pulvinar. In hac habitasse
+								platea dictumst. Proin accumsan, tellus quis varius molestie, mi
+								dolor facilisis risus, quis tristique neque augue eget nunc.
+								Curabitur turpis sapien, lacinia in lacinia nec,</p>
+							<div class="spacer-20"></div>
+							<h4>Whats new in version 13.2.1</h4>
+							<div class="spacer-20"></div>
+							<ul>
+								<li>Suspendisse laoreet molestie justo at pulvinar.</li>
+								<li>Proin accumsan, tellus quis varius molestie, mi dolor
+									facilisis risus.</li>
+								<li>In hac habitasse platea dictumst. Proin accumsan,
+									tellus quis varius molestie dolum ipkut. Curabitur turpis
+									sapien lorem.</li>
+								<li>Curabitur turpis sapien, lacinia in lacinia necr.</li>
+								<li>Lorem ipsum dolor sit amet, consectetur adipiscing
+									elit. Suspendisse laoreet molestie justo.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal">Close</button>
+					<button class="btn btn-primary pull-right">Get it now</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</h:body>
+</html>

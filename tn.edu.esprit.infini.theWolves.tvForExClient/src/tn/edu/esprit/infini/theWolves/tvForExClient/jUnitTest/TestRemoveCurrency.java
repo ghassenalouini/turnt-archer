@@ -9,7 +9,7 @@ import junit.framework.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CurrencyFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CurrencyFacadeRemote;
 
 @SuppressWarnings("deprecation")
 public class TestRemoveCurrency {

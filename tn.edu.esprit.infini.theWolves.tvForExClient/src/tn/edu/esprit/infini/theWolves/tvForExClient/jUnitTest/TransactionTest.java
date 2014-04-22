@@ -10,9 +10,9 @@ import org.junit.Test;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Bank;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Customer;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CurrencyFacadeRemote;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CustomerFacadeRemote;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.TransactionFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CurrencyFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CustomerFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.TransactionFacadeRemote;
 
 public class TransactionTest {
 
@@ -57,17 +57,7 @@ public class TransactionTest {
 		Currency currency2 = proxyCu.findCurrencyById(5);
 		Currency currencyCross2 = proxyCu.findCurrencyById(6);
 
-		proxy.addCrossTransaction(customer2, customerBid2, currency2,
-				currencyCross2, "buy", 500, 3.00F, 9.00F);
-
-		proxy.addCrossTransaction(customer, customerBid, currency,
-				currencyCross, "buy", 200, 2.10F, 17.0F);
-
-		System.out.println(proxy.addCrossTransaction(customer2, customerBid2,
-				currency2, currencyCross2, "buy", 500, 3.00F, 9.00F));
-
-		System.out.println(proxy.addTransaction(customer, currency, "sell",
-				1000, 2.2F));
+		
 
 	}
 
@@ -77,7 +67,7 @@ public class TransactionTest {
 		Customer bank = proxyCust.findCustomerById(1);
 		Currency currency = proxyCu.findCurrencyById(1);
 
-		System.out.println(proxy.createOffer((Bank) bank, currency, 2.2F));
+		
 
 	}
 

@@ -10,12 +10,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CurrencyFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CurrencyFacadeRemote;
 
 public class TestNotUpdateCurrency {
 
 	private CurrencyFacadeRemote proxy;
-	
+
 	@Before
 	public void test() {
 
@@ -31,7 +31,7 @@ public class TestNotUpdateCurrency {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Test(expected = NullPointerException.class)
 	public void itShouldNotUpdateCurrency() {
 		Currency currency = proxy.findCurrencyById(99);

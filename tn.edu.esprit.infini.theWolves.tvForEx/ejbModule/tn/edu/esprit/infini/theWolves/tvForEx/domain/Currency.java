@@ -4,8 +4,6 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -35,14 +33,6 @@ public class Currency implements Serializable {
 		super();
 	}
 
-	/** retourne l'id de la classe currency qui est de type int **/
-	
-
-	/** Modifier l'id de la classe currency et prend en parametre un entier **/
-
-
-	/** retourne le label de la currecy (String) **/
-	
 	@Id
 	public String getLabel() {
 		return this.label;

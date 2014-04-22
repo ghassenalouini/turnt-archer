@@ -20,7 +20,7 @@ import tn.edu.esprit.infini.theWolves.tvForEx.domain.CentralBank;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Corporate;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Customer;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Trader;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CustomerFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CustomerFacadeRemote;
 
 @SuppressWarnings("deprecation")
 public class CustomerTest {
@@ -58,16 +58,22 @@ public class CustomerTest {
 		CentralBank centralBank = new CentralBank();
 		centralBank.setLogin("cb");
 		centralBank.setPassword("cb");
-		
 
 		Trader trader = new Trader();
 		trader.setBank(bank);
 		trader.setLogin("trader");
 		trader.setPassword("trader");
 
-		
-
 		Assert.assertTrue(proxy.addCustomer(centralBank));
+
+		bank.setLogin("bank");
+		bank.setPassword("bank");
+		bank.setName("bank");
+
+		Trader tr = new Trader("wolves", "wolves", "wolves", 22485569,
+				" wolves@esprit.tn", 0, "AdministrateurTrader", bank);
+		// Assert.assertTrue(proxy.addCustomer(bank));
+		Assert.assertTrue(proxy.addCustomer(bank));
 
 	}
 

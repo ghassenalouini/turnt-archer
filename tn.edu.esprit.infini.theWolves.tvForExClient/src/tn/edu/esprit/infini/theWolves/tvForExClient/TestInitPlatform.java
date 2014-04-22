@@ -7,8 +7,8 @@ import javax.naming.NamingException;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Bank;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Corporate;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CurrencyFacadeRemote;
-import tn.edu.esprit.infini.theWolves.tvForEx.facade.interfaces.CustomerFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CurrencyFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CustomerFacadeRemote;
 
 public class TestInitPlatform {
 
@@ -26,8 +26,6 @@ public class TestInitPlatform {
 			CustomerFacadeRemote proxy2 = (CustomerFacadeRemote) context
 					.lookup(jndiName2);
 
-			
-			
 			Currency currency = new Currency();
 			currency.setLabel("euro");
 			currency.setInitials("EUR");
@@ -74,8 +72,7 @@ public class TestInitPlatform {
 			proxy.addCurrency(currency5);
 			proxy.addCurrency(currency6);
 			proxy.addCurrency(currency7);
-			
-			
+
 			proxy2.addCustomer(bank);
 			proxy2.addCustomer(bank2);
 
@@ -92,7 +89,6 @@ public class TestInitPlatform {
 			corporate2.setTypeActivity("Importator");
 			corporate2.setLogin("login");
 			corporate2.setPassword("password");
-			
 
 			proxy2.addCustomer(corporate2);
 			proxy2.addCustomer(corporate);
