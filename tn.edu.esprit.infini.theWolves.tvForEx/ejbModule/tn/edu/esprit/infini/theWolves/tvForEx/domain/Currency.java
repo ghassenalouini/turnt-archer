@@ -4,21 +4,18 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 /**
  * La classe Currency contient 4 attributs id(int),label(String)
- * "comme [euro,dollarAmericain...], unity(int) qui est l'unité de chaque devise comme CHF =10 et un dernier attribut initialsqui prend les premiereslettres de chauqe devise comme "
+ * "comme [euro,dollarAmericain...], unity(int) qui est l'unitï¿½ de chaque devise comme CHF =10 et un dernier attribut initialsqui prend les premiereslettres de chauqe devise comme "
  * euro=>EUR"
  **/
 
 @Entity
 public class Currency implements Serializable {
 
-	
 	private String label;
 	private int unity;
 	private String initials;
@@ -31,11 +28,11 @@ public class Currency implements Serializable {
 
 	private List<Country> countries;
 
-	/** un parametre par defaut de la classe Currecy **/
+	/** un parametre par defaut de la classe Currency **/
 	public Currency() {
 		super();
 	}
-	/** retourne le label de la currecy (String) **/
+
 	@Id
 	public String getLabel() {
 		return this.label;
@@ -81,13 +78,13 @@ public class Currency implements Serializable {
 		this.transactionsCross = transactionsCross;
 	}
 
-	/** retourne l'unité de la devise **/
+	/** retourne l'unitï¿½ de la devise **/
 	public int getUnity() {
 		return unity;
 	}
 
 	/**
-	 * permet de modifier la l'unité de la devise en entrant comme parametre
+	 * permet de modifier la l'unitï¿½ de la devise en entrant comme parametre
 	 * unentier (int)
 	 **/
 	public void setUnity(int unity) {
@@ -96,7 +93,7 @@ public class Currency implements Serializable {
 
 	/**
 	 * un constructeur de laclasse Currency etqui prend en parametre le
-	 * label(String) l'unité (int) et l'initials(String)
+	 * label(String) l'unitï¿½ (int) et l'initials(String)
 	 **/
 	public Currency(String label, int unity, String initials) {
 		super();

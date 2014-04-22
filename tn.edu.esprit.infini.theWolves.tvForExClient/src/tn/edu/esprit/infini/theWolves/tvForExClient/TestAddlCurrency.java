@@ -14,7 +14,7 @@ public class TestAddlCurrency {
 		try {
 			Context context = new InitialContext();
 
-			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyFacade!"
+			String jndiName = "TV-ForEx/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyFacade!"
 					+ CurrencyFacadeRemote.class.getCanonicalName();
 			CurrencyFacadeRemote proxy = (CurrencyFacadeRemote) context
 					.lookup(jndiName);

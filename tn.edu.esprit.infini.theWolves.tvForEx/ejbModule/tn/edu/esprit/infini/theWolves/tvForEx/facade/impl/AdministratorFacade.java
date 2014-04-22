@@ -62,17 +62,15 @@ public class AdministratorFacade implements AdministratorFacadeRemote,
 	public Administrator logInAdmin(String login, String password) {
 
 		String jpql = "select c from Administrator c where c.login=:param1 and c.password=:param2";
-		Administrator b = null;
+		Administrator b ;
 
 		Query query = (Query) entityManager.createQuery(jpql);
 		query.setParameter("param1", login);
 		query.setParameter("param2", password);
 
-		try {
-			b = (Administrator) query.getSingleResult();
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
+		
+			 b = (Administrator) query.getSingleResult();
+		
 
 		return b;
 

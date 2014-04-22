@@ -16,6 +16,8 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Bank;
+import tn.edu.esprit.infini.theWolves.tvForEx.domain.CentralBank;
+import tn.edu.esprit.infini.theWolves.tvForEx.domain.Corporate;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Customer;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Trader;
 import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CustomerFacadeRemote;
@@ -31,7 +33,7 @@ public class CustomerTest {
 		try {
 			Context context = new InitialContext();
 
-			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CustomerFacade!"
+			String jndiName = "TV-ForEx/tn.edu.esprit.infini.theWolves.tvForEx/CustomerFacade!"
 					+ CustomerFacadeRemote.class.getCanonicalName();
 
 			proxy = (CustomerFacadeRemote) context.lookup(jndiName);
@@ -45,9 +47,25 @@ public class CustomerTest {
 	@Test
 	public void itShouldAddCustomer() {
 
-		// Customer customer = new Customer("bank1", "a", "b", 334444,
-		// "aee@ea.com");
 		Bank bank = new Bank();
+		bank.setLogin("bank");
+		bank.setPassword("bank");
+
+		Corporate corporate = new Corporate();
+		corporate.setLogin("corporate");
+		corporate.setPassword("corporate");
+
+		CentralBank centralBank = new CentralBank();
+		centralBank.setLogin("cb");
+		centralBank.setPassword("cb");
+
+		Trader trader = new Trader();
+		trader.setBank(bank);
+		trader.setLogin("trader");
+		trader.setPassword("trader");
+
+		Assert.assertTrue(proxy.addCustomer(centralBank));
+
 		bank.setLogin("bank");
 		bank.setPassword("bank");
 		bank.setName("bank");

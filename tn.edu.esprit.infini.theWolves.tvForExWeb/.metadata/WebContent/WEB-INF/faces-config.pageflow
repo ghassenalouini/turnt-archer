@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13960489615940" configfile="/tn.edu.esprit.infini.theWolves.tvForExWeb/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="WelcomeTvForex.xhtml" x="106" y="289" id="pf13970786115120" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf13970845308226 pf13972062519230" path="/WelcomeTvForex.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="Pages/Platfrom/Login.xhtml" x="366" y="175" id="pf13970845308227" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf13970865614688" inlinks="pf13970845308226" path="/Pages/Platfrom/Login.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="Pages/Platfrom/Register.xhtml" x="600" y="168" id="pf13970865614699" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf13970865614688" path="/Pages/Platfrom/Register.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="Pages/Platfrom/AdminHome.xhtml" x="265" y="121" id="pf13972062519251" inlinks="pf13972062519230" path="/Pages/Platfrom/AdminHome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="WelcomeTvForex.xhtml" x="106" y="289" id="pf13970786115120" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf13970845308226 pf13972062519230" path="/WelcomeTvForex.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Pages/Platfrom/Login.xhtml" x="432" y="336" id="pf13970845308227" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf13970865614688" inlinks="pf13970845308226" path="/Pages/Platfrom/Login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Pages/Platfrom/Register.xhtml" x="648" y="336" id="pf13970865614699" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf13970865614688" path="/Pages/Platfrom/Register.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Pages/Platfrom/AdminHome.xhtml" x="228" y="12" id="pf13972062519251" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf13972062519230" path="/Pages/Platfrom/AdminHome.xhtml"/>
   <links id="pf13970845308226" target="pf13970845308227" source="pf13970786115120" outcome="navtoLogin" redirect="true"/>
   <links id="pf13970865614688" target="pf13970865614699" source="pf13970845308227" outcome="navtoregister"/>
   <links id="pf13972062519230" target="pf13972062519251" source="pf13970786115120" outcome="navtohome" redirect="true"/>

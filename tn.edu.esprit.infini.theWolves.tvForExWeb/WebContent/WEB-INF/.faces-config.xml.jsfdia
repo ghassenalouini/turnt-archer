@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#WelcomeTvForex.xhtml"
+  PATH="/WelcomeTvForex.xhtml" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#WelcomeTvForex.xhtml:0" NAME="item"
+   PATH="/WelcomeTvForex.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="navtoLogin::#Pages#Platfrom#Login.xhtml"
+    NAME="output" PATH="/Pages/Platfrom/Login.xhtml"
+    TARGET="rules:#Pages#Platfrom#Login.xhtml" TITLE="navtoLogin" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#WelcomeTvForex.xhtml:1" NAME="item1"
+   PATH="/WelcomeTvForex.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="navtohome::#Pages#Platfrom#AdminHome.xhtml"
+    NAME="output" PATH="/Pages/Platfrom/AdminHome.xhtml"
+    TARGET="rules:#Pages#Platfrom#AdminHome.xhtml" TITLE="navtohome" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#Pages#Platfrom#Login.xhtml"
+  PATH="/Pages/Platfrom/Login.xhtml" SHAPE="256,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#Pages#Platfrom#Login.xhtml:0" NAME="item"
+   PATH="/Pages/Platfrom/Login.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="navtoregister::#Pages#Platfrom#Register.xhtml" NAME="output"
+    PATH="/Pages/Platfrom/Register.xhtml"
+    TARGET="rules:#Pages#Platfrom#Register.xhtml" TITLE="navtoregister" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#Pages#Platfrom#Login.xhtml:1" NAME="item1"
+   PATH="/Pages/Platfrom/Login.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="success::#Pages#Platfrom#AdminHome.xhtml"
+    NAME="output" PATH="/Pages/Platfrom/AdminHome.xhtml"
+    TARGET="rules:#Pages#Platfrom#AdminHome.xhtml" TITLE="success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#Pages#Platfrom#Register.xhtml"
+  PATH="/Pages/Platfrom/Register.xhtml" SHAPE="464,17,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#Pages#Platfrom#AdminHome.xhtml"
+  PATH="/Pages/Platfrom/AdminHome.xhtml" SHAPE="256,177,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

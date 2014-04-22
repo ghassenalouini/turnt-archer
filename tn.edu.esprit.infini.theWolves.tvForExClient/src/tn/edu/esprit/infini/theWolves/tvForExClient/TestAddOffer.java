@@ -4,7 +4,6 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
-import tn.edu.esprit.infini.theWolves.tvForEx.domain.Bank;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Customer;
 import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CurrencyFacadeRemote;
@@ -37,7 +36,7 @@ public class TestAddOffer {
 
 			Currency currency = proxyCu.findCurrencyById(2);
 
-		boolean a = true;
+			boolean a = true;
 			if (a == true) {
 				System.err.println("Temchi");
 			} else {
@@ -50,5 +49,5 @@ public class TestAddOffer {
 		}
 
 	}
-		
+
 }

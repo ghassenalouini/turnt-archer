@@ -67,7 +67,6 @@ public class TransactionTest {
 		Customer bank = proxyCust.findCustomerById(1);
 		Currency currency = proxyCu.findCurrencyById(1);
 
-	
 
 	}
 

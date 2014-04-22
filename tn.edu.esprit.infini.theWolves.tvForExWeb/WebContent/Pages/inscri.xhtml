@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+
+<h:body>
+	<h:form>
+
+		<h:panelGrid columns="2">
+
+			<h:outputLabel value="name" />
+			<h:inputText value="#{authentificationCustomerBean.customer.name}"
+				id="fcid-1" />
+
+			<h:outputLabel value="mail" />
+			<h:inputText
+				value="#{authentificationCustomerBean.customer.adresse_mail}"
+				id="fcid-2" />
+
+
+			<h:outputLabel value="phone" />
+			<h:inputText
+				value="#{authentificationCustomerBean.customer.phone_number}"
+				id="fcid-4" />
+
+		
+
+
+			<h:outputLabel value="login" />
+
+			<h:inputText value="#{authentificationCustomerBean.customer.login}"
+				id="fcid-10" />
+
+			<h:outputLabel value="password" />
+			<h:inputText
+				value="#{authentificationCustomerBean.customer.password}"
+				id="fcid-12" />
+
+
+			<h:commandButton value="Register account"
+				action="#{authentificationCustomerBean.Register()}" />
+
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>
