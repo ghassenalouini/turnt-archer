@@ -1,11 +1,9 @@
-/src
+
 /build
-<<<<<<< HEAD
-=======
 /.metadata
 /.settings
 /bin
 /.classpath
 /.project
->>>>>>> branch 'master' of https://github.com/ghassenalouini/turnt-archer.git
-/.gitignore
+
+
