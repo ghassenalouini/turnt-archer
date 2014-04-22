@@ -55,8 +55,7 @@ public class TestRealPlatform {
 		Currency currency = proxy.findCurrencyById(1);
 		Currency currencyCross = proxy.findCurrencyById(2);
 
-		Assert.assertTrue(proxyTr.addCrossTransaction(bank, bankBid, currency,
-				currencyCross, "buy", 2000, 2.00F, 1.2F));
+		
 	}
 
 }

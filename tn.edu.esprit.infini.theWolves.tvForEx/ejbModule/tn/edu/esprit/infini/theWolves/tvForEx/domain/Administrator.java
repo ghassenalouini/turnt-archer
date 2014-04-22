@@ -27,7 +27,7 @@ public class Administrator implements Serializable {
 
 	/** ceci est un constructeur sans parametre **/
 	public Administrator() {
-		
+
 	}
 
 	/**
@@ -35,20 +35,19 @@ public class Administrator implements Serializable {
 	 * premier est le login et le deuxieme est le password
 	 **/
 	public Administrator(String login, String password) {
-		
+
 		this.login = login;
 		this.password = password;
 	}
-	
 
 	public Administrator(String nom, String login, String password,
 			String emailAddress) {
-	
+
 		this.nom = nom;
 		this.login = login;
 		this.password = password;
 		this.emailAddress = emailAddress;
-		
+
 	}
 
 	/**
@@ -123,7 +122,7 @@ public class Administrator implements Serializable {
 	 * c'est le getter de la liste des rules qui retourne la liste des rules qui
 	 * on été placés par l'administrateur
 	 **/
-	@OneToMany(mappedBy = "administrator",cascade=CascadeType.ALL)
+	@OneToMany(mappedBy = "administrator", cascade = CascadeType.ALL)
 	public List<Rules> getRules() {
 		return rules;
 	}

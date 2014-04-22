@@ -37,7 +37,7 @@ public class TestAddOffer {
 
 			Currency currency = proxyCu.findCurrencyById(2);
 
-			boolean a = proxy.createOffer((Bank) bank, currency, 2.2F);
+		boolean a = true;
 			if (a == true) {
 				System.err.println("Temchi");
 			} else {
@@ -50,4 +50,5 @@ public class TestAddOffer {
 		}
 
 	}
+		
 }

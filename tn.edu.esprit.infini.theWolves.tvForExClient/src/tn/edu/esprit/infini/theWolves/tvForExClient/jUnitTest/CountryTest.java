@@ -35,7 +35,7 @@ public class CountryTest {
 	@Test
 	public void itShouldAdd() {
 		Currency cr = new Currency("dollar", 1, "USD");
-		cr.setId(1);
+		
 		Country country = new Country("Tunisie", "TN");
 
 		Assert.assertTrue(proxy.addCountry(country));
