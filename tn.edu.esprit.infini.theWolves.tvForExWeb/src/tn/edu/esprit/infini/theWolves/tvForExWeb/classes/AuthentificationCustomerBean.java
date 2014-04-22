@@ -32,7 +32,6 @@ public class AuthentificationCustomerBean implements Serializable {
 	private boolean loggedIn;
 	private String userType;
 
-
 	public String doLoginCustomer() {
 		String navigateTo = null;
 		customer = custFacadeLocal.loginCustomer(customer.getLogin(),
@@ -70,11 +69,11 @@ public class AuthentificationCustomerBean implements Serializable {
 
 	public String logout() {
 		String navigateTo = null;
-		
+
 		customer = new Customer();
-		
-		navigateTo="/WelcomeTvForex?faces-redirect=true";
-		
+
+		navigateTo = "/WelcomeTvForex?faces-redirect=true";
+
 		return navigateTo;
 	}
 
@@ -83,7 +82,6 @@ public class AuthentificationCustomerBean implements Serializable {
 			setDefineType(true);
 		}
 	}
-
 
 	public Customer getCustomer() {
 		return customer;
