@@ -20,7 +20,7 @@ import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CountryService
 public class CountFacade implements CountFacadeLocal {
 
 	@EJB
-	CountryServicesLocal cd;
+	CountryServicesLocal countryServicesLocal;
 	@PersistenceContext
 	private EntityManager entityManager;
 
@@ -33,28 +33,28 @@ public class CountFacade implements CountFacadeLocal {
 
 	@Override
 	public boolean addCountry(Country country) {
-		return cd.addCountry(country);
+		return countryServicesLocal.addCountry(country);
 	}
 
 	@Override
 	public boolean removeCountry(Country country) {
-		return cd.removeCountry(country);
+		return countryServicesLocal.removeCountry(country);
 
 	}
 
 	@Override
 	public boolean updateCountry(Country country) {
-		return cd.updateCountry(country);
+		return countryServicesLocal.updateCountry(country);
 	}
 
 	@Override
 	public Country findCountryById(int id) {
-		return cd.findCountryById(id);
+		return countryServicesLocal.findCountryById(id);
 	}
 
 	@Override
 	public List<Country> findAllCountries() {
-		return cd.findAllCountries();
+		return countryServicesLocal.findAllCountries();
 	}
 
 }

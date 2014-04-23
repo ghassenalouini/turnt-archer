@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head></h:head>
+<h:body>
+	<h:form>
+		<h:dataTable rendered="#{not empty countryBean.countries }"
+			value="#{countryBean.countries}" var="count" border="1">
+			<f:facet name="header">
+				<h:outputText value="all Country" />
+			</f:facet>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="ID" />
+				</f:facet>
+				<h:outputText value="#{count.id}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Name" />
+				</f:facet>
+				<h:outputText value="#{count.name}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Code" />
+				</f:facet>
+				<h:outputText value="#{count.code}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Currency" />
+				</f:facet>
+				<h:outputText value="#{count.currency}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="action" />
+				</f:facet>
+				<h:commandButton value="Select">
+					<f:setPropertyActionListener target="#{countryBean.country}"
+						value="#{count}" />
+					<f:setPropertyActionListener target="#{countryBean.formDisplayed}"
+						value="true" />
+				</h:commandButton>
+			</h:column>
+		</h:dataTable>
+		<h:commandButton action="#{countryBean.DoNew}" value="new" />
+	</h:form>
+
+	<h:form rendered="#{countryBean.formDisplayed}">
+		<h:panelGrid columns="2">
+			<h:outputText value="Name" />
+			<h:inputText value="#{countryBean.country.name}" />
+			<h:outputText value="Code" />
+			<h:inputText value="#{countryBean.country.code}" />
+			
+			
+			<h:outputText value="Currency" />
+			 
+			<h:selectOneMenu value="#{countryBean.selectedCuerrencyLabbel}">
+			<f:selectItem itemValue="-1" itemLabel="Choose your currency ...."/>
+			<f:selectItems value="#{countryBean.selectItemsForCurrency}" />
+			</h:selectOneMenu>
+			
+			
+			
+			<h:commandButton action="#{countryBean.DoCancel}" value="cancel" />
+			<h:panelGrid columns="3">
+				<h:commandButton action="#{countryBean.DoDelete}" value="delete" />
+				<h:commandButton action="#{countryBean.DoSave}" value="Save" />
+				<h:commandButton action="#{countryBean.DoUpdate}" value="Update" />
+			</h:panelGrid>
+		</h:panelGrid>
+
+
+	</h:form>
+
+
+</h:body>
+</html>

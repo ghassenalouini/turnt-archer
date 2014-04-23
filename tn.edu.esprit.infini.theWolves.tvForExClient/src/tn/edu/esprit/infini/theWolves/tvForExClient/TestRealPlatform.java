@@ -4,8 +4,6 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
-import junit.framework.Assert;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -55,7 +53,6 @@ public class TestRealPlatform {
 		Currency currency = proxy.findCurrencyById(1);
 		Currency currencyCross = proxy.findCurrencyById(2);
 
-		
 	}
 
 }
