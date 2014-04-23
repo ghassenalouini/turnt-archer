@@ -11,8 +11,11 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.model.SelectItem;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Bank;
+import tn.edu.esprit.infini.theWolves.tvForEx.domain.CentralBank;
+import tn.edu.esprit.infini.theWolves.tvForEx.domain.Corporate;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Country;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Customer;
+import tn.edu.esprit.infini.theWolves.tvForEx.domain.Trader;
 import tn.edu.esprit.infini.theWolves.tvForEx.facadeLocal.interfaces.CountFacadeLocal;
 import tn.edu.esprit.infini.theWolves.tvForEx.facadeLocal.interfaces.CustFacadeLocal;
 
@@ -34,7 +37,7 @@ public class RegisterBean implements Serializable {
 	Customer customer = new Customer();
 	private String swiftCode;
 	private int fondPropre;
-	private boolean defineType = false;
+	private boolean defineType = true;
 	private int number;
 	private int selectedCountryId = -1;
 	private int selectedTypey = -1;
@@ -54,32 +57,79 @@ public class RegisterBean implements Serializable {
 			selectedItemsForCountries
 					.add(new SelectItem(c.getId(), c.getName()));
 		}
-		
 
 	}
 
-	public void type() {
+	public String SubmitAS()
 
-		defineType = true;
+	{
+		String a = null;
+		if (number == 1) {
+			a = "CentralBank";
+		} else if (number == 2) {
+			a = "Bank";
+		} else if (number == 3) {
+			a = "Corporate";
+		}
+		return a;
+	}
+
+	public boolean type() {
+
+		if (number == 1) {
+			defineType = false;
+		} else if (number == 2) {
+			defineType = true;
+		} else if (number == 3) {
+			defineType = false;
+		}
+		return defineType;
 
 	}
+
 	public void ty() {
 
 		defineType = false;
 
 	}
+
 	
+		
+				
+	
+
 	public String Register() {
 
 		String navigateTo = null;
 		customer.setCountry(countFacadeLocal.findCountryById(selectedCountryId));
-		if (selectedTypey== 2) {
+		if (number == 2) {
 
-			((Bank) customer).setFond_propre(fondPropre);
-			((Bank) customer).setSwift_code(swiftCode);
+			Bank bank = new Bank(customer);
+			bank.setSwift_code(swiftCode);
+			bank.setFond_propre(fondPropre);
+			Trader trader = new Trader(customer, bank);
+			trader.setType("Adminitrator");
+			custFacadeLocal.addCustomer(bank);
+			custFacadeLocal.addCustomer(trader);
+
+			System.out.println("ajoutBank");
+		}
+		if (number == 1) {
+
+			CentralBank centralBank = new CentralBank(customer);
+
+			custFacadeLocal.addCustomer(centralBank);
+			System.out.println("ajout");
 		}
 
-		custFacadeLocal.addCustomer(customer);
+		if (number == 3) {
+
+			Corporate corporate = new Corporate(customer);
+
+			custFacadeLocal.addCustomer(corporate);
+			System.out.println("ajout");
+		}
+
 		System.out.println("ajout");
 		customer = new Customer();
 		defineType = false;

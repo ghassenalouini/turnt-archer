@@ -34,7 +34,7 @@
 
 	<link rel="apple-touch-startup-image"
 		media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)"
-		href="../RessourcesPlatform/images/mobile/apple-touch-startup-image-1536x2008.html" />
+		href="./RessourcesPlatform/images/mobile/apple-touch-startup-image-1536x2008.html" />
 	<link rel="apple-touch-startup-image"
 		media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)"
 		href="./RessourcesPlatform/images/mobile/apple-touch-startup-image-1496x2048.html" />
@@ -82,36 +82,33 @@
 
 	<!-- // Helpers // -->
 
-	<script src="RessourcesPlatform/js/plugins/modernizr.min.js"></script>
-	<script src="RessourcesPlatform/js/plugins/mobiledevices.js"></script>
+	<script src="./RessourcesPlatform/js/plugins/modernizr.min.js"></script>
+	<script src="./RessourcesPlatform/js/plugins/mobiledevices.js"></script>
 
 	<!-- // jQuery core // -->
 
-
-	<script
-		src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.0.min.js"></script>
-
-	<script
-		src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+	<script src="./RessourcesPlatform/js/libs/jquery-1.11.0.min.js"></script>
+	<script src="./RessourcesPlatform/js/libs/jquery-ui-1.10.4.min.js"></script>
 
 	<!-- // Bootstrap // -->
 
 	<script
-		src="RessourcesPlatform/bootstrap/core/dist/js/bootstrap.min.js"></script>
+		src="./RessourcesPlatform/bootstrap/core/dist/js/bootstrap.min.js"></script>
 
 	<!-- // Custom/premium plugins // -->
 
-	<script src="RessourcesPlatform/js/plugins/showpassword.1.0.min.js"></script>
-	<script src="RessourcesPlatform/js/plugins/nanogress.1.0.min.js"></script>
-	<script src="RessourcesPlatform/js/plugins/powerwizard.1.0.min.js"></script>
+	<script src="./RessourcesPlatform/js/plugins/showpassword.1.0.min.js"></script>
+	<script src="./RessourcesPlatform/js/plugins/nanogress.1.0.min.js"></script>
+	<script src="./RessourcesPlatform/js/plugins/powerwizard.1.0.min.js"></script>
 
 	<!-- // Third-party plugins // -->
 
-	<script src="RessourcesPlatform/js/plugins/jquery.pwstrength.min.js"></script>
+	<script src="./RessourcesPlatform/js/plugins/jquery.pwstrength.min.js"></script>
 
 	<!-- // Custom //-->
 
-	<script src="RessourcesPlatform/js/plugins/login.js"></script>
+	<script src="./RessourcesPlatform/js/plugins/login.js"></script>
+
 
 </h:head>
 <h:body>
@@ -180,25 +177,25 @@
 										<label>Submit as :</label>
 									</div>
 
-									
 
 
-									<p:selectOneRadio id="options" value="#{registerBean.number}">
+									<h:form onclick="#{registerBean.type()}">
+										<p:selectOneRadio id="options" value="#{registerBean.number}">
 
-										<div class="col-lg-3">
-											<f:selectItem itemLabel="Central Bank" itemValue="1" value="#{registerBean.type()}" />
-										</div>
-										<div class="col-lg-2">
-											<f:selectItem itemLabel="Bank" itemValue="2"  value="#{registerBean.ty()}"/>
+											<div class="col-lg-3">
+												<f:selectItem itemLabel="Central Bank" itemValue="1" />
+											</div>
+											<div class="col-lg-2">
+												<f:selectItem itemLabel="Bank" itemValue="2" />
 
-										</div>
-										<div class="col-lg-3">
-											<f:selectItem itemLabel="Corporate" itemValue="3" value="#{registerBean.ty()}"/>
-										</div>
+											</div>
+											<div class="col-lg-3">
+												<f:selectItem itemLabel="Corporate" itemValue="3" />
+											</div>
 
 
-									</p:selectOneRadio>
-
+										</p:selectOneRadio>
+									</h:form>
 								</div>
 								<div class="spacer-10"></div>
 								<div class="row">
@@ -230,7 +227,7 @@
 								<div class="spacer-10"></div>
 
 							</div>
-							<div class="powerwizard-step">
+							<div class="powerwizard-step" onshow="#{registerBean.type()}">
 								<h2>2. Account</h2>
 								<p>Create your own account.</p>
 								<div class="spacer-40"></div>
@@ -251,52 +248,58 @@
 											</div>
 										</div>
 										<div class="spacer-10"></div>
-
+										<div class="row">
+											<div class="col-lg-12">
+												<label for="fcid-1">Swift Code: <span
+													class="asterisk">*</span></label>
+											</div>
+											<div class="col-lg-12">
+												<h:inputText class="form-control required" id="fcid-33" />
+											</div>
+										</div>
 									</div>
 									<div class="col-lg-6">
 										<div class="row">
-											<div class="col-lg-12">
-												<label for="fcid-12">Password :<span
-													class="asterisk">*</span></label>
+											<div class="row">
+												<div class="col-lg-12">
+													<label for="fcid-12">Password:<span
+														class="asterisk">*</span></label>
+												</div>
 											</div>
+											<div class="row">
+												<div class="col-lg-12">
+													<h:inputText value="#{registerBean.customer.password}"
+														class="form-control required" type="password"
+														placeholder="Set password" id="fcid-12" />
+												</div>
+											</div>
+											<div class="spacer-10"></div>
+
 										</div>
 										<div class="row">
-											<div class="col-lg-12">
-												<h:inputText value="#{registerBean.customer.password}"
-													class="form-control required" id="fcid-12" />
+											<div class="row">
+												<div class="col-lg-12">
+													<label for="fcid-12">Fond Propre:</label>
+												</div>
 											</div>
+											<div class="row">
+												<div class="col-lg-12">
+													<h:inputText class="form-control" type="password"
+														placeholder="Set password" id="fcid-18" />
+												</div>
+											</div>
+											<div class="spacer-10"></div>
+
 										</div>
+
 
 										<div class="spacer-10"></div>
-										<div class="row">
-											<div class="col-lg-12">
-												<h:inputText class="form-control required" id="fcid-13" />
-											</div>
-										</div>
 
-										<h:form rendered="#{registerBean.defineType}">
 
-											<div class="row">
-												<div class="col-lg-4">
-													<label for="fcid-1">Fond propre: <span
-														class="asterisk">*</span></label>
-												</div>
-												<div class="col-lg-8">
-													<h:inputText value="#{registerBean.customer.name}"
-														class="form-control required" id="fcid-33" />
-												</div>
-											</div>
+										<h:form rendered="#{registerBean.type()}">
 
-											<div class="row">
-												<div class="col-lg-4">
-													<label for="fcid-1">swift code: <span
-														class="asterisk">*</span></label>
-												</div>
-												<div class="col-lg-8">
-													<h:inputText value="#{registerBean.customer.name}"
-														class="form-control required" id="fcid-34" />
-												</div>
-											</div>
+
+
 
 										</h:form>
 
@@ -416,22 +419,22 @@
 					</div>
 				</div>
 			</div>
-			
+
 		</div>
-		
+
 	</h:form>
-	
-		<footer id="login-footer">
-			<strong>Copyright © 2014 Tv-ForEx</strong>
-			<div class="spacer-5"></div>
-			<small>Trade Like a Wolf.</small>
-		</footer>
-	
+
+	<footer id="login-footer">
+		<strong>Copyright © 2014 Tv-ForEx</strong>
+		<div class="spacer-5"></div>
+		<small>Trade Like a Wolf.</small>
+	</footer>
+
 
 	<!-- End #container -->
 
 	<!-- Terms of use Modal -->
-	
+
 	<div class="modal fade" id="modal-tou" tabindex="-1">
 		<div class="modal-dialog">
 			<div class="modal-content">

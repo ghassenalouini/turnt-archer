@@ -31,6 +31,12 @@ public class Corporate extends Customer implements Serializable {
 		super(name, login, password, phone_number, adresse_mail);
 		this.typeActivity = typeActivity;
 	}
+	public Corporate(Customer customer)
+	{super(customer.getName(),customer.getLogin(),customer.getPassword(),customer.getPhone_number(),customer.getAdresse_mail());
+	
+	
+		
+	}
 
 	/**
 	 * retourne le type d'activité d'un corporate (importateur ou exportateur)

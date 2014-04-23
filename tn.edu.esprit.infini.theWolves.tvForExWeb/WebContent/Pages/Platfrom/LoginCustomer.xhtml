@@ -116,9 +116,7 @@
 
 		<div layout="block" id="container-login">
 			<!-- remove this part -->
-			<div layout="block" id="demo-overview">
-
-			</div>
+			<div layout="block" id="demo-overview"></div>
 
 			<div layout="block" id="login-box">
 
@@ -126,13 +124,13 @@
 					<header id="login-header">
 						<a href="#" id="login-logo">
 							<h1>TV-Forex</h1>
-							
+
 						</a>
-						
+
 
 					</header>
 
-					
+
 
 					<div class="spacer-40"></div>
 
@@ -170,9 +168,8 @@
 						<div layout="block" class="col-lg-12">
 
 
-							<label for="fc-id-2">Password:</label>
-							<a href="#" id="showpassword-trigger" class="underline">Show
-								password</a>
+							<label for="fc-id-2">Password:</label> <a href="#"
+								id="showpassword-trigger" class="underline">Show password</a>
 
 						</div>
 					</div>
@@ -180,7 +177,8 @@
 
 
 
-					<h:inputSecret value="#{authentificationCustomerBean.customer.password}"
+					<h:inputSecret
+						value="#{authentificationCustomerBean.customer.password}"
 						class="form-control" id="fc-id-2" tabindex="2" />
 
 
@@ -221,12 +219,11 @@
 					<h:commandButton value="Sign in here"
 						action="#{authentificationCustomerBean.doLoginCustomer()}"
 						class="btn btn-default form-control" id="submit_id" />
-						<br/>
-						<br/>
-						<br/>
-						<h:message for="submit_id" styleClass="attention-warning"/>
-						
-						
+					<br /> <br /> <br />
+					<div class="spacer-15">
+						<h:message for="submit_id" styleClass="alert-danger" />
+
+					</div>
 
 
 

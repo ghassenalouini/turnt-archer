@@ -38,7 +38,12 @@ public class Trader extends Customer implements Serializable {
 		this.type = type;
 		this.bank = bank;
 	}
-
+	public Trader(Customer customer,Bank bank)
+	{super(customer.getName(),customer.getLogin(),customer.getPassword(),customer.getPhone_number(),customer.getAdresse_mail());
+	this.bank=bank;
+		
+	}
+	
 	/** retourne le score du trader **/
 	public int getScore() {
 		return score;
