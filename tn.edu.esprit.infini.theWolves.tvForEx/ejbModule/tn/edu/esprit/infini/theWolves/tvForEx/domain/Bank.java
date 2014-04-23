@@ -40,6 +40,11 @@ public class Bank extends Customer implements Serializable {
 		this.fond_propre = fond_propre;
 		this.swift_code = swift_code;
 	}
+	public Bank(Customer customer){
+		super(customer.getName(),customer.getLogin(),customer.getPassword(),customer.getPhone_number(),customer.getAdresse_mail());
+		
+		
+	}
 
 	/**
 	 * c'est le getter de la classe Bank qui retourne le fond_propre d'une

@@ -27,7 +27,6 @@ public class AuthentificationBean implements Serializable {
 	private String login;
 	private String password;
 	private boolean loggedIn = false;
-	
 
 	public AuthentificationBean() {
 		// TODO Auto-generated constructor stub
@@ -37,13 +36,14 @@ public class AuthentificationBean implements Serializable {
 
 		String navigateTo = null;
 		System.out.println(login);
-		administrator = adminFacadeLocal.loginAdmin(administrator.getLogin(),administrator.getPassword());
+		administrator = adminFacadeLocal.loginAdmin(administrator.getLogin(),
+				administrator.getPassword());
 
 		if (administrator != null) {
 
 			setLoggedIn(true);
 			System.out.println("instance passé");
-			navigateTo = "/Pages/Platfrom/AdminHome";
+			navigateTo = "/Pages/Platfrom/Administrator/AdminHome?faces-redirect=true";
 			System.out.println("oui");
 
 		} else {

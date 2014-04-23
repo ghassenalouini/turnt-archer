@@ -9,6 +9,7 @@
 
 	<title>TV-ForEx</title>
 
+
 	<!-- // IOS webapp icons // -->
 
 	<meta name="apple-mobile-web-app-title" content="Karma Webapp" />
@@ -25,9 +26,8 @@
 	<link rel="apple-touch-icon-precomposed" sizes="72x72"
 		href="../RessourcesPlatform/images/mobile/apple-touch-icon-72x72.png" />
 	<link rel="apple-touch-icon-precomposed"
-		href="../RessourcesPlatform/images/mobile/apple-touch-icon.png" />
-	<link rel="shortcut icon"
-		href="../RessourcesPlatform/images/favicons/favicon.ico" />
+		href="images/mobile/apple-touch-icon.png" />
+	<link rel="shortcut icon" href="images/favicons/favicon.ico" />
 
 	<!-- // IOS webapp splash screens // -->
 
@@ -39,7 +39,7 @@
 		href="../RessourcesPlatform/images/mobile/apple-touch-startup-image-1496x2048.html" />
 	<link rel="apple-touch-startup-image"
 		media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)"
-		href="../RessourcesPlatform/images/mobile/apple-touch-startup-image-768x1004.html" />
+		href="../RessourcesPlatform//images/mobile/apple-touch-startup-image-768x1004.html" />
 	<link rel="apple-touch-startup-image"
 		media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)"
 		href="../RessourcesPlatform/images/mobile/apple-touch-startup-image-748x1024.html" />
@@ -123,8 +123,7 @@
 		src="../RessourcesPlatform/bootstrap/fileupload/bootstrap-fileupload.min.js"></script>
 	<script
 		src="../RessourcesPlatform/bootstrap/inputmask/bootstrap-inputmask.min.js"></script>
-	<script
-		src="../RessourcesPlatform/bootstrap/colorpicker/js/bootstrap-colorpicker.min.js"></script>
+	<script src="bootstrap/colorpicker/js/bootstrap-colorpicker.min.js"></script>
 	<script
 		src="../RessourcesPlatform/bootstrap/timepicker/js/bootstrap-timepicker.min.js"></script>
 
@@ -149,7 +148,7 @@
 	<script src="../RessourcesPlatform/js/plugins/powerwizard.1.0.min.js"></script>
 	<script src="../RessourcesPlatform/js/plugins/simpleselect.1.0.min.js"></script>
 	<script
-		src="./RessourcesPlatform/js/plugins/tinycontextmenu.1.0.min.js"></script>
+		src="../RessourcesPlatform/js/plugins/tinycontextmenu.1.0.min.js"></script>
 
 	<!-- // Third-party plugins // -->
 
@@ -186,7 +185,6 @@
 	<!-- // Custom //-->
 
 	<script src="../RessourcesPlatform/js/plugins/theme-demo.min.js"></script>
-
 </h:head>
 <h:body>
 	<div id="container" class="clearfix">
@@ -233,8 +231,13 @@
 			</div>
 
 
+
 			<ui:include src="./SidebarMenu.xhtml" />
 
+
+			<div id="SideBar">
+				<ui:insert name="SideBar" />
+			</div>
 
 
 		</aside>
@@ -355,18 +358,22 @@
 				<!-- End .window -->
 
 				<!-- ********************************************
-                     * FOOTER MAIN:                             *
+                     * Contenue                            *
                      *                                          *
                      * the part which contains things like      * 
                      * chat, buttons, copyright and             *
                      * dropup menu(s).                          *
                      ******************************************** -->
-                     
-                     
 
-				<ui:include src="./CurrencyUpdate.xhtml" />				
+				<div id="content">
+					<ui:insert name="pageContent" />
+				</div>
 
-					
+
+
+				<ui:include src="./CurrencyUpdate.xhtml" />
+
+
 
 
 				<ui:include src="./FooterChat.xhtml" />

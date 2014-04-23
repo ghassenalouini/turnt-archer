@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faceted-project>
+<<<<<<< HEAD
   <runtime name="JBoss 7.1 Runtime 4"/>
+=======
+  <runtime name="JBoss 7.1 Runtime"/>
+>>>>>>> branch 'master' of https://github.com/ghassenalouini/turnt-archer.git
   <fixed facet="jst.web"/>
   <fixed facet="wst.jsdt.web"/>
   <fixed facet="java"/>

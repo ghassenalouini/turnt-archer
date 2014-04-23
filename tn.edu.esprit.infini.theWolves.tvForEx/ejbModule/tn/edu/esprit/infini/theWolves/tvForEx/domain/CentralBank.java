@@ -16,6 +16,11 @@ public class CentralBank extends Customer implements Serializable {
 	public CentralBank() {
 		super();
 	}
+	public CentralBank(Customer customer) {
+		super(customer.getName(),customer.getLogin(),customer.getPassword(),customer.getPhone_number(),customer.getAdresse_mail());
+		
+		
+	}
 
 	/**
 	 * ceci est un constructeur parametréde la classe central banque qui prend
@@ -26,6 +31,7 @@ public class CentralBank extends Customer implements Serializable {
 	public CentralBank(String name, String login, String password,
 			int phone_number, String adresse_mail) {
 		super(name, login, password, phone_number, adresse_mail);
+
 
 	}
 
