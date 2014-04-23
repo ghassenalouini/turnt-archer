@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head></h:head>
+<h:body>
+
+
+
+
+	<br/><br/>
+
+
+	<h:form>
+		<h:panelGrid columns="3">
+			<h:outputLabel value="USD/TND" />
+			<h:inputText value="1.5" />
+			<h:commandButton value="Set Exchange rate" />
+		</h:panelGrid>
+	</h:form>
+
+	<br />
+
+
+
+
+
+	<h:form>
+
+		<h:outputText value="#{cotationBean.exchangeRate.currency}" />
+
+	</h:form>
+
+	<h:form>
+
+		<h:dataTable value="#{cotationBean.exchangeRates}" var="exRate"
+			border="1" rendered="true">
+
+			<f:facet name="header">
+				<h:outputText value="Cotation Rate" />
+			</f:facet>
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Currency USD" />
+				</f:facet>
+				<h:outputText value="#{exRate.currency}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="exchange Currency " />
+				</f:facet>
+				<h:outputText value="#{exRate.currencyTR}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Rate " />
+				</f:facet>
+				<h:outputText value="#{exRate.rate}" />
+			</h:column>
+
+		</h:dataTable>
+		<br />
+
+		<h:dataTable value="#{cotationBean.exchangeRates}" var="exRate"
+			border="1" rendered="true">
+
+			<f:facet name="header">
+				<h:outputText value="Cotation News" />
+			</f:facet>
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Currency" />
+				</f:facet>
+				<h:outputText value="#{exRate.currencyTR}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value=" Local Currency " />
+				</f:facet>
+				<h:outputText value="TND" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Rate " />
+				</f:facet>
+				<h:outputText value="#{exRate.rate}" />
+			</h:column>
+
+
+
+
+
+		</h:dataTable>
+
+
+
+
+	</h:form>
+
+
+
+</h:body>
+</html>

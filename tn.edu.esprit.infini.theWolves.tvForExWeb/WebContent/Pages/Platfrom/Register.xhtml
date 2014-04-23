@@ -180,23 +180,32 @@
 										<label>Submit as :</label>
 									</div>
 
-									
 
 
-									<p:selectOneRadio id="options" value="#{registerBean.number}">
+
+									<p:selectOneRadio id="options" value="#{registerBean.typeCust}">
 
 										<div class="col-lg-3">
-											<f:selectItem itemLabel="Central Bank" itemValue="1" value="#{registerBean.type()}" />
+											<f:selectItem itemLabel="Central Bank" itemValue="cb"
+												/>
 										</div>
 										<div class="col-lg-2">
-											<f:selectItem itemLabel="Bank" itemValue="2"  value="#{registerBean.ty()}"/>
+											<f:selectItem itemLabel="Bank" itemValue="b"
+												 />
 										</div>
 										<div class="col-lg-3">
-											<f:selectItem itemLabel="Corporate" itemValue="3" value="#{registerBean.ty()}"/>
+											<f:selectItem itemLabel="Corporate" itemValue="c"
+											/>
 										</div>
-
-
+					
+									
 									</p:selectOneRadio>
+									
+									
+									
+							
+									
+									
 
 								</div>
 								<div class="spacer-10"></div>
@@ -345,7 +354,7 @@
 									<div class="col-lg-4">
 										<strong>Submit as:</strong>
 									</div>
-									<div class="col-lg-8">� Revoir</div>
+									<div class="col-lg-8"><h:outputText value="#{registerBean.typeCust}" /></div>
 								</div>
 								<div class="spacer-10"></div>
 								<div class="row">
@@ -415,23 +424,23 @@
 					</div>
 				</div>
 			</div>
-			
-		</div>
-		
-	</h:form>
-	
 
-		<footer id="login-footer">
-			<strong>Copyright © 2014 Tv-ForEx</strong>
-			<div class="spacer-5"></div>
-			<small>Trade Like a Wolf.</small>
-		</footer>
-	
+		</div>
+
+	</h:form>
+
+
+	<footer id="login-footer">
+		<strong>Copyright © 2014 Tv-ForEx</strong>
+		<div class="spacer-5"></div>
+		<small>Trade Like a Wolf.</small>
+	</footer>
+
 
 	<!-- End #container -->
 
 	<!-- Terms of use Modal -->
-	
+
 	<div class="modal fade" id="modal-tou" tabindex="-1">
 		<div class="modal-dialog">
 			<div class="modal-content">
