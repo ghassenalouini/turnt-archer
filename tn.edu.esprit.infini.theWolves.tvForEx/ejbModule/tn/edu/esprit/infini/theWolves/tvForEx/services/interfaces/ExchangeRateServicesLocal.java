@@ -18,5 +18,7 @@ public interface ExchangeRateServicesLocal {
 	public boolean removeExchangeRate(ExchangeRate exchangeRate);
 
 	public List<ExchangeRate> findAllExchangeRate();
+	
+	public ExchangeRate findExchangeRateByCurrencyRT(String currencyRT);
 
 }

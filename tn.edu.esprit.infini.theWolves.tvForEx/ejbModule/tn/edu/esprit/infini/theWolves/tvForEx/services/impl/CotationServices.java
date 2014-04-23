@@ -8,7 +8,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import tn.edu.esprit.infini.theWolves.tvForEx.domain.Administrator;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Bank;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Cotation;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
@@ -62,8 +61,7 @@ public class CotationServices implements CotationServicesLocal {
 		}
 		return b;
 	}
-	
-	
+
 	public boolean removeCotation(Cotation cotatio) {
 		boolean b = false;
 		try {
@@ -75,17 +73,15 @@ public class CotationServices implements CotationServicesLocal {
 		return b;
 	}
 
-
+	@SuppressWarnings("unchecked")
 	public List<Cotation> findcotationByBank(Bank bank) {
 		String jpql = "select p from Cotation p where p.customer= :param1";
 		Query query = entityManager.createQuery(jpql);
 		query.setParameter("param1", bank);
-		
-		
+
 		return entityManager.createQuery(jpql).getResultList();
 
 	}
-
 
 	public boolean updateCotation(Cotation cotation) {
 		boolean b = false;
@@ -98,15 +94,11 @@ public class CotationServices implements CotationServicesLocal {
 		}
 		return b;
 	}
-	
-	
 
-	public List<Administrator> findAllCotation() {
+	@SuppressWarnings("unchecked")
+	public List<Cotation> findAllCotation() {
 		String jpql = "select p from Cotation p";
-		
-		
-		
-		
+
 		return entityManager.createQuery(jpql).getResultList();
 
 	}

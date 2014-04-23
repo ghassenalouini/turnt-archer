@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.ejb.Local;
 
-import tn.edu.esprit.infini.theWolves.tvForEx.domain.Administrator;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Bank;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Cotation;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
@@ -20,7 +19,10 @@ public interface CotationServicesLocal {
 	boolean removeCotation(Cotation cotatio);
 
 	public List<Cotation> findcotationByBank(Bank bank);
+
 	boolean updateCotation(Cotation cotation);
-	public List<Administrator> findAllCotation();
+
+	public List<Cotation> findAllCotation();
+
 	public Cotation findCotationByCurrecy(Currency currency);
 }
