@@ -39,6 +39,9 @@ public class RegisterBean implements Serializable {
 	private int fondPropre;
 	private boolean defineType = true;
 	private int number;
+
+	private String typeCust;
+
 	private int selectedCountryId = -1;
 	private int selectedTypey = -1;
 	private List<SelectItem> selectedItemsForCountries;
@@ -89,19 +92,13 @@ public class RegisterBean implements Serializable {
 
 	public void ty() {
 
-		defineType = false;
-
 	}
-
-	
-		
-				
-	
 
 	public String Register() {
 
 		String navigateTo = null;
 		customer.setCountry(countFacadeLocal.findCountryById(selectedCountryId));
+
 		if (number == 2) {
 
 			Bank bank = new Bank(customer);
@@ -200,6 +197,14 @@ public class RegisterBean implements Serializable {
 
 	public void setSelectedTypey(int selectedTypey) {
 		this.selectedTypey = selectedTypey;
+	}
+
+	public String getTypeCust() {
+		return typeCust;
+	}
+
+	public void setTypeCust(String typeCust) {
+		this.typeCust = typeCust;
 	}
 
 }

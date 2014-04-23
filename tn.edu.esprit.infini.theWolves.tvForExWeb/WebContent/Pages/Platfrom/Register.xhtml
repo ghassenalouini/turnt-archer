@@ -179,8 +179,11 @@
 
 
 
+
 									<h:form onclick="#{registerBean.type()}">
 										<p:selectOneRadio id="options" value="#{registerBean.number}">
+
+
 
 											<div class="col-lg-3">
 												<f:selectItem itemLabel="Central Bank" itemValue="1" />
@@ -196,6 +199,27 @@
 
 										</p:selectOneRadio>
 									</h:form>
+
+									<div class="col-lg-3">
+										<f:selectItem itemLabel="Central Bank" itemValue="cb" />
+									</div>
+									<div class="col-lg-2">
+										<f:selectItem itemLabel="Bank" itemValue="b" />
+									</div>
+									<div class="col-lg-3">
+										<f:selectItem itemLabel="Corporate" itemValue="c" />
+									</div>
+
+
+									</p:selectOneRadio>
+
+
+
+
+
+
+
+									
 								</div>
 								<div class="spacer-10"></div>
 								<div class="row">
@@ -349,7 +373,9 @@
 									<div class="col-lg-4">
 										<strong>Submit as:</strong>
 									</div>
-									<div class="col-lg-8">� Revoir</div>
+									<div class="col-lg-8">
+										<h:outputText value="#{registerBean.typeCust}" />
+									</div>
 								</div>
 								<div class="spacer-10"></div>
 								<div class="row">
@@ -423,6 +449,7 @@
 		</div>
 
 	</h:form>
+
 
 	<footer id="login-footer">
 		<strong>Copyright © 2014 Tv-ForEx</strong>
