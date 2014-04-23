@@ -34,7 +34,7 @@
 				<f:facet name="header">
 					<h:outputText value="Currency" />
 				</f:facet>
-				<h:outputText value="#{count.currency}" />
+				<h:outputText value="#{count.currency.label}" />
 			</h:column>
 			<h:column>
 				<f:facet name="header">
@@ -45,6 +45,9 @@
 						value="#{count}" />
 					<f:setPropertyActionListener target="#{countryBean.formDisplayed}"
 						value="true" />
+					<f:setPropertyActionListener
+						target="#{countryBean.selectedCuerrencyLabbel}"
+						value="#{count.currency.label}" />
 				</h:commandButton>
 			</h:column>
 		</h:dataTable>
@@ -57,17 +60,17 @@
 			<h:inputText value="#{countryBean.country.name}" />
 			<h:outputText value="Code" />
 			<h:inputText value="#{countryBean.country.code}" />
-			
-			
+
+
 			<h:outputText value="Currency" />
-			 
+
 			<h:selectOneMenu value="#{countryBean.selectedCuerrencyLabbel}">
-			<f:selectItem itemValue="-1" itemLabel="Choose your currency ...."/>
-			<f:selectItems value="#{countryBean.selectItemsForCurrency}" />
+				<f:selectItem itemValue="-1" itemLabel="Choose your currency ...." />
+				<f:selectItems value="#{countryBean.selectItemsForCurrency}" />
 			</h:selectOneMenu>
-			
-			
-			
+
+
+
 			<h:commandButton action="#{countryBean.DoCancel}" value="cancel" />
 			<h:panelGrid columns="3">
 				<h:commandButton action="#{countryBean.DoDelete}" value="delete" />

@@ -33,13 +33,13 @@ public class TestAddTransaction {
 
 			Customer customerBid = proxyCust.findCustomerById(2);
 			Customer customer = proxyCust.findCustomerById(4);
-			Currency currency = proxyCu.findCurrencyById(1);
-			Currency currencyCross = proxyCu.findCurrencyById(2);
+			Currency currency = proxyCu.findCurrencyByLabbel("USD");
+			Currency currencyCross = proxyCu.findCurrencyByLabbel("USD");
 
 			Customer customerBid2 = proxyCust.findCustomerById(3);
 			Customer customer2 = proxyCust.findCustomerById(4);
-			Currency currency2 = proxyCu.findCurrencyById(1);
-			Currency currencyCross2 = proxyCu.findCurrencyById(2);
+			Currency currency2 = proxyCu.findCurrencyByLabbel("USD");
+			Currency currencyCross2 = proxyCu.findCurrencyByLabbel("USD");
 
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block

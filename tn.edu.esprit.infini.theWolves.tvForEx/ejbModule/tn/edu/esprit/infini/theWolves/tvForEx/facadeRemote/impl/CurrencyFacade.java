@@ -26,7 +26,7 @@ public class CurrencyFacade implements CurrencyFacadeRemote {
 	}
 
 	@Override
-	public List<Currency> findAllCurrencies() {		
+	public List<Currency> findAllCurrencies() {
 		return currencyServicesLocal.findAllCurrencies();
 	}
 
@@ -36,12 +36,12 @@ public class CurrencyFacade implements CurrencyFacadeRemote {
 	}
 
 	@Override
-	public Currency findCurrencyById(int id) {
-		return currencyServicesLocal.findCurrencyById(id);
+	public Currency findCurrencyByLabbel(String labbel) {
+		return currencyServicesLocal.findCurrencyByLabbel(labbel);
 	}
 
 	@Override
-	public boolean removeCurrency (Currency currency) {
+	public boolean removeCurrency(Currency currency) {
 		return currencyServicesLocal.removeCurrency(currency);
 	}
 
@@ -49,6 +49,5 @@ public class CurrencyFacade implements CurrencyFacadeRemote {
 	public boolean updateCurrency(Currency currency) {
 		return currencyServicesLocal.updateCurrency(currency);
 	}
-	
 
 }

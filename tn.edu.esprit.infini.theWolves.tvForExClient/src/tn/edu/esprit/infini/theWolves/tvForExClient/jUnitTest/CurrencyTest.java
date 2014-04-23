@@ -28,7 +28,7 @@ public class CurrencyTest {
 		try {
 			Context context = new InitialContext();
 
-			String jndiName = "ejb:/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyFacade!"
+			String jndiName = "Tv-Forex/tn.edu.esprit.infini.theWolves.tvForEx/CurrencyFacade!"
 					+ CurrencyFacadeRemote.class.getCanonicalName();
 
 			proxy = (CurrencyFacadeRemote) context.lookup(jndiName);
@@ -53,7 +53,7 @@ public class CurrencyTest {
 	@Ignore
 	@Test
 	public void itShouldFindCurrencyById() {
-		Currency currency = proxy.findCurrencyById(3);
+		Currency currency = proxy.findCurrencyByLabbel("USD");
 
 		Assert.assertEquals("euro", currency.getLabel());
 
@@ -62,7 +62,7 @@ public class CurrencyTest {
 	@Ignore
 	@Test(expected = NullPointerException.class)
 	public void itShouldNotFindCurrencyById() {
-		Currency currency = proxy.findCurrencyById(1);
+		Currency currency = proxy.findCurrencyByLabbel("USD");
 
 		Assert.assertEquals("euro", currency.getLabel());
 
@@ -72,7 +72,7 @@ public class CurrencyTest {
 	@Test
 	public void itShouldFindCurrencyByIdAndCompareIt() {
 
-		Currency currency = proxy.findCurrencyById(1);
+		Currency currency = proxy.findCurrencyByLabbel("USD");
 
 		Currency currency2 = new Currency();
 		currency2.setLabel("euro");
@@ -86,7 +86,7 @@ public class CurrencyTest {
 	@Test(expected = junit.framework.ComparisonFailure.class)
 	public void itShouldFindCurrencyByIdAndCompareIt2() {
 
-		Currency currency = proxy.findCurrencyById(2);
+		Currency currency = proxy.findCurrencyByLabbel("USD");
 
 		Currency currency2 = new Currency();
 		currency2.setLabel("eurooooo");
@@ -99,19 +99,21 @@ public class CurrencyTest {
 	@Ignore
 	@Test
 	public void itShouldRemoveCurrency() {
-		Assert.assertTrue(proxy.removeCurrency(proxy.findCurrencyById(2)));
+		Assert.assertTrue(proxy.removeCurrency(proxy
+				.findCurrencyByLabbel("USD")));
 	}
 
 	@Ignore
 	@Test(expected = AssertionFailedError.class)
 	public void itShouldNotRemoveCurrency() {
-		Assert.assertTrue(proxy.removeCurrency(proxy.findCurrencyById(1)));
+		Assert.assertTrue(proxy.removeCurrency(proxy
+				.findCurrencyByLabbel("USD")));
 	}
 
 	@Ignore
 	@Test
 	public void itShouldUpdateCurrency() {
-		Currency currency = proxy.findCurrencyById(1);
+		Currency currency = proxy.findCurrencyByLabbel("USD");
 		currency.setInitials("aaaaaaaaaaa");
 		Assert.assertTrue(proxy.updateCurrency(currency));
 	}
@@ -119,7 +121,7 @@ public class CurrencyTest {
 	@Ignore
 	@Test(expected = NullPointerException.class)
 	public void itShouldNotUpdateCurrency() {
-		Currency currency = proxy.findCurrencyById(1);
+		Currency currency = proxy.findCurrencyByLabbel("USD");
 		currency.setInitials("aaaaaaaaaaa");
 		Assert.assertTrue(proxy.updateCurrency(currency));
 	}

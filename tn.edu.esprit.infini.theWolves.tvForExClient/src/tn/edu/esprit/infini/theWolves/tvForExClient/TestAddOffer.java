@@ -34,7 +34,7 @@ public class TestAddOffer {
 
 			Customer bank = proxyCust.findCustomerById(2);
 
-			Currency currency = proxyCu.findCurrencyById(2);
+			Currency currency = proxyCu.findCurrencyByLabbel("USd");
 
 			boolean a = true;
 			if (a == true) {
