@@ -15,7 +15,7 @@ public interface CurrencyFacadeRemote {
 
 	boolean updateCurrency(Currency currency);
 
-	Currency findCurrencyById(int id);
+	Currency findCurrencyByLabbel(String labbel);
 
 	List<Currency> findAllCurrencies();
 

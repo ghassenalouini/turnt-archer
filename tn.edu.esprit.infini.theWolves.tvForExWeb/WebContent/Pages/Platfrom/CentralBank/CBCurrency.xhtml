@@ -1,0 +1,159 @@
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/Pages/Platfrom/Template/TemplateAdmin.xhtml">
+
+	<ui:define name="SideBar">
+		<ui:include
+			src="/Pages/Platfrom/Template/SiderBarMenuCentralBank.xhtml" />
+	</ui:define>
+	<ui:define name="pageContent">
+
+		<div class="sidebar-module"></div>
+
+
+
+
+		<h:form>
+			<div class="inner-padding pull-right">
+
+				<h:commandButton value="Manage Currency"
+					action="#{currencyBean.doNewCurrency()}"
+					styleClass="btn btn-primary" />
+			</div>
+		</h:form>
+
+
+
+		<div class="inner-padding">
+			<h:form class="widget">
+
+				<h:dataTable value="#{currencyBean.currencies}" var="curr"
+					class="table" border="1"
+					rendered="#{not empty currencyBean.currencies}">
+					<f:facet name="header">
+						<h:outputText value="Currencies" />
+					</f:facet>
+
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Label" />
+						</f:facet>
+						<h:outputText value="#{curr.label}" />
+					</h:column>
+
+
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Intials" />
+						</f:facet>
+						<h:outputText value="#{curr.initials}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="unity" />
+						</f:facet>
+						<h:outputText value="#{curr.unity}" />
+					</h:column>
+
+
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="select" />
+						</f:facet>
+
+
+						<h:commandButton value="Edit" class="btn btn-info">
+							<f:setPropertyActionListener target="#{currencyBean.currency}"
+								value="#{curr}" />
+							<f:setPropertyActionListener target="#{currencyBean.rendredForm}"
+								value="true" />
+						</h:commandButton>
+					</h:column>
+
+				</h:dataTable>
+
+
+
+
+
+
+			</h:form>
+			<div class="sidebar-module"></div>
+
+
+
+
+			<h:form rendered="#{currencyBean.rendredForm}" class="col-sm-12">
+				<fieldset>
+					<legend>Manage Currency </legend>
+					<h:panelGrid columns="2">
+
+						<div class="row">
+							<div class="col-sm-3">
+								<label>Label</label>
+							</div>
+
+							<div class="col-sm-9">
+								<h:inputText value="#{currencyBean.currency.label}"
+									class="form-control" />
+							</div>
+						</div>
+
+						<div class="sidebar-line"></div>
+
+						<div class="row">
+
+							<div class="col-sm-3">
+								<label>Initials</label>
+							</div>
+
+							<h:inputText value="#{currencyBean.currency.initials}"
+								class="form-control" />
+						</div>
+
+						<div class="sidebar-line"></div>
+
+						<div class="row">
+							<div class="col-sm-3">
+								<label>Unity</label>
+							</div>
+							<h:inputText value="#{currencyBean.currency.unity}"
+								class="form-control" />
+						</div>
+
+
+
+					</h:panelGrid>
+					<div class="inner-padding pull-right">
+						<h:panelGrid columns="3">
+
+
+							<h:commandButton action="#{currencyBean.doDeleteCurrency()}"
+								value="delete" class="btn btn-primary" />
+
+							<h:commandButton
+								action="#{currencyBean.doSaveOrUpdateCurrency()}" value="save"
+								class="btn btn-primary" />
+
+
+							<h:commandButton action="#{currencyBean.doCancelCurrency()}"
+								value="cancel" class="btn btn-primary" />
+
+
+						</h:panelGrid>
+					</div>
+
+
+				</fieldset>
+			</h:form>
+
+
+		</div>
+
+
+	</ui:define>
+
+</ui:composition>

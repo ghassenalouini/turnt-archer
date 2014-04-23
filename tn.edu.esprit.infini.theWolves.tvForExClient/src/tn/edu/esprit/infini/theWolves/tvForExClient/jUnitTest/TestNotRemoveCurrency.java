@@ -34,7 +34,7 @@ public class TestNotRemoveCurrency {
 
 	@Test(expected = AssertionFailedError.class)
 	public void itShouldNotRemoveCurrency() {
-		Assert.assertTrue(proxy.removeCurrency(proxy.findCurrencyById(99)));
+	//	Assert.assertTrue(proxy.removeCurrency(proxy.findCurrencyById(99)));
 	}
 
 }

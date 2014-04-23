@@ -4,7 +4,7 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/tn.edu.esprit.infini.theWolves.tvForEx"/>
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.jboss.ide.eclipse.as.core.server.runtime.runtimeTarget/JBoss 7.1 Runtime">
 		<attributes>
-			<attribute name="owner.project.facets" value="jst.jsf;jst.web"/>
+			<attribute name="owner.project.facets" value="jst.web;jst.jsf"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
@@ -12,5 +12,7 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

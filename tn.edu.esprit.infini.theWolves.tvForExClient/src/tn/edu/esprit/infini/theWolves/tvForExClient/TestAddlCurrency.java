@@ -26,7 +26,7 @@ public class TestAddlCurrency {
 
 			System.out.println(proxy.addCurrency(currency));
 
-			Currency currency2 = proxy.findCurrencyById(1);
+			Currency currency2 = proxy.findCurrencyByLabbel("USD");
 			System.out.println(proxy.removeCurrency(currency2));
 
 		} catch (NamingException e) {

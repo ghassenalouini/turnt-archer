@@ -29,7 +29,7 @@ public interface CurrencyServicesLocal {
 	 * la méthode find byid permet de retourner un currency si on lui envoie en
 	 * paramétre son id!
 	 **/
-	Currency findCurrencyById(int id);
+	Currency findCurrencyByLabbel(String labbel);
 
 	/**
 	 * la méthode findAllCurrencies retourne tous les currency en forme de

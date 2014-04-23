@@ -54,15 +54,16 @@ public class AuthentificationCustomerBean implements Serializable {
 			} else if (customer instanceof CentralBank) {
 				System.out.println("login central bank");
 				userType = "Central Bank";
-				navigateTo = "/Pages/Platfrom/AdminHome";
+				navigateTo = "/Pages/Platfrom/CentralBank/CentralBankHome?faces-redirect=true";
 			}
 
 		} else {
-			FacesMessage message = new FacesMessage("Bad credentials");
+			FacesMessage message = new FacesMessage("   Bad credentials   ");
 			FacesContext.getCurrentInstance().addMessage(
 					"login_submit:submit_id", message);
 			loggedIn = false;
 			navigateTo = null;
+			customer = new Customer();
 		}
 		return navigateTo;
 	}

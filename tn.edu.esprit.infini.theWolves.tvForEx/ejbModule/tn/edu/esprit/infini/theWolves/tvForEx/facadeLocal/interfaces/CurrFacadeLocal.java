@@ -15,7 +15,7 @@ public interface CurrFacadeLocal {
 
 	boolean updateCurrency(Currency currency);
 
-	Currency findCurrencyById(int id);
+	Currency findCurrencyByLabbel(String labbel);
 
 	List<Currency> findAllCurrencies();
 

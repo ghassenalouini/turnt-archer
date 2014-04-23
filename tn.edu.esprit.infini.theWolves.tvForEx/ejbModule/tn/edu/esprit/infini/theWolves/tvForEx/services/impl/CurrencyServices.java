@@ -67,8 +67,8 @@ public class CurrencyServices implements CurrencyServicesLocal {
 	}
 
 	@Override
-	public Currency findCurrencyById(int id) {
-		return entityManager.find(Currency.class, id);
+	public Currency findCurrencyByLabbel(String labbel) {
+		return entityManager.find(Currency.class, labbel);
 	}
 
 	@SuppressWarnings("unchecked")

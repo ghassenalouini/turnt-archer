@@ -58,6 +58,7 @@ public class CotationFacadeImpl implements CotationFacadeRemote {
 	}
 
 	public List<Cotation> findAllCotation() {
+
 		return cotationServiceLocal.findAllCotation();
 	}
 

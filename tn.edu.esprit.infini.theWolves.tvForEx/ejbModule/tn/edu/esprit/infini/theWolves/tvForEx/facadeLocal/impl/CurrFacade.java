@@ -19,16 +19,16 @@ public class CurrFacade implements CurrFacadeLocal {
 
 	@EJB
 	CurrencyServicesLocal currencyServicesLocal;
-	
-    /**
-     * Default constructor. 
-     */
-    public CurrFacade() {
-        // TODO Auto-generated constructor stub
-    }
-    
-    @Override
-	public List<Currency> findAllCurrencies() {		
+
+	/**
+	 * Default constructor.
+	 */
+	public CurrFacade() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public List<Currency> findAllCurrencies() {
 		return currencyServicesLocal.findAllCurrencies();
 	}
 
@@ -38,12 +38,12 @@ public class CurrFacade implements CurrFacadeLocal {
 	}
 
 	@Override
-	public Currency findCurrencyById(int id) {
-		return currencyServicesLocal.findCurrencyById(id);
+	public Currency findCurrencyByLabbel(String labbel) {
+		return currencyServicesLocal.findCurrencyByLabbel(labbel);
 	}
 
 	@Override
-	public boolean removeCurrency (Currency currency) {
+	public boolean removeCurrency(Currency currency) {
 		return currencyServicesLocal.removeCurrency(currency);
 	}
 
@@ -51,6 +51,5 @@ public class CurrFacade implements CurrFacadeLocal {
 	public boolean updateCurrency(Currency currency) {
 		return currencyServicesLocal.updateCurrency(currency);
 	}
-    
 
 }

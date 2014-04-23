@@ -54,7 +54,9 @@ public class CotationFacade implements CotationFacadeLocal {
 		return cotationServiceLocal.updateCotation(cotation);
 	}
 
+
 	public List<Cotation> findAllCotation() {
+
 		return cotationServiceLocal.findAllCotation();
 	}
 

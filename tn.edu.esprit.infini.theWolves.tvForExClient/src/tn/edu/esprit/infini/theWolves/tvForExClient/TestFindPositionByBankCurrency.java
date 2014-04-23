@@ -34,7 +34,7 @@ public class TestFindPositionByBankCurrency {
 					.lookup(jndiNameCu);
 
 			Customer bank = proxyCust.findCustomerById(2);
-			Currency currency = proxyCu.findCurrencyById(1);
+			Currency currency = proxyCu.findCurrencyByLabbel("USD");
 			Position position = proxy.findPositionByBankCurrency((Bank) bank,
 					currency);
 
