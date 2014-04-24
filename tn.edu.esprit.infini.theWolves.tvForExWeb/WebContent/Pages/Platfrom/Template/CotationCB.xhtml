@@ -10,21 +10,20 @@
 
 
 
-	<br/><br/>
+	<br />
+	<br />
 
 
 	<h:form>
 		<h:panelGrid columns="3">
 			<h:outputLabel value="USD/TND" />
 			<h:inputText value="#{cotationBean.usdTnd}" />
-			<h:commandButton value="Set Exchange rate" action="#{cotationBean.calculate()}" />
+			<h:commandButton value="Set Exchange rate"
+				action="#{cotationBean.calculate()}" />
 		</h:panelGrid>
 	</h:form>
 
 	<br />
-
-
-
 
 
 	<h:form>
@@ -66,8 +65,8 @@
 		</h:dataTable>
 		<br />
 
-		<h:dataTable value="#{cotationBean.cotations}" var="exCot"
-			border="1" rendered="true">
+		<h:dataTable value="#{cotationBean.cotations}" var="exCot" border="1"
+			rendered="true">
 
 			<f:facet name="header">
 				<h:outputText value="Cotation News" />
