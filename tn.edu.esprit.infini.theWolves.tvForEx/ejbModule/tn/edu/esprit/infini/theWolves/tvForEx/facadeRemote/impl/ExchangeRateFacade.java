@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.ExchangeRate;
 import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.ExchangeRateFacadeRemote;
@@ -17,6 +19,9 @@ public class ExchangeRateFacade implements ExchangeRateFacadeRemote {
 
 	@EJB
 	ExchangeRateServicesLocal exchangeRateServicesLocal;
+
+	@PersistenceContext
+	private EntityManager entityManager;
 
 	/**
 	 * Default constructor.
@@ -48,6 +53,11 @@ public class ExchangeRateFacade implements ExchangeRateFacadeRemote {
 	@Override
 	public List<ExchangeRate> findAllExchangeRate() {
 		return exchangeRateServicesLocal.findAllExchangeRate();
+	}
+
+	@Override
+	public ExchangeRate findExchangeRateByCurrencyRT(String currencyRT) {
+		return exchangeRateServicesLocal.findExchangeRateByCurrencyRT(currencyRT);
 	}
 
 }

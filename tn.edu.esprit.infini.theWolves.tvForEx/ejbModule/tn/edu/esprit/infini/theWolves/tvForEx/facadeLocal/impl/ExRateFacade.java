@@ -4,6 +4,9 @@ import java.util.List;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.ExchangeRate;
 import tn.edu.esprit.infini.theWolves.tvForEx.facadeLocal.interfaces.ExRateFacadeLocal;
@@ -17,6 +20,9 @@ public class ExRateFacade implements ExRateFacadeLocal {
 
 	@EJB
 	ExchangeRateServicesLocal exchangeRateServicesLocal;
+
+	@PersistenceContext
+	private EntityManager entityManager;
 
 	/**
 	 * Default constructor.
@@ -48,6 +54,25 @@ public class ExRateFacade implements ExRateFacadeLocal {
 	@Override
 	public List<ExchangeRate> findAllExchangeRate() {
 		return exchangeRateServicesLocal.findAllExchangeRate();
+	}
+
+	@Override
+	public ExchangeRate findExchangeRateByCurrencyRT(String currencyRT) {
+		
+		String jpql="select c from ExchangeRate c where c.currencyTR= :param";
+		
+		Query query = entityManager.createQuery(jpql);
+		query.setParameter("param", currencyRT);
+		Object object = null;
+		try {
+			object = query.getSingleResult();
+			return (ExchangeRate) object;
+
+		} catch (Exception e) {
+			System.err.println("pas de currency TR ...");
+		}
+		return (ExchangeRate) object;
+
 	}
 
 }

@@ -55,11 +55,11 @@ public class PositionTest {
 	public void testfindPostionbyBankCuurency() {
 
 		Bank bank = (Bank) proxyCust.findCustomerById(1);
-		Currency currency = proxyCu.findCurrencyById(1);
+		//Currency currency = proxyCu.findCurrencyById(1);
 
-		Position position = proxy.findPositionByBankCurrency(bank, currency);
+		//Position position = proxy.findPositionByBankCurrency(bank, currency);
 
-		System.out.println(position.getId());
+		//System.out.println(position.getId());
 
 	}
 

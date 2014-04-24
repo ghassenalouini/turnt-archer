@@ -76,5 +76,10 @@ public class ExchangeRateServices implements ExchangeRateServicesLocal {
 		String jpql = "select e from ExchangeRate e";
 		return entityManager.createQuery(jpql).getResultList();
 	}
+	
+	@Override
+	public ExchangeRate findExchangeRateByCurrencyRT(String currencyRT) {
+		return entityManager.find(ExchangeRate.class, currencyRT);
+	}
 
 }

@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head></h:head>
+<h:body>
+
+	<h:form>
+
+		<h:dataTable value="#{transactionBean.transactions}" var="tr"
+			border="1" rendered="true">
+
+			<f:facet name="header">
+				<h:outputText value="Transactions " />
+			</f:facet>
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Deal Ref" />
+				</f:facet>
+				<h:outputText value="#{tr.id}" />
+			</h:column>
+
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="CCY Amount" />
+				</f:facet>
+				<h:outputText value="#{tr.amount}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="CCY Base Amount" />
+				</f:facet>
+				<h:outputText value="#{tr.ccyBasAmount}" />
+			</h:column>
+
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="CCY Rate" />
+				</f:facet>
+				<h:outputText value="#{tr.cotation}" />
+			</h:column>
+
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="CCY Base Rate" />
+				</f:facet>
+				<h:outputText value="#{tr.cotationBase}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="CTR Amount" />
+				</f:facet>
+				<h:outputText value="#{tr.ctrAmout}" />
+			</h:column>
+
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Deal Time" />
+				</f:facet>
+				<h:outputText value="#{tr.transactionPk.date}" />
+			</h:column>
+
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="CCY" />
+				</f:facet>
+				<h:outputText value="#{tr.transactionPk.idCu}" />
+			</h:column>
+
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Trader" />
+				</f:facet>
+				<h:outputText value="#{tr.transactionPk.idCustomer}" />
+			</h:column>
+
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Side" />
+				</f:facet>
+				<h:outputText value="#{tr.type}" />
+			</h:column>
+
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="CTR CCY" />
+				</f:facet>
+				<h:outputText value="#{tr.currencyCross.label}" />
+			</h:column>
+
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="CTR Customer" />
+				</f:facet>
+				<h:outputText value="#{tr.customerCross.name}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Trade Serie id" />
+				</f:facet>
+				<h:outputText value="#{tr.tradeSerie.id}" />
+			</h:column>
+
+
+		</h:dataTable>
+	</h:form>
+
+
+
+
+
+
+</h:body>
+</html>

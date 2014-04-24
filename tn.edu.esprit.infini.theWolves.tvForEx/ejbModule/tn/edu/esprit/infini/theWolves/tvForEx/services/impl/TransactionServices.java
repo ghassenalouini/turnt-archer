@@ -17,16 +17,16 @@ import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.TransactionSer
 @LocalBean
 public class TransactionServices implements TransactionServicesLocal {
 
-    /**
-     * Default constructor. 
-     */
-    public TransactionServices() {
-        // TODO Auto-generated constructor stub
-    }
-    
-    @PersistenceContext
-    EntityManager entityManager;
-    
+	/**
+	 * Default constructor.
+	 */
+	public TransactionServices() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@PersistenceContext
+	EntityManager entityManager;
+
 	@Override
 	public boolean addTransactionC(Transaction transaction) {
 		boolean b = false;
@@ -68,16 +68,16 @@ public class TransactionServices implements TransactionServicesLocal {
 
 	@Override
 	public Transaction findTransactionById(int id) {
-		
+
 		return entityManager.find(Transaction.class, id);
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Transaction> findAllTransactions() {
-		String jpql = "SELECT t FROM Transaction t";
+		String jpql = "select t from Transaction t";
 		return entityManager.createQuery(jpql).getResultList();
-		
+
 	}
-    
+
 }

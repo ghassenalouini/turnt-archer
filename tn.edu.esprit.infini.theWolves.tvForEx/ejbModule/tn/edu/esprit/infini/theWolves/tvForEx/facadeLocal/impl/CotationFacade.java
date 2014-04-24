@@ -7,19 +7,18 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import tn.edu.esprit.infini.theWolves.tvForEx.domain.Administrator;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Bank;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Cotation;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Currency;
 import tn.edu.esprit.infini.theWolves.tvForEx.domain.Customer;
-import tn.edu.esprit.infini.theWolves.tvForEx.facadeRemote.interfaces.CotationFacadeRemote;
+import tn.edu.esprit.infini.theWolves.tvForEx.facadeLocal.interfaces.CotationFacadeLocal;
 import tn.edu.esprit.infini.theWolves.tvForEx.services.interfaces.CotationServicesLocal;
 
 /**
  * Session Bean implementation class CotationFacadeImpl
  */
 @Stateless
-public class CotationFacade implements CotationFacadeRemote {
+public class CotationFacade implements CotationFacadeLocal {
 
 	@EJB
 	private CotationServicesLocal cotationServiceLocal;
@@ -55,7 +54,9 @@ public class CotationFacade implements CotationFacadeRemote {
 		return cotationServiceLocal.updateCotation(cotation);
 	}
 
-	public List<Administrator> findAllCotation() {
+
+	public List<Cotation> findAllCotation() {
+
 		return cotationServiceLocal.findAllCotation();
 	}
 
