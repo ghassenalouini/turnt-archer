@@ -1,18 +1,25 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:h="http://java.sun.com/jsf/html"
-                xmlns:f="http://java.sun.com/jsf/core"
-                xmlns:ui="http://java.sun.com/jsf/facelets">
-                
-                <div class="sidebar-module">
-				<div class="sidebar-profile">
-					<img src="images/users/user-1.jpg" alt="" class="avatar" /> <span
-						class="indicator-dot">2</span>
-					<ul class="sidebar-profile-list">
-						<li><h3>Hi, Steven Watson</h3></li>
-						<li><a href="#">Profile</a> | <a href="#">Mail</a> | <a
-							href="#">Logout</a></li>
-					</ul>
-				</div>
-				<!-- End .sidebar-profile -->
-			</div>
-			</ui:composition>
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<div class="sidebar-module">
+		<div class="sidebar-profile">
+			<img src="images/users/user-1.jpg" alt="" class="avatar" /> <span
+				class="indicator-dot">2</span>
+			<ul class="sidebar-profile-list">
+				<li><h3>
+						<h:form rendered="#{authentificationCustomerBean.loggedIn}">
+							<h:outputText
+								value="Hi, #{authentificationCustomerBean.customer.name}" />
+						</h:form>
+					</h3></li>
+				<li><h:form>
+						<h:commandLink action="#{authentificationCustomerBean.logout}"
+							value="Log Out" />
+					</h:form></li>
+			</ul>
+		</div>
+		<!-- End .sidebar-profile -->
+	</div>
+</ui:composition>

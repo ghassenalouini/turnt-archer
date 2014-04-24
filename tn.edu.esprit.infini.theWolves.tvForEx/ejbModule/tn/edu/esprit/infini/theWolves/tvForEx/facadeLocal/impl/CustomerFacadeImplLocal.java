@@ -68,5 +68,12 @@ public class CustomerFacadeImplLocal implements CustomerFacadeLocal {
 
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Customer> findWaitingCustomers() {
+
+		String jpql = "select c from Customer c where c.state='en attente'" ;
+		return entityManager.createQuery(jpql).getResultList();
+	}
 
 }

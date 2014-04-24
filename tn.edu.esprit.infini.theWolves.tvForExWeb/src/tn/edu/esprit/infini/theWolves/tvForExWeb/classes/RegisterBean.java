@@ -108,13 +108,11 @@ public class RegisterBean implements Serializable {
 			trader.setType("Adminitrator");
 			custFacadeLocal.addCustomer(bank);
 			custFacadeLocal.addCustomer(trader);
-
 			System.out.println("ajoutBank");
 		}
 		if (number == 1) {
 
 			CentralBank centralBank = new CentralBank(customer);
-
 			custFacadeLocal.addCustomer(centralBank);
 			System.out.println("ajout");
 		}
@@ -122,7 +120,6 @@ public class RegisterBean implements Serializable {
 		if (number == 3) {
 
 			Corporate corporate = new Corporate(customer);
-
 			custFacadeLocal.addCustomer(corporate);
 			System.out.println("ajout");
 		}
@@ -130,7 +127,7 @@ public class RegisterBean implements Serializable {
 		System.out.println("ajout");
 		customer = new Customer();
 		defineType = false;
-		return navigateTo;
+		return navigateTo = "/Pages/Platfrom/LoginCustomer?faces-redirect=true";
 
 	}
 

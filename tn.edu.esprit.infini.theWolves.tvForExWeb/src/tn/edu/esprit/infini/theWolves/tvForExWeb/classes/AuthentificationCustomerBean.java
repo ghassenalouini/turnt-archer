@@ -49,7 +49,6 @@ public class AuthentificationCustomerBean implements Serializable {
 				System.out.println("login corporate");
 				userType = "Corporate";
 				navigateTo = "/Pages/Platfrom/AdminHome";
-				userType = "";
 
 			} else if (customer instanceof CentralBank) {
 				System.out.println("login central bank");
@@ -61,7 +60,7 @@ public class AuthentificationCustomerBean implements Serializable {
 			FacesMessage message = new FacesMessage("   Bad credentials   ");
 			FacesContext.getCurrentInstance().addMessage(
 					"login_submit:submit_id", message);
-			loggedIn = false;
+			setLoggedIn(false);
 			navigateTo = null;
 			customer = new Customer();
 		}
@@ -70,9 +69,9 @@ public class AuthentificationCustomerBean implements Serializable {
 
 	public String logout() {
 		String navigateTo = null;
-
+		loggedIn = false;
 		customer = new Customer();
-
+		userType = "";
 		navigateTo = "/WelcomeTvForex?faces-redirect=true";
 
 		return navigateTo;
@@ -106,6 +105,22 @@ public class AuthentificationCustomerBean implements Serializable {
 
 	public void setDefineType(boolean defineType) {
 		this.defineType = defineType;
+	}
+
+	public boolean isLoggedIn() {
+		return loggedIn;
+	}
+
+	public void setLoggedIn(boolean loggedIn) {
+		this.loggedIn = loggedIn;
+	}
+
+	public String getUserType() {
+		return userType;
+	}
+
+	public void setUserType(String userType) {
+		this.userType = userType;
 	}
 
 }

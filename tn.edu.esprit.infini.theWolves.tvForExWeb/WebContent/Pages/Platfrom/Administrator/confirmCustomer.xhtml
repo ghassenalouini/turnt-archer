@@ -1,0 +1,72 @@
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/Pages/Platfrom/Template/TemplateAdmin.xhtml">
+
+	<ui:define name="SideBar">
+		<ui:include src="/Pages/Platfrom/Template/SideBarMenuAdmin.xhtml" />
+	</ui:define>
+	<ui:define name="pageContent">
+		<h:form>
+			<div class="inner-padding pull-right"></div>
+		</h:form>
+
+
+
+		<div class="inner-padding">
+			<h:form class="widget">
+
+				<h:dataTable value="#{customerBean.filteredCategories}" var="cust"
+					class="table" border="1"
+					rendered="#{not empty customerBean.filteredCategories}">
+					<f:facet name="header">
+						<h:outputText value="customers" />
+					</f:facet>
+
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="addresse mail " />
+						</f:facet>
+						<h:outputText value="#{cust.adresse_mail}" />
+					</h:column>
+
+
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="name" />
+						</f:facet>
+						<h:outputText value="#{cust.name}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="phone Number" />
+						</f:facet>
+						<h:outputText value="#{cust.phone_number}" />
+					</h:column>
+
+
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Confirmation" />
+						</f:facet>
+
+
+						<h:commandButton action="#{customerBean.confirmCustomer}"
+							value="Confirm" class="btn btn-info">
+							<f:setPropertyActionListener target="#{customerBean.customer}"
+								value="#{cust}" />
+						</h:commandButton>
+					</h:column>
+
+				</h:dataTable>
+
+			</h:form>
+			<div class="sidebar-module"></div>
+		</div>
+
+
+	</ui:define>
+
+</ui:composition>

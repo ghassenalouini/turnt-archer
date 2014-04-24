@@ -29,6 +29,7 @@ public class Customer implements Serializable {
 	private String password;
 	private int phone_number;
 	private String adresse_mail;
+	private String state = "en attente";
 
 	private List<Position> positions;
 	private List<Transaction> transactions;
@@ -168,6 +169,14 @@ public class Customer implements Serializable {
 	/** modifie le pays du customer **/
 	public void setCountry(Country country) {
 		this.country = country;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
 	}
 
 }
